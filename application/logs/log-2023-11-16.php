@@ -1,0 +1,27 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2023-11-16 06:09:18 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 06:21:59 --> Severity: Warning  --> number_format() expects parameter 1 to be float, string given /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 06:33:34 --> Severity: Warning  --> number_format() expects parameter 1 to be float, string given /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 07:34:30 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 08:14:05 --> Severity: Warning  --> imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error: Not a JPEG file: starts with 0x89 0x50 /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 08:14:05 --> Severity: Warning  --> imagecreatefromjpeg(): '/home/digipanda/public_html/realEstate/files/smart_world_gems.jpg' is not a valid JPEG file /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 08:14:05 --> Severity: Warning  --> imagedestroy() expects parameter 1 to be resource, bool given /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 472
+ERROR - 2023-11-16 08:14:05 --> Severity: Warning  --> imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error: Not a JPEG file: starts with 0x89 0x50 /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 08:14:05 --> Severity: Warning  --> imagecreatefromjpeg(): '/home/digipanda/public_html/realEstate/files/smart_world_gems_gpm_villa.jpg' is not a valid JPEG file /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 08:14:05 --> Severity: Warning  --> imagedestroy() expects parameter 1 to be resource, bool given /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 472
+ERROR - 2023-11-16 08:14:24 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 10:31:05 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 10:36:21 --> Severity: Warning  --> number_format() expects parameter 1 to be float, string given /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 10:40:07 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 10:47:42 --> Severity: Warning  --> imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error: Not a JPEG file: starts with 0x89 0x50 /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 10:47:42 --> Severity: Warning  --> imagecreatefromjpeg(): '/home/digipanda/public_html/realEstate/files/silverglades_hightown_residences3.jpg' is not a valid JPEG file /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 10:47:42 --> Severity: Warning  --> imagedestroy() expects parameter 1 to be resource, bool given /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 472
+ERROR - 2023-11-16 10:47:42 --> Severity: Warning  --> imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error: Not a JPEG file: starts with 0x89 0x50 /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 10:47:42 --> Severity: Warning  --> imagecreatefromjpeg(): '/home/digipanda/public_html/realEstate/files/silverglades_hightown_residences3.jpg' is not a valid JPEG file /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 379
+ERROR - 2023-11-16 10:47:42 --> Severity: Warning  --> imagedestroy() expects parameter 1 to be resource, bool given /home/digipanda/public_html/realEstate/application/libraries/UploadHandler.php 472
+ERROR - 2023-11-16 10:47:54 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 10:48:07 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 10:57:53 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 11:10:39 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-11-16 11:15:18 --> Severity: Warning  --> number_format() expects parameter 1 to be float, string given /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15

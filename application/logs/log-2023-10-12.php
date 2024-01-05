@@ -1,0 +1,49 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2023-10-12 11:36:00 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 11:36:01 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 11:42:49 --> Severity: Notice  --> Trying to get property 'form_name' of non-object /home/digipanda/public_html/realEstate/application/views/admin/forms/edit.php 73
+ERROR - 2023-10-12 11:42:49 --> Severity: Notice  --> Trying to get property 'fields_order_primary' of non-object /home/digipanda/public_html/realEstate/application/views/admin/forms/edit.php 88
+ERROR - 2023-10-12 11:44:46 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 11:50:24 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 11:50:26 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 11:50:58 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 11:56:03 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 12:40:02 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 12:40:07 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:00:24 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:00:29 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:00:43 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:00:46 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:00:57 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:01:00 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:01:10 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:25:22 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:25:24 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:33:56 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:34:01 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:34:48 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:34:48 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:34:49 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:34:50 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:34:50 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:36:23 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:43:34 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:44:20 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:44:25 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:44:29 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:44:40 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:45:05 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:58:12 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 13:58:17 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:13:36 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:13:41 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:31:36 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:31:42 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:32:35 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:49:18 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:49:22 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:58:38 --> Severity: Notice  --> Undefined variable: agent_name_surname /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_form_contact.php 29
+ERROR - 2023-10-12 14:58:38 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15
+ERROR - 2023-10-12 14:58:43 --> Severity: Notice  --> Undefined variable: agent_name_surname /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_form_contact.php 29
+ERROR - 2023-10-12 14:58:43 --> Severity: Notice  --> A non well formed numeric value encountered /home/digipanda/public_html/realEstate/templates/selio/widgets/property_right_mortgage.php 15

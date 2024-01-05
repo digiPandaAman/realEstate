@@ -1,0 +1,721 @@
+.header .navbar-nav .nav-item.active .nav-link,
+.header .navbar-nav .nav-item .nav-link:hover,
+header.pb .header .navbar-nav .nav-item .nav-link:hover,
+.view-btn,
+.face.front,
+.bottom-list ul li a:hover,
+.card .card-body h3:hover,
+.card:hover .card-body h3,
+.post-nfo li:not(:first-child):hover,
+.post-nfo li:not(:first-child):hover a,
+.blog-single-post:hover .post_info > h3 a,
+.cm-reply,
+.widget-search form button,
+.widget-catgs ul li a,
+.ps-info > h3 a:hover,
+.btn1,
+.blog-grid-posts .post_info > a:hover,
+.cont-links li a,
+.cont-links li span,
+.socio-links li a:hover,
+.cont_info li i,
+.cont_info li a,
+.social_links li a:hover,
+.view-change ul.nav-tabs .nav-link.active,
+.card_bod_full .card-footer .btn-default,
+.btn-default,
+.sidebar.layout2 .ps-info > strong,
+.more-feat i,
+.contct-nf > span,
+.apartment-sec .rate-info h5,
+.comment-info:before,
+.price > h2,
+.agent_info > strong,
+.agent:hover .agent_info h3 a,
+.list-products .card:hover .card-body h3,
+.social-links li a:hover,
+.slick-prev:focus,
+.slick-next:focus,
+.slick-prev:before,
+.slick-next:before,
+.banner_text .card .card-footer > a,
+.catg-icon > i,
+.map-city-links ul li a:hover,
+a.link,
+.selected,
+.dropdown-item.active, 
+.dropdown-item:active,
+.post-share > a:hover,
+.footer-list i,
+.h-card-body .title,
+body ul.post-nfo a:hover,
+.drop-menu.active .select > span, .drop-menu.active .select i, .drop-menu .dropeddown li:hover,
+.header .navbar-nav .submit-btn a,
+.header .navbar-nav .signin-btn a:hover,
+.dropdown-item:focus, .dropdown-item:hover,
+a,
+.page-content .toggle-item h2:before,
+.h-page-card .title a:hover {
+	color: #D81212;
+}
+
+.header .navbar-nav .submit-btn a {
+    color: #D81212 !important;
+}
+
+.cta,
+.banner-search .btn,
+.explore-feature .card .card-body i,
+.cluster-visible,
+.face.back,
+.widget-tags > ul li a,
+.post_info > a:hover,
+.pagination .page-item.active .page-link,
+.pagination .page-item .page-link:hover,
+.contact_form > form button:hover,
+.post-comment-sec form button:hover,
+.input-field input[type="radio"]:checked + label span,
+.input-field input[type="checkbox"]:checked + label span,
+.features-dv .input-field input[type="checkbox"] + label span,
+.btn2,
+.price:hover .btn-default,
+.discover-text .btn-default,
+.slick-prev:hover,
+.slick-next:hover,
+.banner_text .rate-info,
+.btn-default.st1,
+.categories-info:hover,
+.card .card-footer a .la-heart-o:hover,.table-compare.table-hover>tbody>tr:not(:last-child):hover>td,.btn-default:hover,.favorites-actions .remove-from-favorites i.la-heart-o,
+.footer-social a:hover,
+.signin-btn b:before,
+.success-message, 
+body:after,
+.error-message,
+.btn.btn-local-primary,
+.block-header,
+.model-item .title:hover,.menu-onmap li label:hover,.menu-onmap li.active label,
+body .winter_dropdown_tree .input-group-addon,
+.currency-selector .drop-menu .dropeddown li:hover,
+.language-selector .drop-menu .dropeddown li:hover,
+.blog-single-post:hover .post_info > a {
+	background-color: #D81212;
+}
+
+.marker-arrow {
+    border-color: #D81212 transparent transparent;
+}
+
+.header .navbar-nav .submit-btn a,
+.view-btn,
+.cluster-visible:before,
+.face.front,
+.face.back,
+.blog-single-post > blockquote,
+.btn1,
+.btn-default,
+.btn.btn-local-primary,.currency-selector .drop-menu .dropeddown li:hover,
+.language-selector .drop-menu .dropeddown li:hover,.menu-onmap li.active label:before,.menu-onmap li label:hover:before {
+	border-color: #D81212;
+}
+
+.blog-img:before, .agent_img:before,
+.bfr:before,
+.blog-img:before, .agent_img:before,
+.popular-cities .card .overlay,
+.banner-search .btn:hover,
+.banner::after,
+.view-btn:hover, .view-btn:focus, .view-btn.active,
+.sbmt-btn:hover,
+.card .img-block:before, .card .img-block:after, .popular-cities .card:before, .popular-cities .card:after, .banner-search .btn:before, .banner-search .btn:after, .intro-content a:before, .intro-content a:after, .sbmt-btn:before, .sbmt-btn:after, .btn2:before, .btn2:after, .btn-default:before, .btn-default:after,
+.card .img-block .overlay,
+.srch-btn .overlay {
+    background: rgba(216, 18, 18, 0.79);
+}
+
+.currency-selector .drop-menu .dropeddown li,
+.language-selector .drop-menu .dropeddown li,
+.currency-selector .drop-menu .dropeddown,
+.language-selector .drop-menu .dropeddown,
+.top-header {
+    background: #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+a:hover {
+    color: #8a1414;
+}
+
+
+.marker-cluster div, .cluster div {
+    background: #8a1414 !important;
+}
+
+
+.marker-cluster div:before, .cluster div:before {
+    border-color: #8a1414;
+    -webkit-box-shadow: inset 0 0 0 4px #8a1414;
+    box-shadow: inset 0 0 0 4px #8a1414;
+}
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Bold.woff2') format('woff2'),
+        url('Gilroy-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Light.woff2') format('woff2'),
+        url('Gilroy-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-ExtraBold.woff2') format('woff2'),
+        url('Gilroy-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Regular.woff2') format('woff2'),
+        url('Gilroy-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Medium.woff2') format('woff2'),
+        url('Gilroy-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('Gilroy-Thin.woff2') format('woff2'),
+        url('Gilroy-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+header .top-header {
+    padding: 3px 0;
+}
+header .header {
+    min-height: auto;
+    padding: 10px 0 6px;
+}
+
+.header-address a:hover, .header-address a {
+    display: inline-block;
+    color: #151515;
+    font-family: 'Gilroy';
+    font-weight:300;
+}
+.header-address a i {
+    font-size: 18px;
+    margin-right: 9px;
+    position: relative;
+    top: 1px;
+    color: #151515;
+    border-radius: 50px;
+    border: 1px solid #151515;
+    padding: 2px 3px;
+    width: 25px;
+    height: 25px;
+}
+.header-address a span {
+    font-size: 14px;
+    font-weight: 300;
+    position: relative;
+}
+.header-social a {
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;
+    padding: 0 1px;
+    background: #3e3e3e;
+    border-radius: 50px;
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+}
+.header .navbar-nav .nav-item .nav-link {
+    color: #040404;
+    font-size: 14px;
+    position: relative;
+    font-family: 'Gilroy';
+    font-weight: 300;
+}
+.header .navbar-nav .submit-btn a {
+    color: #fff!important;
+    background: #e6181b;
+    font-family: 'Gilroy';
+    font-weight: 300;
+    height: 40px;
+    padding: 9px 20px;
+    line-height: normal;
+}
+.header .navbar-nav .submit-btn a:hover{
+    background: #000;
+    border-color:#000;
+}
+.banner-content {
+    margin-bottom: 90px !important;
+}
+.banner-content h1{
+    font-family: 'Gilroy';
+    margin-top: 0;
+}
+.banner-content h1 span{
+    font-family: 'Gilroy';
+    font-weight:300;
+    font-size: 36px;
+}
+.menu-onmap li label {
+    display: block;
+    margin: 0px 20px;
+    padding:0;
+    margin-bottom: 15px;
+    color: #fff;
+    background: transparent;
+    transition: all .15s;
+    font-size: 14px;
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Gilroy';
+    font-weight: 300;
+}
+.menu-onmap li.active label{
+    background:transparent;
+}
+.menu-onmap li.active label:before {
+    border: none;
+    background: #e5181c;
+    height: 3px;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    margin: 0;
+}
+.menu-onmap li label:hover:before{
+    border: none;
+    background: #e5181c;
+    height: 3px;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    margin: 0;
+}
+.menu-onmap li label:hover{
+    background:transparent;
+}
+body .banner::after{
+    background: rgb(0 0 0 / 20%);
+}
+.banner-search {
+    background: rgb(255 255 255 / 80%);
+    border-radius: 10px;
+    padding: 0px 7px 0px 10px;
+    height: 65px;
+}
+.banner-search .form-control{
+    background:transparent;
+}
+.drop-menu .select, .top-search div.form-group .winter_dropdown_tree button, 
+input#search_option_smart{
+    font-family: 'Gilroy' !important;
+    font-weight: 300 !important;
+    color: #000 !important;
+}
+body .banner-search.banner-search_init .search-additional-btn {
+    display:none;
+}
+button#search-save {
+    display: none;
+}
+.banner-search .srch-btn .btn i {
+    margin-right: 0;
+    line-height: 1;
+    transform: rotate(259deg);
+    color: #000;
+    background: transparent;
+}
+.banner-search .srch-btn .btn:hover i {
+    color:#D81212;
+}
+.banner-search .btn:before, .banner-search .btn:after{
+    display:none;
+}
+.banner-search .btn, .banner-search .btn:hover {
+    background: transparent;
+}
+body .banner {
+    min-height: 550px;
+    padding: 150px 0 180px;
+}
+
+.banner-search .form_field .drop-menu, .banner-search .form_field.sf_input .form-control, 
+body .top-search .winter_dropdown_tree{
+    border-left: 1px solid #c1c1c1;
+}
+.top-search .form_field_sw_range>.form-group {
+    padding: 0 18px;
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.drop-menu .dropeddown li{
+    font-size:12px;
+}
+.scale-range .noUi-handle {
+    border: 7px solid #ffffff;
+}
+body .banner{
+    background: url(https://digipanda.biz/realEstate/files/dubai-marina-sunset.jpg);
+    background-size: cover;
+    background-position: center;
+}
+input#search_option_smart::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000;
+}
+input#search_option_smart::-moz-placeholder { /* Firefox 19+ */
+  color: #000;
+}
+input#search_option_smart:-ms-input-placeholder { /* IE 10+ */
+  color: #000;
+}
+input#search_option_smart:-moz-placeholder { /* Firefox 18- */
+  color: #000;
+}
+
+.resp-grid.flex-dynamic.socail-icons {
+    padding: 0;
+    margin-right: -15px;
+}
+.section-heading span {
+    font-size: 18px;
+    color: #909090;
+    float: left;
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: 300;
+    font-family: 'Gilroy' !important;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+}
+.section-heading h3 {
+    font-size: 32px;
+    font-weight: 300;
+    float: left;
+    width: 100%;
+    margin-top: -4px;
+    color: #0b1116;
+    text-transform: uppercase;
+    font-family: 'Gilroy' !important;
+    font-weight: 300 !important;
+}
+.card .img-block:before, .card .img-block:after, .card .img-block .budget, 
+.rate-info:before {
+    display:none;
+}
+.card .img-block .overlay{
+    display:none;
+}
+.popular-listing.hp2 .card .carousel-item img {
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+.popular-listing.hp2 .card .img-block{
+    border-radius: 20px;
+    overflow: hidden;
+}
+.popular-listing.hp2 .card .card-body{
+    border:none;
+}
+.popular-listing.hp2 .card .card-footer{
+    border-left:0px;
+    border-right:0px;
+}
+
+.popular-listing.hp2 .card {
+    border-radius: 0 0 20px 20px;
+}
+
+.card .card-body ul li{
+    font-family: 'Gilroy';
+    font-weight: 400;
+}
+.card .card-body h3{
+    margin-bottom:10px;
+}
+.popular-cities {
+    background: #eff3f4;
+}
+.footer_area {
+    background: url(../img/footer-bg.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: bottom;
+    padding-top: 20px;
+    border-radius: 40px 0 0 0;
+}
+.footer-content{
+    border:none;
+}
+.copyright p {
+    font-family: 'Gilroy';
+    font-weight: 400;
+    font-size: 14px;
+    color: #878787;
+}
+.footer-list li a {
+    color: #878787;
+}
+.footer-list li a, .footer-list li {
+    color: #878787;
+    font-family: 'Gilroy';
+    font-weight: 400;
+    line-height: 24px;
+}
+.widget-footer-contacts h3, .bottom-list.widget-follow-us h3 {
+    color: #fff;
+}
+.footer-list i{
+    color:#fff;
+}
+section.footer_area p.description {
+    font-family: 'Gilroy';
+    font-size: 14px;
+    line-height: 26px;
+}
+.footer-social a {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #e0e1e6;
+    color: #000000;
+    display: inline-block;
+    line-height: 29px;
+    border-radius: 50px;
+    font-size: 13px;
+    margin: 0px 0px 0px 10px;
+    background: #fff;
+}
+.footer_area .col-xl-3.col-sm-6.col-md-4.widget_edit_enabled{
+    margin-top: -20px;
+}
+.footer_area .col-xl-3.col-sm-6.col-md-3.widget_edit_enabled {
+    border-left: 0.1px;
+    border-style: solid;
+    border-image: linear-gradient( #3c3c3c00, #3c3c3c, rgb(0 0 0 / 0%) ) 1 100%;
+}
+
+.footer_area .col-xl-3.col-sm-6.col-md-3.widget_edit_enabled {
+    padding-top: 25px;
+    position:relative;
+}
+.footer_area .col-xl-3.col-sm-6.col-md-3.widget_edit_enabled:before{
+    content:'';
+    border-top: 1px solid #292929;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.explore-feature .card {
+    border-radius: 10px;
+}
+.explore-feature .card .card-body h3 {
+    font-size: 18px;
+    margin: 25px auto 10px auto;
+    color: #0b1116;
+    font-weight: 200;
+    min-height: auto;
+    line-height: 24px;
+}
+.explore-feature .card .card-body p {
+    font-size: 14px;
+}
+section.popular-cities.hp_s1.section-padding.widget_edit_enabled {
+    padding: 70px 0 60px;
+    margin: 50px 0;
+}
+.testimonial_gb{
+    background: url(../img/testi-bg.png);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    padding: 0px 0 90px;
+    border-radius: 8px;
+    max-width: 1240px;
+    margin: auto;
+}
+body .testimonial-sec.section-padding {
+    padding: 60px 40px 80px;
+}
+.testimonial-sec span, .testimonial-sec .section-heading h3 {
+    color: #fff;
+}
+.testimonail-sect .comment-info > p {
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Gilroy';
+    font-weight: 200;
+    line-height: 42px;
+    text-align: center;
+    max-width: 750px;
+    margin: auto !important;
+    width: auto;
+    float: none;
+    padding: 140px 0px 30px 0;
+}
+.cm-info-sec .cm-info h3 {
+    font-weight: 100;
+    color: #fff;
+}
+.comment-info .cm-info {
+    padding-top: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comment-info .cm-info > h4 {
+    padding-left: 3px;
+}
+.comment-info .cm-info-sec{
+    padding-top:0;
+}
+.cm-img {
+    display: block;
+    width: 61px;
+    margin: auto;
+    float: none;
+}
+.testi_title {
+    width: 100%;
+    color: #909090;
+    text-transform: uppercase;
+    font-family: 'Gilroy' !important;
+    font-weight: 400 !important;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+.comment-info:before{
+    display:none;
+}
+.testimonial_gb .cm-img img {
+    background: #fff;
+    padding: 2px;
+    border-radius: 50%;
+}
+.testimonial_gb .cm-img{
+    width:85px;
+}
+.intro .intro-img img {
+    border-radius: 10px;
+}
+.intro-thumb-row .intro-thumb {
+    border-radius: 8px;
+}
+.intro-thumb h6{
+    font-weight:normal;
+}
+.intro-content h3{
+    font-weight:300;
+}
+.testimonial_gb .slick-list {
+    margin-top: -85px;
+}
+.load-more-posts > .btn2 {
+    padding: 0 20px 0 20px;
+    width: auto;
+    float: none;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 100;
+}
+.intro-thumb-row{
+    display:none;
+}
+.intro .intro-img {
+    padding-left: 0px;
+    height: 100%;
+}
+.intro .intro-img img.img-fluid {
+    height: 100%;
+}
+.intro .intro-img img {
+    border-radius: 0 30px 30px 0;
+}
+.intro-content.bg-black {
+    background: #000;
+    height: 100%;
+    border-radius: 30px 0 0 30px;
+    padding: 40px 40px 60px;
+    display: flex;
+    align-items: center;
+}
+span.title-sub-top {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 200;
+    background: -webkit-linear-gradient(45deg, #afafaf, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.AddOff_c h3 {
+    font-size: 50px;
+    text-transform: uppercase;
+    line-height: 58px;
+    color: #fff;
+    position: relative;
+    background: -webkit-linear-gradient(45deg, #afafaf, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.AddOff_c h3:after {
+    content: '';
+    position: absolute;
+    background: #e5181c;
+    width: 200px;
+    height: 7px;
+    left: 0;
+    bottom: -30px;
+}
+
+
+
+
+
+
+
+
+
+
+
