@@ -2165,11 +2165,11 @@ class Frontend extends Frontend_Controller
                         $this->load->model('affilatepackages_m');
                         $affiliate_user = $this->affilatepackages_m->get_related_affilate($default_language_id, $county_affiliate_values);
 
-//                        $affiliate_user = $this->user_m->get_by(array('county_affiliate_values LIKE' => $county_affiliate_values.'%',
-//                                                                      'type' => 'AGENT_COUNTY_AFFILIATE',
-//                                                                      'package_last_payment >' => date('Y-m-d H:i:s'),
-//                                                                      'package_id >' => 0
-//                                                                ), true, 1, 'package_last_payment DESC');
+                    //    $affiliate_user = $this->user_m->get_by(array('county_affiliate_values LIKE' => $county_affiliate_values.'%',
+                    //                                                  'type' => 'AGENT_COUNTY_AFFILIATE',
+                    //                                                  'package_last_payment >' => date('Y-m-d H:i:s'),
+                    //                                                  'package_id >' => 0
+                    //                                            ), true, 1, 'package_last_payment DESC');
 
                         // set affiliate email
                         if(!empty($affiliate_user->mail))
@@ -3268,56 +3268,56 @@ class Frontend extends Frontend_Controller
 
     public function notify_payment()
     {
-//        Array
-//        (
-//            [mc_gross] => 2.99
-//            [invoice] => 12373469
-//            [protection_eligibility] => Eligible
-//            [address_status] => confirmed
-//            [item_number1] => 
-//            [payer_id] => ER2LXCHKVY38Q
-//            [tax] => 0.00
-//            [address_street] => 1 Main St
-//            [payment_date] => 12:56:41 Jun 03, 2014 PDT
-//            [payment_status] => Completed
-//            [charset] => windows-1252
-//            [address_zip] => 95131
-//            [mc_shipping] => 0.00
-//            [mc_handling] => 0.00
-//            [first_name] => Info
-//            [mc_fee] => 0.39
-//            [address_country_code] => US
-//            [address_name] => Info Winter
-//            [notify_version] => 3.8
-//            [custom] => 
-//            [payer_status] => verified
-//            [business] => sandi@iwinter.com.hr
-//            [address_country] => United States
-//            [num_cart_items] => 1
-//            [mc_handling1] => 0.00
-//            [address_city] => San Jose
-//            [verify_sign] => AI36sk2Aln3iC.t.mla1wMizPRcQA8RKkhVgDKLdhbV.2hZelzrKnqbO
-//            [payer_email] => info@iwinter.com.hr
-//            [mc_shipping1] => 0.00
-//            [tax1] => 0.00
-//            [txn_id] => 5NJ254081K680701C
-//            [payment_type] => instant
-//            [last_name] => Winter
-//            [address_state] => CA
-//            [item_name1] => T-shirt
-//            [receiver_email] => sandi@iwinter.com.hr
-//            [payment_fee] => 0.39
-//            [quantity1] => 1
-//            [receiver_id] => S63XQYGHM4X8N
-//            [txn_type] => cart
-//            [mc_gross_1] => 2.99
-//            [mc_currency] => USD
-//            [residence_country] => US
-//            [test_ipn] => 1
-//            [transaction_subject] => 
-//            [payment_gross] => 2.99
-//            [ipn_track_id] => 9d77baf4e8f10
-//        )
+        //    Array
+        //    (
+        //        [mc_gross] => 2.99
+        //        [invoice] => 12373469
+        //        [protection_eligibility] => Eligible
+        //        [address_status] => confirmed
+        //        [item_number1] => 
+        //        [payer_id] => ER2LXCHKVY38Q
+        //        [tax] => 0.00
+        //        [address_street] => 1 Main St
+        //        [payment_date] => 12:56:41 Jun 03, 2014 PDT
+        //        [payment_status] => Completed
+        //        [charset] => windows-1252
+        //        [address_zip] => 95131
+        //        [mc_shipping] => 0.00
+        //        [mc_handling] => 0.00
+        //        [first_name] => Info
+        //        [mc_fee] => 0.39
+        //        [address_country_code] => US
+        //        [address_name] => Info Winter
+        //        [notify_version] => 3.8
+        //        [custom] => 
+        //        [payer_status] => verified
+        //        [business] => sandi@iwinter.com.hr
+        //        [address_country] => United States
+        //        [num_cart_items] => 1
+        //        [mc_handling1] => 0.00
+        //        [address_city] => San Jose
+        //        [verify_sign] => AI36sk2Aln3iC.t.mla1wMizPRcQA8RKkhVgDKLdhbV.2hZelzrKnqbO
+        //        [payer_email] => info@iwinter.com.hr
+        //        [mc_shipping1] => 0.00
+        //        [tax1] => 0.00
+        //        [txn_id] => 5NJ254081K680701C
+        //        [payment_type] => instant
+        //        [last_name] => Winter
+        //        [address_state] => CA
+        //        [item_name1] => T-shirt
+        //        [receiver_email] => sandi@iwinter.com.hr
+        //        [payment_fee] => 0.39
+        //        [quantity1] => 1
+        //        [receiver_id] => S63XQYGHM4X8N
+        //        [txn_type] => cart
+        //        [mc_gross_1] => 2.99
+        //        [mc_currency] => USD
+        //        [residence_country] => US
+        //        [test_ipn] => 1
+        //        [transaction_subject] => 
+        //        [payment_gross] => 2.99
+        //        [ipn_track_id] => 9d77baf4e8f10
+        //    )
         
         $this->load->model('reservations_m');
         
@@ -3676,15 +3676,15 @@ class Frontend extends Frontend_Controller
                             }
                             else
                             {
-//                                echo $val1."\r\n";
-//                                echo $options[$row['id']][$option_num]."\r\n";
-//                                echo $options[$row['id']][$option_num+1]."\r\n";
+                            //    echo $val1."\r\n";
+                            //    echo $options[$row['id']][$option_num]."\r\n";
+                            //    echo $options[$row['id']][$option_num+1]."\r\n";
                                 
                                 if( ($options[$row['id']][$option_num] > $val1 || empty($options[$row['id']][$option_num])) && 
                                     ($options[$row['id']][$option_num+1] > $val1 || empty($options[$row['id']][$option_num+1]) || $row['id'] != 36 )  )
                                 {
                                     unset($res_array[$key]);
-//                                    echo "unset\r\n";
+                                //    echo "unset\r\n";
                                 }
                             }
                         }
@@ -4895,8 +4895,8 @@ class Frontend extends Frontend_Controller
                 $this->session->set_flashdata('email_sent', 'email_sent_true');
             }
             
-//            echo $this->email->print_debugger();
-//            exit();
+        //    echo $this->email->print_debugger();
+        //    exit();
 
             redirect($this->uri->uri_string());
         }
