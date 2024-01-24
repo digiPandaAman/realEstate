@@ -5,7 +5,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_locations_grid.webp
  */
 ?>
 <?php
-$treefields = generate_treefields_list(64,'limit_3_level_0');
+$treefields = generate_treefields_list(64,'limit_3');
 ?>
 
 <?php
@@ -39,80 +39,97 @@ if(empty($treefields)) {
                 </div>
             </div>
         </div>
-		
-		<!--
-        <div class="row">
-            <!?php $i=0;  foreach ($treefields as $key=>$item): ?>
-            <!?php if ($i>=3) break; ?>
-                <div class="col-lg-4 col-md-6">
-                    <a href='<!?php _che($item['url']);?>'>
-                        <div class="card">
-                            <div class="overlay"></div>
-                            <!?php 
+
+        <!-- <div class="row">
+            <?php $i=0;  foreach ($treefields as $key=>$item): ?>
+            <?php if ($i>=3) break; ?>
+            <div class="col-lg-4 col-md-6">
+                <a href='<?php _che($item['url']);?>'>
+                    <div class="card">
+                        <div class="overlay"></div>
+                        <?php 
                                 if(!isset($defaul_images[$key])){
                                     $defaul_images[$key] = 'assets/img/no_image.jpg';
                                 }
                             ?>
-                            <img src="<!?php _che($item['thumbnail_url'], $defaul_images[$key]);?>" alt="<!?php _che($item['title']);?>" class="img-fluid">
-                            <div class="card-body">
-                                <h4><!?php _che($item['title']);?></h4>
-                                <p>
-                                    <!?php if(_ch($item['count'], 0) == 1):?>
-                                        <!?php _che($item['count'], 0);?> <!?php echo lang_check('Listing');?>                                                                    
-                                    <!?php else:?>
-                                        <!?php _che($item['count'], 0);?> <!?php echo lang_check('Listings');?>                                                                    
-                                    <!?php endif;?>
-                                </p>
-                                <i class="fa fa-angle-right"></i>
-                            </div>
+                        <img src="<?php _che($item['thumbnail_url'], $defaul_images[$key]);?>"
+                            alt="<?php _che($item['title']);?>" class="img-fluid">
+                        <div class="card-body">
+                            <h4><?php _che($item['title']);?></h4>
+                            <p>
+                                <?php if(_ch($item['count'], 0) == 1):?>
+                                <?php _che($item['count'], 0);?> <?php echo lang_check('Listing');?>
+                                <?php else:?>
+                                <?php _che($item['count'], 0);?> <?php echo lang_check('Listings');?>
+                                <?php endif;?>
+                            </p>
+                            <i class="fa fa-angle-right"></i>
                         </div>
-                    </a>
-                </div>
-            <!?php $i++; endforeach; ?>
+                    </div>
+                </a>
+            </div>
+            <?php $i++; endforeach; ?>
+        </div> -->
+
+        <!-- <div class="row mt-5">
+            <?php $i=0;  foreach ($treefields as $key=>$item): ?>
+            <?php if ($i>=3) break; ?>
+            <div class="col-lg-4 col-md-4 col-6">
+                <a href="<?php _che($item['url']);?>">
+                    <div class="card popular_locations">
+                        <div class="overlay"></div>
+                        <?php 
+                            if(!isset($defaul_images[$key])){
+                                $defaul_images[$key] = 'assets/img/no_image.jpg';
+                            }
+                        ?>
+                        <img src="<?php _che($item['thumbnail_url'], $defaul_images[$key]);?>" alt="<?php _che($item['title']);?>" class="img-fluid">
+                        <div class="card-body">
+                            <h4><?php _che($item['title']);?></h4>
+                            <p>
+                                <?php if(_ch($item['count'], 0) == 1):?>
+                                <?php _che($item['count'], 0);?> <?php echo lang_check('Listing');?>
+                                <?php else:?>
+                                <?php _che($item['count'], 0);?> <?php echo lang_check('Listings');?>
+                                <?php endif;?>
+                            </p>
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <?php $i++; endforeach; ?>
+        </div> -->
+        
+        <div class="row mt-5">
+            <?php $i=0;  foreach ($treefields as $key=>$item): ?>
+            <?php if ($i>=3) break; ?>
+            <?php if($item['childs']): foreach($item['childs'] as $childsData): if($childsData['count']): ?>
+            <div class="col-lg-3 col-md-4 col-6 mt-3">
+                <a href="<?php _che($childsData['url']);?>">
+                    <div class="card popular_locations">
+                        <div class="overlay"></div>
+                        <?php 
+                            if(!isset($defaul_images[$key])){
+                                $defaul_images[$key] = 'assets/img/no_image.jpg';
+                            }
+                        ?>
+                        <img src="<?php _che($childsData['thumbnail_url'], $defaul_images[$key]);?>" alt="<?php _che($childsData['title']);?>" class="img-fluid">
+                        <div class="card-body">
+                            <h4><?php _che($childsData['title']);?></h4>
+                            <p>
+                                <?php if(_ch($childsData['count'], 0) == 1):?>
+                                <?php _che($childsData['count'], 0);?> <?php echo lang_check('Listing');?>
+                                <?php else:?>
+                                <?php _che($childsData['count'], 0);?> <?php echo lang_check('Listings');?>
+                                <?php endif;?>
+                            </p>
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <?php endif; endforeach; endif; $i++; endforeach; ?>
         </div>
-	-->
-		<div class="row">
-			<div class="col-lg-4 col-md-6">
-<a href="https://digipanda.biz/realEstate/index.php/en/145/search_property">
-<div class="card">
-<div class="overlay"></div>
-<img src="https://digipanda.biz/realEstate/files/noida.jpg" alt="India" class="img-fluid">
-<div class="card-body">
-<h4>Noida</h4>
-<i class="fa fa-angle-right"></i>
-</div>
-</div>
-</a>
-</div>
-			<div class="col-lg-4 col-md-6">
-<a href="https://digipanda.biz/realEstate/index.php/en/145/search_property">
-<div class="card">
-<div class="overlay"></div>
-<img src="https://digipanda.biz/realEstate/files/gurgaon.jpg" alt="India" class="img-fluid">
-<div class="card-body">
-<h4>Gurgaon</h4>
-<i class="fa fa-angle-right"></i>
-</div>
-</div>
-</a>
-</div>
-			
-			<div class="col-lg-4 col-md-6">
-<a href="https://digipanda.biz/realEstate/index.php/en/145/search_property">
-<div class="card">
-<div class="overlay"></div>
-<img src="https://digipanda.biz/realEstate/files/dubai.jpg" alt="India" class="img-fluid">
-<div class="card-body">
-<h4>Dubai</h4>
-<i class="fa fa-angle-right"></i>
-</div>
-</div>
-</a>
-</div>
-			
-		</div>
-		
-		
-		
     </div>
 </section>
