@@ -108,6 +108,21 @@ Widget-preview-image: /assets/img/widgets_preview/header_bar.webp
             <?php else:?>
             <div class="resp-grid flex-dynamic socail-icons">
             <?php endif;?>
+				<div class="loginSignupAJ">
+                    {not_logged}
+                        <span class="nav-link">
+                        <i class="la la-sign-in"></i>
+                        <span>
+                            <a href="{front_login_url}#sw_login" class="login_popup_enabled ">
+                                <b class="signin-op"><?php echo lang_check('Sign in');?></b> 
+                            </a>
+                            <?php echo lang_check('or');?>
+                            <a href="{front_login_url}#sw_register" class="">
+                                <b class="reg-op"><?php echo lang_check('Register');?></b>
+                            </a>
+                        </span>
+                    {/not_logged}
+                </div>
                 <div class="header-social d-none d-sm-none d-md-block">
                     <a href="#">
                         <i class="fa fa-facebook"></i>

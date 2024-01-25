@@ -6,8 +6,8 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
 ?>
 
 
-<section class="explore-feature hp7 section-padding widget_edit_enabled pb-0 mt-4 seller-bg">
-    <div class="container-fluid px-5">
+<section class="explore-feature hp7 section-padding widget_edit_enabled pb-0 seller-bg">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-xl-8">
                 <div class="section-heading mb-4">
@@ -16,13 +16,10 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
                 </div>
             </div>
         </div>
-        <?php
-            echo "<pre>";
-            print_r($paginated_agents);
-        ?>
-        <div class="row mt-4">
-            <?php if(!empty($paginated_agents)):foreach($paginated_agents as $item): ?>
-            <div class="col-xl-3 col-sm-6 col-md-6 col-lg-4">
+        <div class="recommendedSellerSliderAJ owl-carousel owl-theme mt-4">
+            <?php if(!empty($paginated_agents)): $paginated_agents = array_chunk($paginated_agents,2); foreach($paginated_agents as $itemCombo): ?>
+            <div class="product-wrap">
+                <?php foreach($itemCombo as $item): ?>
                 <div class="sellers_card">
                     <div class="card-body">
                         <div class="sellers_img">
@@ -41,7 +38,7 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
                             <div class="seller_location">
                                 <span><?php  _che($item['address']);?></span>
                             </div>
-                            <div class="seller_exp_pro">
+                           <div class="seller_exp_pro">
                                 <?php
 									$OldDate = new DateTime(date('Y-m-d', strtotime($item['agent_profile']['registration_date'])));
 									$now = new DateTime(Date('Y-m-d'));
@@ -52,16 +49,17 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
                                         if($gapDate->m):
                                             $registerText = $gapDate->m.' Month';
                                         else:
-                                            $registerText = '1 Day';
+											$registerText = $gapDate->d?$gapDate->d.' Day':'1 Day';
                                         endif;
                                     endif;
                                 ?>
-                                <span class="seller_exp"><b>Reg:</b> <?=$registerText;?> Ago</span>
+                               <span class="seller_exp"><b>Reg:</b> <?=$registerText;?> Ago</span>
                                 <span class="seller_property"><b><?php  _che($item['total_listings_num']);?></b> Properties</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </div>
             <?php endforeach; endif;?>
         </div>

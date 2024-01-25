@@ -102,6 +102,12 @@
 <?php cache_file('big_css.css', 'assets/libraries/nouislider/nouislider.min.css'); ?>
 <!--end jquery.cookiebar -->
 
+<!-- AJ Slider File Start -->
+<?php cache_file('big_css.css', 'assets/selfImages/slider/owl.carousel.min.css'); ?>
+<?php cache_file('big_js_footer.js', 'assets/selfImages/slider/owl.carousel.min.js'); ?>
+<?php cache_file('big_js_footer.js', 'assets/selfImages/custom.js'); ?>
+<!-- AJ Slider File End -->
+
 <!-- Start custom styles  -->
 <?php cache_file('big_css.css', 'assets/js/winter_treefield/winter.css'); ?>
 <?php cache_file('big_js_footer.js', 'assets/js/winter_treefield/winter.js'); ?>

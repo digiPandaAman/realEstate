@@ -10,7 +10,7 @@
                 <?php _widget('header_main_panel'); ?>
             </header><!--header end-->
             <?php if(file_exists(APPPATH.'controllers/admin/packages.php')): ?>
-            <div class="container">
+            <!-- <div class="container">
                 <h2 class="widget-header text-uppercase">
                     {lang_AvailablePackages}
                 </h2>
@@ -65,7 +65,8 @@
                     </p>
                     <?php endif;?>
                 </div>
-            </div> <!-- /. widget-AVAILABLE PACKAGES -->   
+            </div>  -->
+            <!-- /. widget-AVAILABLE PACKAGES -->   
             <?php endif; ?>
 
             <main class="main-clear">
