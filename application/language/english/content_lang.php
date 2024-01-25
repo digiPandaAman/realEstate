@@ -1,6 +1,5 @@
-<?php
+<?php 
 
-/* Hardcoded content translations */
 $lang['Contact'] = "Contact";
 $lang['Custom search'] = "Custom search";
 $lang['Fullscreen'] = "Fullscreen";
@@ -17,8 +16,8 @@ $lang['Blog page'] = "Blog page";
 $lang['Map'] = "Map";
 $lang['Agents'] = "Agents";
 $lang['Featured'] = "Featured";
-$lang['Sale'] = "Sale";
-$lang['Sale and Rent'] = "Sale and Rent";
+$lang['Sale'] = "Buy";
+$lang['Sale and Rent'] = "Buy and Rent";
 $lang['About us'] = "About us";
 $lang['Rent'] = "Rent";
 $lang['Homepage'] = "Homepage";
@@ -89,6 +88,7 @@ $lang['Company description'] = "Company description";
 $lang['Office hours'] = "Office hours";
 $lang['Company logo 60x60px'] = "Company logo 60x60px";
 $lang['Currency symbol'] = "Currency symbol";
-$lang['subject'] = "subject"; 
+$lang['subject'] = "subject";
 $lang['link'] = "link";
+
 ?>
