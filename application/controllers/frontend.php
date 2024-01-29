@@ -2716,8 +2716,13 @@ class Frontend extends Frontend_Controller
                     exit();
                 }
                 
-                $data = $this->user_m->array_from_post(array('name_surname', 'mail', 'password', 'username',
+                $data = $this->user_m->array_from_post(array('name_surname', 'mail', 'password', 'username','reraNo','aadhaarNo','panNo',
                                                              'address', 'description', 'mail', 'phone','phone2', 'type', 'language', 'activated', 'type'));
+
+                $data['reraNo'] = isset($_POST['reraRegisterNo'])&&$_POST['reraRegisterNo']?$_POST['reraRegisterNo']:'';
+                $data['aadhaarNo'] = isset($_POST['aadhaarNo'])&&$_POST['aadhaarNo']?$_POST['aadhaarNo']:'';
+                $data['panNo'] = isset($_POST['panNo'])&&$_POST['panNo']?$_POST['panNo']:'';
+                                                             
                 if($data['password'] == '')
                 {
                     unset($data['password']);
@@ -2781,7 +2786,7 @@ class Frontend extends Frontend_Controller
                             $data['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
                     }
                 }
-                
+
                 $user_id = $this->user_m->save($data, NULL);
                 
                 $message_mail = '';

@@ -14,7 +14,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_explore_features4x_html.we
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-xl-3 col-sm-6 col-md-6 col-lg-4">
                 <a href="#" title="">
                     <div class="card">
@@ -48,7 +48,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_explore_features4x_html.we
                     </div>
                 </a>
             </div>
-            <div class="col-xl-3 col-sm-6 col-md-6 col-lg-4">
+            <!--<div class="col-xl-3 col-sm-6 col-md-6 col-lg-4">
                 <a href="#" title="">
                     <div class="card">
                         <div class="card-body">
@@ -56,9 +56,9 @@ Widget-preview-image: /assets/img/widgets_preview/top_explore_features4x_html.we
                             <h3 class=""><?php echo lang_check('5 Star Support');?></h3>
                             <p class=""><?php echo lang_check('explore2_support');?></p>
                         </div>
-                    </div><!--card end-->
+                    </div>
 		</a>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>

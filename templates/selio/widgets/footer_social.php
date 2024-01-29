@@ -16,7 +16,7 @@ Widget-preview-image: /assets/img/widgets_preview/footer_social.webp
     </div>
 </div>
 
-<div class="col-xl-3 col-sm-6 col-md-3 widget_edit_enabled">
+<div class="col-xl-3 col-sm-6 col-md-6 widget_edit_enabled">
     <div class="bottom-list widget-follow-us">
         <h3><?php echo lang_check('Follow Us');?></h3>
         <div class="footer-social">

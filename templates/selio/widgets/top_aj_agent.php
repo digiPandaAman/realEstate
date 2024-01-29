@@ -7,15 +7,16 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
 
 
 <section class="explore-feature hp7 section-padding widget_edit_enabled pb-0 seller-bg">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8">
-                <div class="section-heading mb-4">
+                <div class="section-heading mb-0">
                     <span>Popular Seller</span>
                     <h3>Recommended Seller </h3>
                 </div>
             </div>
         </div>
+        
         <div class="recommendedSellerSliderAJ owl-carousel owl-theme mt-4">
             <?php if(!empty($paginated_agents)): $paginated_agents = array_chunk($paginated_agents,2); foreach($paginated_agents as $itemCombo): ?>
             <div class="product-wrap">
@@ -49,6 +50,7 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
                                         if($gapDate->m):
                                             $registerText = $gapDate->m.' Month';
                                         else:
+                                            //$registerText = '1 Day';
 											$registerText = $gapDate->d?$gapDate->d.' Day':'1 Day';
                                         endif;
                                     endif;

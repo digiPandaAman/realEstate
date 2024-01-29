@@ -123,7 +123,7 @@ Widget-preview-image: /assets/img/widgets_preview/header_main_panel.webp
                             {/is_logged_other}
                             <ul class="navbar-nav">
                                 <?php if(config_db_item('property_subm_disabled')==FALSE):  ?>
-                                <li class="nav-item signin-btn">
+                                <!-- <li class="nav-item signin-btn">
                                     {not_logged}
                                     <span class="nav-link">
                                         <i class="la la-sign-in"></i>
@@ -152,16 +152,32 @@ Widget-preview-image: /assets/img/widgets_preview/header_main_panel.webp
                                                 </a>
                                                 {/is_logged_other}
                                             </span>
-                                </li>
+                                </li> -->
                                 <?php endif;?>
                                 {not_logged}
-                                <li class="nav-item submit-btn">
-                                    <a href="{front_login_url}#sw_register" class="my-2 my-sm-0 nav-link sbmt-btn">
+                                <li class="nav-item agent_login_btn">
+                                    <a href="{front_login_url}" class="my-2 my-sm-0 nav-link sbmt-btn">
                                         <i class="fa fa-user-o"></i>
                                         <span><?php echo lang_check('Agent Login');?></span>
                                     </a>
                                 </li>
                                 {/not_logged}
+                                {is_logged_user}
+                                <li class="nav-item agent_login_btn">
+                                    <a href="{logout_url}" class="my-2 my-sm-0 nav-link sbmt-btn">
+                                        <i class="la la-sign-in"></i>
+                                        <span><?php _l('Logout');?></span>
+                                    </a>
+                                </li>
+                                {/is_logged_user}
+                                {is_logged_other}
+                                <li class="nav-item agent_login_btn">
+                                    <a href="{logout_url}" class="my-2 my-sm-0 nav-link sbmt-btn">
+                                        <i class="la la-sign-in"></i>
+                                        <span><?php _l('Logout');?></span>
+                                    </a>
+                                </li>
+                                {/is_logged_other}
                                 <?php if(config_db_item('enable_qs') == 1): ?>
                                 <li class="nav-item submit-btn">
                                     <a href="<?php echo site_url('fquick/submission/'.$lang_code); ?>"
