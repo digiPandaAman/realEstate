@@ -1360,6 +1360,263 @@ div#form-contact h3.widget-title {
 
 
 
+/* Custom Form */
+.navbar-brand.CusTom_Logo {
+    animation: 300ms linear 0s 1 normal none running animation-1qbobka;
+    object-fit: cover;
+    width: 100%;
+    margin: 0px auto 10px;
+    display: block;
+    padding: 20px 20px 0px;
+}
+.AppForm{
+    min-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 3px 27px 0 rgba(0,0,0,0.1);
+    background: #fff;
+    margin: 0 auto;
+    pointer-events: initial;
+    position: relative;
+    max-width: 520px;
+    padding: 38px 20px 37px;
+    overflow: hidden;
+}
+.header-title{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 24px 24px 16px 24px;
+    margin: -35px -20px 0px -20px;
+}
+.header-icon{
+    width: 36px;
+    height: 36px;
+    border-radius: 16px;
+    background-color: #e9eaf0;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 50%;
+}
+.img-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ee1d24;
+}   
+.header-lael {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 16px;
+}
+.header-lael label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 6px;
+}
+.form .form-group {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    -webkit-letter-spacing: 0.2px;
+    -moz-letter-spacing: 0.2px;
+    -ms-letter-spacing: 0.2px;
+    letter-spacing: 0.2px;
+    padding:0;
+}
+.form .form-control {
+    display: block;
+    background: none;
+    padding: 0 10px 8px 0px;
+    border-width: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+    height: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    margin-top: 0px;
+    border-radius: 0px;
+    z-index: 1;
+    position: relative;
+}   
+.form label {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    font-size: 16px;
+    font-weight: 300;
+    color: #bfc0c6;
+    z-index: 0;
+}
+.form select.form-control:not([size]):not([multiple]) {
+    border: none;
+    display: block;
+    background: none;
+    padding: 0 10px 8px 0px;
+    border-width: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #bfc0c6;
+    margin-top: 0px;
+    border-radius: 0px;
+    z-index: 1;
+    position: relative;
+}
+.radio-row {
+    margin: 0;
+}
+.radio-field {
+    position: relative;
+    min-height: 70px;
+    padding: 8px 8px 0px 0;
+    display: inline-block;
+}
+.radio-field input[type=radio] {
+    display: none!important
+}
+.radio-field label {
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    height: 55px;
+    padding: 10px 25px;
+    font-size: 14px;
+    color: #222;
+    text-align: center;
+    border-radius: 10px;
+    border: solid 1px #ebebeb;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    font-weight: 400;
+}
+.radio-field input[type=radio]+label {
+    cursor: pointer!important;
+    z-index: 1
+}
+
+.radio-field input[type=radio]:checked+label {
+    background-color: #ffdbd9!important;
+    border-color: #fdd0ce;
+}
+.form h6 {
+    font-size: 12px;
+    font-weight: 400;
+}
+.form select.form-control {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    font-size: 18px;
+    font-weight: 300;
+    color: #bfc0c6;
+}
+.form label.form-check {
+    color: #000;
+    font-size: 14px;
+}
+.form label.form-check.font-bold {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: normal;
+    top: -4px;
+}
+.text-trm-condition {
+    font-size: 14px;
+    margin-bottom: 30px;
+    color: #000;
+    padding-left: 20px;
+}
+.text-trm-condition a{
+    color: #ee1d24;
+}
+button.btn.btn-submit {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 50px;
+    padding: 0 15px;
+    border: none;
+    font-weight: 400;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    bottom: 0;
+    margin: 0 auto;
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    background-color: #ee1d24;
+    border-bottom: solid 3px #bd070e;
+}
+button.btn.btn-submit:hover {
+    background-color: #333;
+    border-bottom: solid 3px #000;
+}
+
+.form input:focus  ~ label {
+    top: -1.5em;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-size: 12px;
+}
 
 
 
