@@ -1187,10 +1187,9 @@ class Settings extends Admin_Controller {
                 exit();
             }
             // time limit increase
-            $email= $this->input->post('email');
-
+            $email = $this->input->post('email');
             $this->load->library('email');
-            $this->email->from($this->data['settings']['noreply'], 'Web Portal');
+            $this->email->from($this->data['settings']['noreply'], $this->data['settings']['websitetitle']?$this->data['settings']['websitetitle']:'Web Portal');
             $this->email->to($email);
 
             $this->email->subject('Email Test');

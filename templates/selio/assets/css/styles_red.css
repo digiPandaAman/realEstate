@@ -847,14 +847,14 @@ body .explore-feature .card.card_services:hover .card-body i img{
 }
 .seller_expert {
     display: block;
-    width: 100%;
+    white-space: nowrap;
     background: linear-gradient(to right, #ff6262, #b28691);
     color: #fff;
     text-align: center;
     font-weight: 300;
     font-size: 12px;
-    border-radius: 6px;
-    padding: 1px;
+    border-radius: 5px;
+    padding: 1px 12px;
 }
 .seller_location span {
     background: linear-gradient(to right, #96969629, #ffa50033);
@@ -1412,7 +1412,7 @@ header {
     -ms-flex-align: center;
     align-items: center;
     padding:0px;
-    margin: 0px;
+    margin: 0px 0 10px 0;
 }
 .header-icon{
     width: 36px;
@@ -1452,6 +1452,7 @@ header {
     -ms-flex-direction: column;
     flex-direction: column;
     margin-left: 16px;
+    
 }
 .header-lael label {
     font-size: 16px;
@@ -1484,13 +1485,8 @@ header {
     color: #222;
     margin-top: 0px;
     border-radius: 0px;
-    z-index: 1;
-    position: relative;
 }   
 .form label {
-    position: absolute;
-    left: 0;
-    top: 0px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -1500,6 +1496,19 @@ header {
     font-weight: 300;
     color: #bfc0c6;
     z-index: 0;
+}
+.form .label_up{
+    position: absolute;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	transition: all 0.1s ease;
+}
+.form .form-control:focus~label, .form .form-control:not(:placeholder-shown)~label {
+    top: -1.5em;
+    font-weight: 500;
+    color: #7f7f7f;
+    font-size: 12px;
 }
 .form select.form-control:not([size]):not([multiple]) {
     border: none;
@@ -1631,13 +1640,6 @@ button.btn.btn-submit {
 button.btn.btn-submit:hover {
     background-color: #333;
     border-bottom: solid 3px #000;
-}
-
-.form input:focus  ~ .label_up, .form input.has-value ~ .label_up {
-    top: -1.5em;
-    font-weight: 500;
-    color: #7f7f7f;
-    font-size: 12px;
 }
 
 input:-webkit-autofill{
@@ -2481,6 +2483,44 @@ header .top-header{
     border: 0;
     display: none;
 }
+.paginated_agents_scroll {
+    height: 500px;
+    overflow-y: scroll;
+    margin:10px 0 30px 0;
+    padding-right: 5px;
+}
+.paginated_agents_scroll::-webkit-scrollbar {
+  width: 5px;
+  border-radius:20px;
+}
+ 
+.paginated_agents_scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius:20px;
+}
+ 
+.paginated_agents_scroll::-webkit-scrollbar-thumb {
+  background-color: #eee;
+  outline: 1px solid #ddd;
+  border-radius:20px;
+}
+.recommended_sellers_sidebar_properes h3 {
+    font-size: 24px;
+    text-align: left;
+    background: #eff3f4;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.paginated_agents_scroll .product-wrap:nth-child(1) .sellers_card {
+    margin-top: 0;
+}
+
+
+
+
+
+
 
 @media (max-width: 1340px) {
     .header .navbar-nav .nav-item {

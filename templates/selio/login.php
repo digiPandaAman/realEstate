@@ -175,8 +175,23 @@
                                         <?php if(config_db_item('dropdown_register_enabled') === TRUE): ?>
                                         <div class="form-field">
                                             <?php 
-                                                $values = array('USER' => lang_check('USER'), 'AGENT' => lang_check('AGENT'));
-                                                echo form_dropdown('type', $values, set_value('type', ''), 'class="form-control" id="input_type" onclick="chnageUserType(this);"')?>
+                                                //$values = array('USER' => lang_check('USER'), 'AGENT' => lang_check('AGENT'));
+                                                //echo form_dropdown('type', $values, set_value('type', ''), 'class="form-control" id="input_type" onclick="chnageUserType(this);"')
+                                            ?>
+                                        </div>
+                                        <div class="form-check text-left mb-4 p-0 mt-2">
+                                            <div class="d-flex pl-4 mt-1">
+                                                <div class="mr-4 pr-2">
+                                                    <input type="radio" name="type" id="userTypeUser" value="USER"
+                                                    onclick="chnageUserType(this);" class="form-check-input" checked>
+                                                    <label class="form-check-label" for="userTypeUser"><?=lang_check('User');?></label>
+                                                </div>
+                                                <div>
+                                                    <input type="radio" name="type" id="userTypeAgent" value="AGENT"
+                                                    onclick="chnageUserType(this);" class="form-check-input">
+                                                    <label class="form-check-label" for="userTypeAgent"><?=lang_check('Agent');?></label>
+                                                </div>
+                                            </div>
                                         </div>
                                         <?php endif; ?>
                                         <?php if(config_db_item('register_reduced') == FALSE): ?>
@@ -316,7 +331,6 @@
         }
 
         function reraField(data) {
-            alert(data.value);
             let result = data.value;
             if (result == 'Yes') {
                 $("#reraRegistrationField").show(); // Display the div
