@@ -109,7 +109,7 @@ Widget-preview-image: /assets/img/widgets_preview/header_bar.webp
             <div class="resp-grid flex-dynamic socail-icons">
             <?php endif;?>
 				<div class="loginSignupAJ">
-                    {not_logged}
+					{not_logged}
                         <span class="nav-link">
                         <i class="la la-sign-in"></i>
                         <span>
@@ -137,6 +137,7 @@ Widget-preview-image: /assets/img/widgets_preview/header_bar.webp
                         <i class="fa fa-linkedin"></i>
                     </a>
                 </div>
+				
             </div>
             <div class="resp-grid flex">
             <?php if(sw_count($lang_array) > 1):?> 

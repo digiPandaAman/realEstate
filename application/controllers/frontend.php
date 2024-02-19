@@ -4841,7 +4841,7 @@ class Frontend extends Frontend_Controller
        }
        
        $this->form_validation->set_rules($rules);
-        
+        // echo "<pre>";print_r($_POST);die('Am');
         // Process the form
         if($this->form_validation->run() == TRUE)
         {
@@ -4900,8 +4900,8 @@ class Frontend extends Frontend_Controller
                 $this->session->set_flashdata('email_sent', 'email_sent_true');
             }
             
-        //    echo $this->email->print_debugger();
-        //    exit();
+            // echo $this->email->print_debugger();
+            // exit();
 
             redirect($this->uri->uri_string());
         }

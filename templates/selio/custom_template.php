@@ -196,7 +196,7 @@
                                                 <div class="visual_widget-thumbnail-box">\n\
                                                     <img src="'+val.thumbnail+'" alt="widget">\n\
                                                 </div>\n\
-                                            \n\<h2 class="title">'+val.title+'</h2>\n\
+\n\                                             <h2 class="title">'+val.title+'</h2>\n\
                                             </a>\n\
                                         </div>'
                         });

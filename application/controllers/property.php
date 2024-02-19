@@ -49,6 +49,53 @@ class Property extends Frontend_Controller
         $lang_id = $this->data['lang_id'];
         
         $option_sum = '';
+
+        // Add AJ Code Start
+        $search_agent = $this->input->get('search-agent', TRUE);
+
+        $offset = $this->uri->segment(4);
+        if(empty($offset))$offset = 0;
+
+        $agent_per_page = config_item('per_page_agents');
+        if(empty($agent_per_page))
+            $agent_per_page = 32;
+        
+        $user_enabled= '';
+        if(config_db_item('agents_page_user_enable') !== FALSE) {
+            $user_enabled= ' or type LIKE \'USER%\' ';
+        }
+        $paginated_agents = $this->user_m->get_counted('(type LIKE \'AGENT%\' '.$user_enabled.') AND activated=1 AND NOT property_id IS NULL', FALSE, $agent_per_page, 'properties_count DESC, user_id', $offset, $search_agent);
+        
+
+        $this->data['paginated_agents'] = array();
+        foreach($paginated_agents as $key=>$agent_obj)
+        {
+            $agent = array();
+            $agent['name_surname'] = $agent_obj->name_surname;
+            $agent['phone'] = $agent_obj->phone;
+            $agent['mail'] = $agent_obj->mail;
+            $agent['address'] = $agent_obj->address;
+            $agent['description'] = $agent_obj->description;
+            
+            $agent['agent_name_title'] = url_title_cro($agent_obj->name_surname);
+            $agent['agent_url'] = slug_url('profile/'.$agent_obj->id.'/'.$this->data['lang_code'].'/'.$agent['agent_name_title']);
+            
+            $agent['total_listings_num'] = $agent_obj->properties_count;
+            
+            if(isset($agent_obj->image_user_filename) and file_exists(FCPATH.'files/thumbnail/'.$agent_obj->image_user_filename))
+            {
+                $agent['image_url'] =  base_url('files/thumbnail/'.$agent_obj->image_user_filename);
+            }
+            else
+            {
+                $agent['image_url'] = 'assets/img/user-agent.png';
+            }
+            
+            $agent['agent_profile'] = (array) $agent_obj;
+            
+            $this->data['paginated_agents'][] = $agent;
+        }
+        // Add AJ Code End
         
         /* Fetch estate data */
         $this->data['property_id'] = $property_id;
@@ -142,12 +189,12 @@ class Property extends Frontend_Controller
                 {
                     $this->data['category_options_'.$option_categories[$key]][$key]['option_value'] = $val;
                     
-//                    if(!empty($options[$estate_data['id']][$option_categories[$key]]))
-//                    {
-//                        print_r($option_categories[$key]);
-//                        echo $options[$estate_data['id']][$option_categories[$key]];
-//                        echo '<br />';
-//                    }
+                //    if(!empty($options[$estate_data['id']][$option_categories[$key]]))
+                //    {
+                //        print_r($option_categories[$key]);
+                //        echo $options[$estate_data['id']][$option_categories[$key]];
+                //        echo '<br />';
+                //    }
                     
                     if(!empty($val) && !isset($categories_hidden_preview[$option_categories[$key]]))
                         $this->data['category_options_count_'.$option_categories[$key]]++;
@@ -517,15 +564,15 @@ class Property extends Frontend_Controller
                 }
             }
             
-            // [START] custom price field
-//            $estate['custom_price'] = '';
-//            if(!empty($estate['option_36']))
-//                $estate['custom_price'].=$this->data['options_prefix_36'].$estate['option_36'].$this->data['options_suffix_36'];
-//            if(!empty($estate['option_37']))
-//                $estate['custom_price'].=$this->data['options_prefix_37'].$estate['option_37'].$this->data['options_suffix_37'];
-//            if(empty($estate['option_37']) && !empty($estate['option_56']))
-//                $estate['custom_price'].=$this->data['options_prefix_56'].$estate['option_56'].$this->data['options_suffix_56'];
-            // [END] custom price field
+        //     [START] custom price field
+        //    $estate['custom_price'] = '';
+        //    if(!empty($estate['option_36']))
+        //        $estate['custom_price'].=$this->data['options_prefix_36'].$estate['option_36'].$this->data['options_suffix_36'];
+        //    if(!empty($estate['option_37']))
+        //        $estate['custom_price'].=$this->data['options_prefix_37'].$estate['option_37'].$this->data['options_suffix_37'];
+        //    if(empty($estate['option_37']) && !empty($estate['option_56']))
+        //        $estate['custom_price'].=$this->data['options_prefix_56'].$estate['option_56'].$this->data['options_suffix_56'];
+        //     [END] custom price field
             
             // Url to preview
             if(isset($json_obj->field_10))
@@ -557,20 +604,20 @@ class Property extends Frontend_Controller
         $rep_file_count = array();
         $this->data['slideshow_property_images'] = array();
         $num=0;
-//        foreach($files as $key=>$file)
-//        {
-//            if($estate_data['repository_id'] == $file->repository_id)
-//            {
-//                $slideshow_image = array();
-//                $slideshow_image['num'] = $num;
-//                $slideshow_image['url'] = base_url('files/'.$file->filename);
-//                $slideshow_image['first_active'] = '';
-//                if($num==0)$slideshow_image['first_active'] = 'active';
-//                
-//                $this->data['slideshow_property_images'][] = $slideshow_image;
-//                $num++;
-//            }
-//        }
+    //    foreach($files as $key=>$file)
+    //    {
+    //        if($estate_data['repository_id'] == $file->repository_id)
+    //        {
+    //            $slideshow_image = array();
+    //            $slideshow_image['num'] = $num;
+    //            $slideshow_image['url'] = base_url('files/'.$file->filename);
+    //            $slideshow_image['first_active'] = '';
+    //            if($num==0)$slideshow_image['first_active'] = 'active';
+               
+    //            $this->data['slideshow_property_images'][] = $slideshow_image;
+    //            $num++;
+    //        }
+    //    }
 
         foreach($this->data['page_images']  as $key=>$file)
         {
@@ -723,10 +770,10 @@ class Property extends Frontend_Controller
                 // $data['property name'] = $this->data['page_title'];
                 // unset($data['fromdate'], $data['todate'], $data['readed']);
                 
-//                $message='';
-//                foreach($data as $key=>$value){
-//                	$message.="$key:\n$value\n";
-//                }
+            //    $message='';
+            //    foreach($data as $key=>$value){
+            //    	$message.="$key:\n$value\n";
+            //    }
 
                 if(isset($data['repository_id'])) {
                     $file_rep = $this->file_m->get_by(array('repository_id'=>$data['repository_id']));
@@ -861,23 +908,23 @@ class Property extends Frontend_Controller
                 {
                     $this->data['form_sent_message'] = '<p class="alert alert-success">'.lang_check('message_sent_successfully').'</p>';
                     
-    //                $this->data['form_sent_message'].=' <script type="text/javascript">
-    //                                                    /* <![CDATA[ */
-    //                                                    var google_conversion_id = 973185194;
-    //                                                    var google_conversion_language = "en";
-    //                                                    var google_conversion_format = "3";
-    //                                                    var google_conversion_color = "ffffff";
-    //                                                    var google_conversion_label = "7RR9CJ6C6AcQqsGG0AM";
-    //                                                    var google_remarketing_only = false;
-    //                                                    /* ]]> */
-    //                                                    </script>
-    //                                                    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-    //                                                    </script>
-    //                                                    <noscript>
-    //                                                    <div style="display:inline;">
-    //                                                    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/973185194/?label=7RR9CJ6C6AcQqsGG0AM&amp;guid=ON&amp;script=0"/>
-    //                                                    </div>
-    //                                                    </noscript>';
+                //    $this->data['form_sent_message'].=' <script type="text/javascript">
+                //                                        /* <![CDATA[ */
+                //                                        var google_conversion_id = 973185194;
+                //                                        var google_conversion_language = "en";
+                //                                        var google_conversion_format = "3";
+                //                                        var google_conversion_color = "ffffff";
+                //                                        var google_conversion_label = "7RR9CJ6C6AcQqsGG0AM";
+                //                                        var google_remarketing_only = false;
+                //                                        /* ]]> */
+                //                                        </script>
+                //                                        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+                //                                        </script>
+                //                                        <noscript>
+                //                                        <div style="display:inline;">
+                //                                        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/973185194/?label=7RR9CJ6C6AcQqsGG0AM&amp;guid=ON&amp;script=0"/>
+                //                                        </div>
+                //                                        </noscript>';
                 }
                 else
                 {

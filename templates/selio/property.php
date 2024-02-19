@@ -36,7 +36,7 @@
                                 <?php _widget('property_center_documents');?>
                                 <?php _widget('property_center_details');?>
                                 <?php _widget('property_center_amenities_indoor');?>
-                                <?php _widget('property_center_amenities_outdoor');?>
+                                <?php //_widget('property_center_amenities_outdoor');?>
                                 <?php _widget('property_center_distances');?>
                                 <?php _widget('property_center_dynamic_categories');?>
                                 <?php _widget('property_center_plan');?>
@@ -50,6 +50,9 @@
                         </div>
                         <div class="col-lg-4 pr-0">
                             <div class="sidebar layout2">
+                                 <!-- Start AJ Code -->
+                                 <?php _widget('property_right_aj_agent');?>
+                                 <!-- End AJ Code -->
                                  <?php _widget('property_right_form_contact');?>
                                  <?php _widget('property_right_popular_listings');?>
                                  <?php _widget('property_right_mortgage');?>

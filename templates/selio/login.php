@@ -202,13 +202,13 @@
                                             <label>Rera Register</label><br>
                                             <div class="d-flex pl-4 mt-1">
                                                 <div class="mr-4 pr-2">
-                                                    <input type="radio" name="reraRegister" id="reraRegisterYes"
-                                                    onclick="reraField(this);" class="form-check-input" value="Yes">
+                                                    <input type="radio" name="reraRegister" id="reraRegisterYes" value="Yes"
+                                                    onclick="reraField(this);" class="form-check-input">
                                                     <label class="form-check-label" for="reraRegisterYes">Yes</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio" name="reraRegister" id="reraRegisterNo"
-                                                    onclick="reraField(this);" class="form-check-input" value="No">
+                                                    <input type="radio" name="reraRegister" id="reraRegisterNo" value="No"
+                                                    onclick="reraField(this);" class="form-check-input">
                                                     <label class="form-check-label" for="reraRegisterNo">No</label>
                                                 </div>
                                             </div>
@@ -306,22 +306,22 @@
         _generate_js('_generate_login_page_js_' . md5(current_url_q()), 'widgets/_generate_login_page_js.php', false, 0);
         ?>
     <script>
+        function chnageUserType(data) {
+            let result = data.value;
+            if (result == 'AGENT') {
+                $("#reraRegisterOpen").show(); // Display the div
+            } else {
+                $("#reraRegisterOpen").hide(); // Display the div
+            }
+        }
+
         function reraField(data) {
+            alert(data.value);
             let result = data.value;
             if (result == 'Yes') {
                 $("#reraRegistrationField").show(); // Display the div
             } else {
                 $("#reraRegistrationField").hide(); // Display the div
-            }
-        }
-
-        function chnageUserType(data) {
-            let result = data.value;
-            // alert(result);
-            if (result == 'AGENT') {
-                $("#reraRegisterOpen").show(); // Display the div
-            } else {
-                $("#reraRegisterOpen").hide(); // Display the div
             }
         }
     </script>

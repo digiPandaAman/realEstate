@@ -12,7 +12,7 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
             <div class="col-xl-8">
                 <div class="section-heading mb-0">
                     <span>Popular Seller</span>
-                    <h3>Recommended Seller </h3>
+                    <h3>Owner's Properties</h3>
                 </div>
             </div>
         </div>
