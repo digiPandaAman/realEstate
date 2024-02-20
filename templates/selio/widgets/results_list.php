@@ -14,7 +14,14 @@
                 ?>
                 <?php endif;?>
                 <img src="<?php echo _simg($item['thumbnail_url'], '851x678', true); ?>" alt="<?php echo _ch($item['option_10']); ?>" class="img-fluid">
-                <div class="rate-info">
+                
+            </div>
+        </a>
+        <div class="card_bod_full">
+            <div class="card-body">
+                <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
+                    <h3><?php echo _ch($item['option_10']); ?></h3>
+                    <div class="rate-info">
                     <?php if(!empty($item['option_36']) || !empty($item['option_37'])): ?>
                     <h5>
                     <?php if(!empty($item['option_36']) || !empty($item['option_37'])): ?>
@@ -38,12 +45,6 @@
                     <span class="purpose-<?php $a='';$a=strtolower($item['option_4']);echo url_title_cro( str_replace(' ','_',$a)); ?>"><?php echo _ch($item['option_4'], ''); ?></span>
                     <?php endif;?>
                 </div>
-            </div>
-        </a>
-        <div class="card_bod_full">
-            <div class="card-body">
-                <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
-                    <h3><?php echo _ch($item['option_10']); ?></h3>
                     <p><i class="la la-map-marker"></i><?php _che($item['address']); ?></p>
                 </a>
                 <ul>

@@ -75,6 +75,16 @@ foreach($slideshow_images_obj as $value) {
                     <?php else:?>
                         <img src="<?php echo _simg($item['thumbnail_url'], '851x678', true); ?>" alt="<?php echo _ch($item['option_10']); ?>" class="img-fluid">
                     <?php endif;?>
+                
+            </div>
+        <?php if(config_db_item('results_listings_video') == 1 && _ch($item['option_'.config_db_item('multimedia_field_id')], false)):?>
+            </div>
+        <?php else:?>
+            </a>
+        <?php endif;?>
+        <div class="card-body">
+            <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
+                <h3><?php echo _ch($item['option_10']); ?></h3>
                 <div class="rate-info">
                     <?php if(!empty($item['option_36']) || !empty($item['option_37'])): ?>
                     <h5>
@@ -97,15 +107,6 @@ foreach($slideshow_images_obj as $value) {
                     <span class="purpose-<?php $a='';$a=strtolower($item['option_4']);echo url_title_cro( str_replace(' ','_',$a)); ?>"><?php echo _ch($item['option_4'], ''); ?></span>
                     <?php endif;?>
                 </div>
-            </div>
-        <?php if(config_db_item('results_listings_video') == 1 && _ch($item['option_'.config_db_item('multimedia_field_id')], false)):?>
-            </div>
-        <?php else:?>
-            </a>
-        <?php endif;?>
-        <div class="card-body">
-            <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
-                <h3><?php echo _ch($item['option_10']); ?></h3>
                 <p><i class="la la-map-marker"></i><?php _che($item['address']); ?></p>
             </a>
             <ul>

@@ -2276,7 +2276,8 @@ class Api extends CI_Controller
                 }
                 
                 if(empty($attr_search) && $row->level > 0){
-                    $level_gen = str_pad('', $row->level*12, '&nbsp;').'|-';
+                    $level_gen = str_pad('', $row->level*12, '&nbsp;').'';
+                    // $level_gen = str_pad('', $row->level*12, '&nbsp;').'|-'; //AJ Change
                 }
                 
                 if($attr_id =='value_path') {
