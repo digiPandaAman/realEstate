@@ -4841,7 +4841,6 @@ class Frontend extends Frontend_Controller
        }
        
        $this->form_validation->set_rules($rules);
-        // echo "<pre>";print_r($_POST);die('Am');
         // Process the form
         if($this->form_validation->run() == TRUE)
         {

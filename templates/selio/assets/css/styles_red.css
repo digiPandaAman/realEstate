@@ -2184,9 +2184,10 @@ select option[value=""], select:invalid {
 }
 
 #partners-section {
-    padding: 40px 0px 80px;
+    padding: 60px 0px 100px;
+    /*overflow: hidden;*/
+    /*background-image: linear-gradient(to bottom, rgb(246 243 243), rgb(255 255 255));*/
     overflow: hidden;
-    background-image: linear-gradient(to bottom, rgb(246 243 243), rgb(255 255 255));
 }
 #partners-section .partner-heading{
     font-size: 32px;
@@ -2443,10 +2444,6 @@ header .top-header{
     padding: 38px 20px 40px;
     overflow: hidden;
 }
-.inso_img {
-    padding-top: 40px;
-}
-
 .tab-content-row-insurance .nav-tabs .nav-item:nth-child(1) .nav-link{
     background: linear-gradient(to right, #f4dc52, #ffb056);
 }
@@ -2514,6 +2511,189 @@ header .top-header{
 }
 .paginated_agents_scroll .product-wrap:nth-child(1) .sellers_card {
     margin-top: 0;
+}
+.insurance_bg{
+    background:#f7f7f7;
+    padding:60px 0 70px;
+}
+.form-title_top {
+    max-width: 470px;
+}
+.form-title_top h3 {
+    color: #212121;
+    font-size: 42px;
+    font-weight: 100;
+    line-height: 46px;
+}
+.form-title_top h3 span{
+    color: #e6181b;
+    font-weight: bold;
+}
+.form-title_top p{
+    font-size: 18px;
+    color: #212121;
+    margin: 30px 0 20px 0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.form-title_top p .badge {
+    background: #e6181b;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Poppins';
+    letter-spacing: 0.6px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+.form-title_top p .badge img {
+    filter: invert(1);
+}
+.nav_nav_tabs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.nav_nav_tabs .nav-link {
+    background: #fff;
+    color: #212121;
+    box-shadow: 0 0 20px rgb(0 0 0 / 5%);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: left;
+    line-height: 18px;
+    padding: 12px;
+    position:relative;
+}
+.nav_nav_tabs .nav-link label{
+    color: #212121;
+    font-size:14px;
+    font-weight: 400;
+}
+.nav_nav_tabs .nav-link .Insurance_radio {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.nav_nav_tabs .nav-link:hover {
+    background: #d89798;
+    color: #fff !important;
+}
+.nav_nav_tabs .nav-link:hover label{
+    color: #fff !important;
+}
+.nav_nav_tabs .nav-link:hover img {
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+}
+.nav_nav_tabs a img{
+    margin-right:12px;
+}
+.Insurance_fill_form {
+    background: #fffdfd;
+    box-shadow: 14px 13px 11px rgb(0 0 0 / 3%);
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 10px 25px 30px;
+}
+.Insurance_fill_form .form-group {
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+.Insurance_fill_form .form-group.form-control {
+    display: block;
+    background: none;
+    padding: 0 10px 5px 0px;
+    border-width: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    margin-top: 0px;
+    border-radius: 0px;
+}
+.Insurance_fill_form label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    font-size: 14px;
+    font-weight: 100;
+    color: #2c2c2c;
+    z-index: 0;
+}
+.Insurance_fill_form select.form-control:not([size]):not([multiple]){
+    font-size: 14px;
+    font-weight: 100;
+    color: #2c2c2c;
+}
+.Insurance_fill_form label.form-check.font-bold {
+    color: #2c2c2c;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: normal;
+    top: -4px;
+}
+.Insurance_fill_form  .text-trm-condition {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #2c2c2c;
+    padding-left: 20px;
+}
+.Insurance_fill_form .btn-submit {
+    border: none !important;
+    border-radius: 0px !important;
+    max-width: 100% !important;
+    height: 42px !important;
+    background: #000 !important;
+    font-weight: 200 !important;
+    letter-spacing: 0.6px;
+}
+.Insurance_fill_form .btn-submit:hover {
+    background: #e6181b !important;
+}
+.top_move_list .list_scroll ul li:nth-child(1), 
+.top_move_list .list_scroll ul li:nth-child(2){
+    display:none;
+}
+.Digipanda_Consulting p, .Digipanda_Consulting p a {
+    font-family: 'Gilroy';
+    font-weight: 400;
+    font-size: 14px;
+    color: #878787;
+    text-align: right;
+}
+div#accordion .card {
+    margin: 10px 0;
+}
+div#accordion .card .card-header {
+    border-bottom: none;
+    border-radius:20px;
+}
+.widget-panel.border .title {
+    color: #0b1116;
+    text-transform: uppercase;
+    font-family: 'Gilroy' !important;
+    font-weight: 300 !important;
+}
+.widget-panel.border .alert-info {
+    background-color: #ffeeee;
+    border-color: #d3bfbf;
+    color: #111;
 }
 
 
@@ -2749,6 +2929,12 @@ header .top-header{
     form.row.banner-search.search-form.top-search.banner-search_init{
         padding: 45px 0px 10px;
     }
+    .Digipanda_Consulting.footer-content {
+        padding: 0px 0 50px !important;
+    }
+    .Digipanda_Consulting.footer-content p{
+        text-align:left;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2850,6 +3036,9 @@ header .top-header{
         grid-template-columns: repeat(1,1fr);
         width: 100%;
     }
+    .container-fluid.px-5{
+        padding:0 15px !important;
+    }
 }
 
 @media screen and (max-width: 680px){
@@ -2861,6 +3050,19 @@ header .top-header{
     }
     .BankName,.opt60 ,.fontsemiBold{
         font-size: 12px;
+    }
+    .form-title_top h3 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+}
+@media screen and (max-width: 480px){
+    .nav_nav_tabs{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .nav_nav_tabs a{
+        width:48%;
     }
 }
 

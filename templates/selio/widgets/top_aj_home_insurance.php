@@ -1,225 +1,81 @@
-<div class="container">
-	<div class="row">
-		<div class="col-lg-6">
-			<div class="tab-content-row-insurance">
-				<ul class="nav nav-tabs" role="tablist">
-					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"><i
-								class="img-icon fa fa-file-text-o"></i> General/ life insurance</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"><i
-								class="img-icon fa fa-heart-o"></i> Health Insurance</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"><i
-								class="img-icon fa fa-motorcycle"></i> Motor Insurance</a>
-					</li>
-				</ul>
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div class="tab-pane active" id="tabs-1" role="tabpanel">
-						<div class="AppForm">
-							<div class="header-title">
-								<div class="header-icon">
-									<i class="img-icon fa fa-file-text-o"></i>
-								</div>
-								<div class="header-lael"><label>The General/ life insurance is for:</label></div>
-							</div>
-							<?=form_open('customform',['class'=>'form mt-3','autocomplete'=>'off']);?>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="">
-								<label class="label_up">Name</label>
-							</div>
-							<div class="form-group">
-								<input type="number" class="form-control" placeholder="">
-								<label class="label_up">Phone Numer</label>
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="">
-								<label class="label_up">Email Id</label>
-							</div>
-							<div class="form-group">
-								<input type="number" class="form-control" placeholder="">
-								<label class="label_up">Pincode</label>
-							</div>
-							<div class="form-group">
-								<select class="form-control">
-									<option selected>City</option>
-									<option>Mumbai</option>
-									<option>Bangalore</option>
-									<option>Gurgaon</option>
-									<option>Noida</option>
-									<option>Hyderabad</option>
-									<option>Pune</option>
-								</select>
-							</div>
-							<div class="radio-row mt-4">
-								<h6>Tenure</h6>
-								<div class="radio-field radio-field3">
-									<input type="radio" id="1year" name="Tenure" value="1 year" checked="">
-									<label for="1year" id="1year"> 1 year</label>
-								</div>
-								<div class="radio-field radio-field4">
-									<input type="radio" id="2-5-years" name="Tenure" value="2 - 5 years">
-									<label for="2-5-years" id="2-5-years">2 - 5 years</label>
-								</div>
-								<div class="radio-field radio-field2">
-									<input type="radio" id=">-5-years" name="Tenure" value="> 5 years">
-									<label for=">-5-years" id=">-5-years">> 5 years</label>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="d-flex align-items-start">
-									<input type="checkbox" class="form-check" id="exampleCheck1" checked="">
-									<label class="form-check position-relative m-0 pl-2 font-bold" for="exampleCheck1">I
-										hereby authorize TownManor and its partners to contact
-										me via WhatsApp, sms, phone, email etc.</label>
-								</div>
-							</div>
-							<div class="text-trm-condition">By submitting you agree to <a href="/terms-of-use">Terms
-									of use </a> and<a href="/terms-and-conditions"> T&amp;C</a></div>
-							<button type="submit" class="btn btn-primary btn-submit">Submit</button>
-							<?=form_close();?>
-						</div>
+<section class="insurance_bg">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6">
+				<div class="forms-_row_area">
+					<div class="form-title_top">
+						<h3>The Futuristic Way <span>To Buy Insurance</span></h3>
+						<p><span class="badge"><img src="<?=('assets/selfImages/insurance-icons.png');?>"/></span> Select type of insurance</p>
 					</div>
-					<div class="tab-pane" id="tabs-2" role="tabpanel">
-						<div class="AppForm">
-							<div class="header-title">
-								<div class="header-icon">
-									<i class="img-icon fa fa-file-text-o"></i>
-								</div>
-								<div class="header-lael"><label>The Health insurance is for:</label></div>
+					<div class="insurance_forms">
+						<form class="form mt-3" autocomplete="off">
+							<div class="nav_nav_tabs">
+								<a class="nav-link"> 
+									<img class="Insurance_img_icon" src="<?=('assets/selfImages/insurance1.png');?>" alt=""> 
+									<label for="General-Life-Insurance"> General & <br/> Life Insurance</label>
+									<input class="Insurance_radio" type="radio" id="General-Life-Insurance" name="Life-Insurance" value="General-Life-Insurance" checked="">
+								</a>
+								<a class="nav-link">
+									<img class="Insurance_img_icon" src="<?=('assets/selfImages/life-protection.png');?>" alt="">
+									<label for="Health-Insurance">  Health <br/> Insurance</label>
+									<input class="Insurance_radio" type="radio" id="Health-Insurance" name="Life-Insurance" value="Health-Insurance">
+								</a>
+								<a class="nav-link">
+									<img class="Insurance_img_icon" src="<?=('assets/selfImages/motorcycle_i.png');?>" alt="">
+									<label for="Motor-Life-Insurance">  Motor <br/>Life Insurance</label>
+									<input class="Insurance_radio" type="radio" id="Motor-Life-Insurance" name="Life-Insurance" value="Motor-Life-Insurance">
+								</a>
 							</div>
-							<form class="form mt-3" autocomplete="off">
+
+							<div class="Insurance_fill_form">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="">
 									<label class="label_up">Name</label>
 								</div>
 								<div class="form-group">
-									<input type="number" class="form-control" placeholder="">
-									<label class="label_up">Phone Numer</label>
+									<input type="number" class="form-control" placeholder=""> 
+									<label class="label_up">Phone Number</label>
 								</div>
 								<div class="form-group">
 									<input type="email" class="form-control" placeholder="">
-									<label class="label_up">Email Id</label>
+									<label class="label_up">Email ID</label>
 								</div>
 								<div class="form-group">
 									<input type="number" class="form-control" placeholder="">
-									<label class="label_up">Pincode</label>
+									<label class="label_up">Pin Code</label>
 								</div>
-								<div class="form-group">
-									<select class="form-control">
-										<option selected>City</option>
-										<option>Mumbai</option>
-										<option>Bangalore</option>
-										<option>Gurgaon</option>
-										<option>Noida</option>
-										<option>Hyderabad</option>
-										<option>Pune</option>
-									</select>
-								</div>
-								<div class="radio-row mt-4">
-									<h6>Tenure</h6>
-									<div class="radio-field radio-field3">
-										<input type="radio" id="1year" name="Tenure" value="1 year" checked="">
-										<label for="1year" id="1year"> 1 year</label>
-									</div>
-									<div class="radio-field radio-field4">
-										<input type="radio" id="2-5-years" name="Tenure" value="2 - 5 years">
-										<label for="2-5-years" id="2-5-years">2 - 5 years</label>
-									</div>
-									<div class="radio-field radio-field2">
-										<input type="radio" id=">-5-years" name="Tenure" value="> 5 years">
-										<label for=">-5-years" id=">-5-years">> 5 years</label>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="d-flex align-items-start">
-										<input type="checkbox" class="form-check" id="exampleCheck1" checked="">
-										<label class="form-check position-relative m-0 pl-2 font-bold"
-											for="exampleCheck1">I hereby authorize TownManor and its partners to contact
-											me via WhatsApp, sms, phone, email etc.</label>
-									</div>
-								</div>
-								<div class="text-trm-condition">By submitting you agree to <a href="/terms-of-use">Terms
-										of use </a> and<a href="/terms-and-conditions"> T&amp;C</a></div>
-								<button type="submit" class="btn btn-primary btn-submit">Submit</button>
-							</form>
-						</div>
-					</div>
-					<div class="tab-pane" id="tabs-3" role="tabpanel">
-						<div class="AppForm">
-							<div class="header-title">
-								<div class="header-icon">
-									<i class="img-icon fa fa-file-text-o"></i>
-								</div>
-								<div class="header-lael"><label>The Motor insurance is for:</label></div>
-							</div>
-							<form class="form mt-3" autocomplete="off">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="">
-									<label class="label_up">Name</label>
-								</div>
-								<div class="form-group">
-									<input type="number" class="form-control" placeholder="">
-									<label class="label_up">Phone Numer</label>
-								</div>
-								<div class="form-group">
-									<input type="email" class="form-control" placeholder="">
-									<label class="label_up">Email Id</label>
-								</div>
-								<div class="form-group">
-									<input type="number" class="form-control" placeholder="">
-									<label class="label_up">Pincode</label>
+									<label class="label_up">City</label>
 								</div>
 								<div class="form-group">
 									<select class="form-control">
-										<option selected>City</option>
-										<option>Mumbai</option>
-										<option>Bangalore</option>
-										<option>Gurgaon</option>
-										<option>Noida</option>
-										<option>Hyderabad</option>
-										<option>Pune</option>
+										<option selected>Tenure</option>
+										<option>5 Years</option>
+										<option>10 Years</option>
+										<option>15 Years</option>
+										<option>20 Years</option>
 									</select>
 								</div>
-								<div class="radio-row mt-4">
-									<h6>Tenure</h6>
-									<div class="radio-field radio-field3">
-										<input type="radio" id="1year" name="Tenure" value="1 year" checked="">
-										<label for="1year" id="1year"> 1 year</label>
-									</div>
-									<div class="radio-field radio-field4">
-										<input type="radio" id="2-5-years" name="Tenure" value="2 - 5 years">
-										<label for="2-5-years" id="2-5-years">2 - 5 years</label>
-									</div>
-									<div class="radio-field radio-field2">
-										<input type="radio" id=">-5-years" name="Tenure" value="> 5 years">
-										<label for=">-5-years" id=">-5-years">> 5 years</label>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="d-flex align-items-start">
+								<div class="form-group mb-0">
+									<div class="d-flex align-items-start custom_radio">
 										<input type="checkbox" class="form-check" id="exampleCheck1" checked="">
-										<label class="form-check position-relative m-0 pl-2 font-bold"
-											for="exampleCheck1">I hereby authorize TownManor and its partners to contact
-											me via WhatsApp, sms, phone, email etc.</label>
+										<label class="form-check position-relative m-0 pl-2 font-bold" for="exampleCheck1">Hereby authorize TownManor and its partners to contact me via WhatsApp, sms, phone, email etc.</label>
 									</div>
 								</div>
-								<div class="text-trm-condition">By submitting you agree to <a href="/terms-of-use">Terms
-										of use </a> and<a href="/terms-and-conditions"> T&amp;C</a></div>
+								<div class="text-trm-condition">By submitting you agree to  <a href="/terms-of-use">Terms of use </a>  and<a href="/terms-and-conditions"> T&amp;C</a></div>
 								<button type="submit" class="btn btn-primary btn-submit">Submit</button>
-							</form>
-						</div>
+							</div>
+							
+						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-lg-6">
-			<div class="inso_img">
-				<img src="<?=('assets/selfImages/inso_right.jpg');?>" alt="">
+			<div class="col-lg-6">
+				<div class="inso_img">
+					<img src="<?=('assets/selfImages/insurance_right_img.png');?>" alt="">
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>
