@@ -23,6 +23,9 @@
                         <img width="100" src="<?=('assets/selfImages/hdfc-bank.webp');?>" />
                         <img width="100" src="<?=('assets/selfImages/axis-bank.webp');?>" />
                     </div>
+					<div class="CIBIL_score">
+						<a href="<?=base_url('en/192/cibil_score');?>" class="check_CIBIL_score_btn">Get Your CIBIL Score</a>
+					</div>
                 </div>
                 <div class="ProductBanner_Img">
                     <img width="400" src="<?=('assets/selfImages/home-loan.jpg');?>" />

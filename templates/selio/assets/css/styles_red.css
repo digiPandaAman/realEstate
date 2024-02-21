@@ -1356,7 +1356,7 @@ header {
 }
 .form-wr{
     width:100%;
-    max-width:500px;
+    max-width:550px;
 }
 
 /* Custom Form */
@@ -2456,7 +2456,7 @@ header .top-header{
 .popular-listing.hp2 .card .card-footer, .listing-main-sec-details .card .card-footer{
     position: absolute;
     right: 20px;
-    bottom: 50px;
+    bottom: 75px;
     padding: 0;
     border: none !important;
 }
@@ -2595,7 +2595,7 @@ header .top-header{
 .nav_nav_tabs .nav-link:hover img {
     filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
 }
-.nav_nav_tabs a img{
+.nav_nav_tabs .nav-link img{
     margin-right:12px;
 }
 .Insurance_fill_form {
@@ -2695,9 +2695,158 @@ div#accordion .card .card-header {
     border-color: #d3bfbf;
     color: #111;
 }
+.nav_nav_tabs label.form-check-label {
+    display: flex;
+    align-items: center;
+}
+.nav_nav_tabs label.form-check-label img {
+    margin-right:10px;
+}
+.nav_nav_tabs {
+    width: 100%;
+}
+.form-check .nav_nav_tabs .nav-link .Insurance_radio {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+}
+.form-check .nav_nav_tabs .nav-link {
+    padding: 15px 10px;
+    border: 1px solid #c6c6c6;
+    min-height: 70px;
+}
+.Dflex_vander {
+    display: flex !important;
+    align-items: center;
+    place-content: space-between;
+}
+.scopOW {
+    max-width: 25px !important;
+    margin-right: 10px;
+}
+.radio-field label {
+    text-align: left;
+    line-height: 16px;
+}
+.rate-info {
+    position: relative;
+    padding: 0 0 10px 0;
+}
+.card .img-block h5, .map-box .rate-info > h5{
+    color: #000;
+}
+.popular-listing.hp2 .card .card-body {
+    border: none;
+    padding-top: 10px;
+}
+.popular-listing .card .card-body h3, 
+.listing-main-sec-details .card .card-body h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+.property-hd-sec .rate-info > h5{
+    margin-right:0;
+}
+.listing-main-sec-details .card .card-body {
+    padding-top: 10px;
+}
 
-
-
+.rate-info .purpose-sale {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #ffcfcf;
+    line-height: 0;
+    width: 40px;
+    padding: 10px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #000;
+    text-align: center;
+    height:10px;
+}
+.property-hd-sec .rate-info > span {
+    display: inline-block;
+    color: #242526;
+    font-size: 12px;
+    background-color: #efeff3;
+    height: 20px;
+    border-radius: 30px;
+    padding: 0 3px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.list-products .card .btn-default {
+    float: right;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.widget-featured-property .rate-info {
+    position: relative;
+    padding: 12px 15px 0px 20px;
+}
+.list-products .rate-info {
+    padding-top: 30px;
+}
+.list-products .rate-info .purpose-sale {
+    position: absolute;
+    right:auto;
+    left: 30%;
+    top: 15px;
+    bottom: 0;
+    margin: auto;
+    background: #ffcfcf;
+    line-height: 0;
+    width: 40px;
+    padding: 10px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #000;
+    text-align: center;
+    height: 10px;
+}
+.CIBIL_score {
+    padding: 60px 0 0;
+}
+.check_CIBIL_score_btn {
+    background: #e6181b;
+    color: #fff;
+    border: 1px solid #e6181b;
+    transition: .5s;
+    padding: 13px 25px;
+    text-align: center;
+    outline: none;
+    line-height: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.check_CIBIL_score_btn:hover {
+    background: #222;
+    color: #fff;
+    border: 1px solid #111;
+}
+.btn-calc.textCenterSm.pdTB {
+    padding: 12px 30px;
+}
+.ProductBanner_features.d-block li {
+    display: flex;
+    gap: 10px;
+    padding: 6px 0;
+}
+.font_size_32 {
+    font-size: 18px;
+    font-weight: 500;
+}
+.faq-section.paddinngTB {
+    padding-bottom: 80px;
+}
+.faq-section.paddinngTB .card .card-header {
+    border-bottom: 1px solid rgb(112 126 224 / 10%) !important;
+}
 
 
 
