@@ -6,17 +6,17 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
 ?>
 
 
-<section class="explore-feature hp7 section-padding widget_edit_enabled pb-0 seller-bg">
+<section class="explore-feature hp7 section-padding widget_edit_enabled pb-0 pt-0">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-8">
+            <div class="col-xl-12 p-0">
                 <div class="section-heading mb-0 recommended_sellers_sidebar_properes">
                     <h3>Recommended Sellers</h3>
                 </div>
             </div>
         </div>
 
-        <div class=" mt-4">
+        <div class="paginated_agents_scroll">
             <?php if(!empty($paginated_agents)): foreach($paginated_agents as $item): ?>
             <div class="product-wrap">
                 <div class="sellers_card">
@@ -31,7 +31,7 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
                                         title="<?php  _che($item['name_surname']);?>"><?php  _che($item['name_surname']);?></a>
                                 </h4>
                                 <?php if($item['agent_profile']['activated']): ?>
-                                <span class="seller_expert">Housing Expert <b>Pro</b></span>
+                                <span class="seller_expert">Expert <b>Pro</b></span>
                                 <?php endif; ?>
                             </div>
                             <div class="seller_location">

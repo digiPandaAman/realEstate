@@ -119,10 +119,15 @@
         <footer class="footer">
             <div class="container">
                     <div class="row justify-content-between">
-                        <div class="col-xl-12 ">
+                        <div class="col-md-6">
                             <div class="copyright text-left footer-content ">
                                 <p>© <?php echo lang_check('Selio theme made in EU. All Rights Reserved');?>.</p>
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                        	<div class="Digipanda_Consulting footer-content">
+                        	   <p> <small>Crafted with <i class="icon-heart text-danger"></i> by: <a href="https://digipanda.co.in/" target="_blank"> Digipanda Consulting</a> </small></p>
+                        	</div>
                         </div>
                     </div>
             </div>

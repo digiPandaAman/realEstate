@@ -33,7 +33,7 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
                                         title="<?php  _che($item['name_surname']);?>"><?php  _che($item['name_surname']);?></a>
                                 </h4>
                                 <?php if($item['agent_profile']['activated']): ?>
-                                <span class="seller_expert">Housing Expert <b>Pro</b></span>
+                                <span class="seller_expert">Expert <b>Pro</b></span>
                                 <?php endif; ?>
                             </div>
                             <div class="seller_location">

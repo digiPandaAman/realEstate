@@ -9,6 +9,7 @@
                                 <p>&copy;<?php echo lang_check('Selio theme made in EU. All Rights Reserved');?>.</p>
                             </div>
                         </div>
+
                         <div class="col-xl-3 col-md-6">
                             <div class="footer-social">
                                 <a href="https://www.facebook.com/share.php?u={homepage_url}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">

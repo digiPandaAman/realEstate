@@ -54,8 +54,8 @@
 <ul class="menu-onmap tabbed-selector">
     <li class="all-button">
         <label>
-            <?php echo lang_check('All'); ?>
-            <input type="radio" rel="<?php echo lang_check('All'); ?>" name="search_option_4" value="">
+            <?php echo lang_check('New Properties'); ?>
+            <input type="radio" rel="<?php echo lang_check('New Properties'); ?>" name="search_option_4" value="">
         </label>
     </li>
     <?php foreach ($options_values_arr_4 as $key=>$value):if(empty($value)) continue;?>
