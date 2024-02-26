@@ -131,10 +131,10 @@ Widget-preview-image: /assets/img/widgets_preview/header_main_panel.webp
                                             <a href="{front_login_url}#sw_login" class="login_popup_enabled ">
                                                 <b class="signin-op"><?php echo lang_check('Sign in');?></b>
                                             </a>
-                                            <?php echo lang_check('or');?>
-                                            <a href="{front_login_url}#sw_register" class="">
+                                            <?php //echo lang_check('or');?>
+                                            <!-- <a href="{front_login_url}#sw_register" class="">
                                                 <b class="reg-op"><?php echo lang_check('Register');?></b>
-                                            </a>
+                                            </a> -->
                                         </span>
                                         {/not_logged}
                                         {is_logged_user}
@@ -180,7 +180,8 @@ Widget-preview-image: /assets/img/widgets_preview/header_main_panel.webp
                                 <!--{/is_logged_other}-->
                                 <?php if(config_db_item('enable_qs') == 1): ?>
                                 <li class="nav-item submit-btn">
-                                    <a href="<?php echo site_url('fquick/submission/'.$lang_code); ?>"
+                                    <?php //echo site_url('fquick/submission/'.$lang_code); ?>
+                                    <a href="{front_login_url}#sw_register"
                                         class="my-2 my-sm-0 nav-link sbmt-btn">
                                         <i class="icon-plus"></i>
                                         <span><?php echo lang_check('Submit Listing');?></span>
@@ -188,7 +189,8 @@ Widget-preview-image: /assets/img/widgets_preview/header_main_panel.webp
                                 </li>
                                 <?php else: ?>
                                 <li class="nav-item submit-btn">
-                                    <a href="<?php echo site_url('frontend/editproperty/'.$lang_code.'#content');?>"
+                                    <?php //echo site_url('frontend/editproperty/'.$lang_code.'#content');?>
+                                    <a href="{front_login_url}#sw_register"
                                         class="my-2 my-sm-0 nav-link sbmt-btn">
                                         <i class="icon-plus"></i>
                                         <span><?php echo lang_check('Submit Listing');?></span>
