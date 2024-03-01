@@ -337,7 +337,7 @@ body .top-search .winter_dropdown_tree{
     border: 7px solid #ffffff;
 }
 body .banner{
-    background: url(https://digipanda.biz/realEstate/files/dubai-marina-sunset.jpg);
+    background: url('../selfImages/dubai-marina-sunset.jpg');
     background-size: cover;
     background-position: center;
     background-position: center;
@@ -2295,7 +2295,7 @@ select option[value=""], select:invalid {
     border-top: 1px solid #dfe0e5 !important;
 }
 .form_sec {
-    background: url(https://digipanda.biz/realEstate/templates/selio/assets/css/../images/banner/1.jpg);
+    background: url('../selfImages/1.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 0 0 40px 40px;
