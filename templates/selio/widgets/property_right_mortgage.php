@@ -47,6 +47,7 @@
 
 <div class="">
     <div class="widget widget-calculator mortgage_widget clearfix">
+        <h3 class="widget-title">EMI Calculator</h3>
          <form method="get" action="#" class="" id="mortgage_calculator">
             <ul>
                 <li>

@@ -17,7 +17,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_page_content.webp
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-2 col-md-3 col-6">
-                <a href="#" title="">
+                <a href="<?=base_url('en/190/home_loan');?>" title="">
                     <div class="card card_services">
                         <div class="card-body">
                             <i class="icon-sevices"><img src="<?=('assets/selfImages/servicesIcon1.png');?>" /></i>
@@ -28,7 +28,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_page_content.webp
                 </a>
             </div>
             <div class="col-lg-2 col-md-3 col-6">
-                <a href="#" title="">
+                <a href="<?=base_url('en/189/home_interior');?>" title="">
                     <div class="card card_services">
                         <div class="card-body">
                            <i class="icon-sevices"><img src="<?=('assets/selfImages/servicesIcon2.png');?>" /></i>
@@ -38,7 +38,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_page_content.webp
                 </a>
             </div>
             <div class="col-lg-2 col-md-3 col-6">
-                <a href="#" title="">
+                <a href="<?=base_url('en/191/insurance');?>" title="">
                     <div class="card card_services">
                         <div class="card-body">
                             <i class="icon-sevices"><img src="<?=('assets/selfImages/servicesIcon3.png');?>" /></i>

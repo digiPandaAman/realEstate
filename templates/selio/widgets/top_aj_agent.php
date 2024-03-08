@@ -37,7 +37,7 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
                                 <?php endif; ?>
                             </div>
                             <div class="seller_location">
-                                <span><?php  _che($item['address']);?></span>
+                                <span><i class="fa fa-map-marker"></i> <?php  _che($item['address']);?></span>
                             </div>
                            <div class="seller_exp_pro">
                                 <?php

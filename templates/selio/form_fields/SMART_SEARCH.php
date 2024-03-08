@@ -29,7 +29,7 @@
 
 <div class="form_field <?php echo _ch($class_add, ''); ?>">
     <div class="form-group field_search_<?php echo _ch($f_id); ?>" style="<?php echo _ch($field->style, ''); ?>">
-        <input id="search_option_smart" name="search_option_smart" value="<?php echo _ch($search_query,''); ?>" type="text" class="form-control" placeholder="<?php echo lang_check('Property Type');?>" />
+        <input id="search_option_smart" name="search_option_smart" value="<?php echo _ch($search_query,''); ?>" type="text" class="form-control" placeholder="<?php echo lang_check('Keyword Search');?>" />
     </div>
 </div>
 <?php if(true):?>

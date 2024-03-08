@@ -73,6 +73,7 @@ Widget-preview-image: /assets/img/widgets_preview/header_naviagation_search.webp
                                         <a href="<?php echo site_url('fquick/submission/'.$lang_code); ?>" class="my-2 my-sm-0 nav-link sbmt-btn">
                                             <i class="icon-plus"></i>
                                             <span><?php echo lang_check('Submit Listing');?></span>
+                                            
                                         </a>
                                     </li>
                                 <?php else: ?>

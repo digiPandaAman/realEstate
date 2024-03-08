@@ -42,11 +42,11 @@
                                 <?php echo form_input('gps', set_value('gps', $estate['gps']), 'class="form-control" id="inputGps" placeholder="' . lang('Gps') . '"  readonly') ?>
                             </div>
                         </div>
-                        <div class="widget-header header-styles">
-                            <h2 class="title"><?php echo lang_check('Translation data')?></h2>
-                        </div>
+                        <!--<div class="widget-header header-styles">-->
+                        <!--    <h2 class="title"><?php echo lang_check('Translation data')?></h2>-->
+                        <!--</div>-->
                         <div role="tabpanel" styl e="margin-bottom: 0px;" class="tabbable">
-                            <div class="edit_tabs_menu">
+                            <div class="edit_tabs_menu d-none">
                                 <ul class="nav nav-tabs lang-tabs" data-toggle="affix">
                                     <?php $i = 0;
                                     foreach ($this->option_m->languages as $key => $val):$i++; ?>
@@ -483,7 +483,7 @@
                                 <?php endforeach;?>
                               </div>
                             </div>
-                        <hr id="page-files-<?php _che($estate['id'])?>">
+                        <hr class="d-none" id="page-files-<?php _che($estate['id'])?>">
                         <?php if(config_db_item('terms_link') !== FALSE): ?>
                         <div class="form-group">
                             <div class="controls">

@@ -54,11 +54,11 @@
                                  <?php _widget('property_right_aj_agent');?>
                                  <!-- End AJ Code -->
                                  <?php _widget('property_right_form_contact');?>
-                                 <?php _widget('property_right_popular_listings');?>
+                                 <!--<//?php _widget('property_right_popular_listings');?>-->
                                  <?php _widget('property_right_mortgage');?>
                                  <?php _widget('property_right_pdf');?>
                                  <?php _widget('property_right_qrcode');?>
-                                 <?php _widget('property_right_print');?>
+                                 <!--<//?php _widget('property_right_print');?>-->
                                  <?php _widget('property_right_compare');?>
                                  <?php _widget('right_ads');?>
                                  <?php _widget('property_right_companydetails');?>
@@ -69,7 +69,7 @@
             </div>
         </section><!--property-single-pg end-->
         <?php _widget('top_discover_banner_html');?>
-        <?php _subtemplate( 'footers', _ch($subtemplate_footer, 'default')); ?>
+        <?php _subtemplate( 'footers', _ch($subtemplate_footer, 'alternative')); ?>
     </div><!--wrapper end-->
     <?php if(file_exists(APPPATH.'controllers/admin/swin_reviews.php')): ?>
         <script src="assets/libraries/ratings/bootstrap-rating-input.js"></script> 

@@ -124,7 +124,7 @@ jQuery(window).on("load", function($) {
 	  asNavFor: '.thumb-carous'
 	});
 	jQuery('.thumb-carous').slick({
-	  slidesToShow: 3,
+	  slidesToShow: 6,
 	  slidesToScroll: 1,
 	  asNavFor: '.property-main-img',
 	  dots: false,
@@ -135,7 +135,7 @@ jQuery(window).on("load", function($) {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1
         }
       },

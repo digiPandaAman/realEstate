@@ -16,20 +16,32 @@
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/My_Work/digi/realEstate/en/175/home_loan</loc>
-	<lastmod>2020-04-07T10:50:12+02:00</lastmod>
+	<loc>http://localhost/My_Work/digi/realEstate/en/190/home_loan</loc>
+	<lastmod>2024-01-30T06:32:43+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/My_Work/digi/realEstate/en/178/insurance</loc>
-	<lastmod>2023-09-27T11:57:13+02:00</lastmod>
+	<loc>http://localhost/My_Work/digi/realEstate/en/191/insurance</loc>
+	<lastmod>2024-01-30T06:34:13+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/My_Work/digi/realEstate/en/179/home_interior</loc>
-	<lastmod>2023-09-27T11:57:41+02:00</lastmod>
+	<loc>http://localhost/My_Work/digi/realEstate/en/189/home_interior</loc>
+	<lastmod>2024-01-29T11:58:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/My_Work/digi/realEstate/property/496/en/aj_property_final</loc>
+	<lastmod>2024-02-22T07:04:10+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/My_Work/digi/realEstate/property/494/en/aj_property</loc>
+	<lastmod>2024-01-24T10:23:32+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
@@ -2871,22 +2883,22 @@
 	<priority>0.5</priority>
 </url>
 <url>
+	<loc>http://localhost/My_Work/digi/realEstate/treefield/en/88586/faridabad</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
 	<loc>http://localhost/My_Work/digi/realEstate/treefield/en/88580/gurgaon</loc>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
+	<loc>http://localhost/My_Work/digi/realEstate/treefield/en/88585/new_delhi</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
 	<loc>http://localhost/My_Work/digi/realEstate/treefield/en/88577/noida</loc>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/My_Work/digi/realEstate/treefield/en/88581/united_arab_emirates</loc>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/My_Work/digi/realEstate/treefield/en/88582/dubai_coming_soon</loc>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>

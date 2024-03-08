@@ -8,10 +8,10 @@ Widget-preview-image: /assets/img/widgets_preview/footer_social.webp
     <div class="widget-footer-contacts">
         <h3>Quick Links</h3>
         <ul class="footer-list">                
-             <li><a href="<?=base_url('en/182/about_us');?>"> About Us</a> </li>
-			 <li><a href="<?=base_url('en/180/contact_us');?>">Contact Us</a> </li>
-			 <li><a href="<?=base_url('en/183/faqs');?>"> FAQ's</a> </li>
-			 <li><a href="<?=base_url('en/181/privacy_policy');?>"> Privacy Policy</a> </li>
+                <li><a href="https://digipanda.biz/realEstate/index.php/en/182/about_us"> About Us</a> </li>
+			 <li><a href="https://digipanda.biz/realEstate/index.php/en/180/contact_us">Contact Us</a> </li>
+			 <li><a href="https://digipanda.biz/realEstate/index.php/en/183/faqs"> FAQ's</a> </li>
+			 <li><a href="https://digipanda.biz/realEstate/index.php/en/181/privacy_policy"> Privacy Policy</a> </li>
 		</ul>
     </div>
 </div>

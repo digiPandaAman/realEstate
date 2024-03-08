@@ -182,18 +182,20 @@ Widget-preview-image: /assets/img/widgets_preview/header_main_panel.webp
                                 <li class="nav-item submit-btn">
                                     <?php //echo site_url('fquick/submission/'.$lang_code); ?>
                                     <a href="{front_login_url}#sw_register"
-                                        class="my-2 my-sm-0 nav-link sbmt-btn">
+                                        class="my-2 my-sm-0 nav-link sbmt-btn overflowVisible">
                                         <i class="icon-plus"></i>
                                         <span><?php echo lang_check('Submit Listing');?></span>
+                                        <span class="FrEe">Free</span>
                                     </a>
                                 </li>
                                 <?php else: ?>
                                 <li class="nav-item submit-btn">
                                     <?php //echo site_url('frontend/editproperty/'.$lang_code.'#content');?>
                                     <a href="{front_login_url}#sw_register"
-                                        class="my-2 my-sm-0 nav-link sbmt-btn">
+                                        class="my-2 my-sm-0 nav-link sbmt-btn overflowVisible">
                                         <i class="icon-plus"></i>
                                         <span><?php echo lang_check('Submit Listing');?></span>
+                                        <span class="FrEe">Free</span>
                                     </a>
                                 </li>
                                 <?php endif; ?>

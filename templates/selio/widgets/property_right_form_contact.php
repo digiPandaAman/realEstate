@@ -9,7 +9,7 @@ if(_ch($estate_data_option_68, false))
 ?>
 
 <div class="widget widget-form" id="form-contact">
-    <h3 class="widget-title"><?php echo lang_check('Contact Listing Agent');?></h3>
+    <h3 class="widget-title mt-4"><?php echo lang_check('Contact Listing Agent');?></h3>
     {has_agent}
     <div class="contct-info">
         <?php
