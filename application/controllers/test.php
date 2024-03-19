@@ -132,7 +132,7 @@ class Test extends CI_Controller
     
     public function authorize_test_return()
     {
-/*
+        /*
         print_r($_POST);
         
         Array
@@ -181,7 +181,7 @@ class Test extends CI_Controller
             [x_test_request] => true
             [x_method_available] => true
         )
-*/
+        */
         
         print_r($_POST);
     }
