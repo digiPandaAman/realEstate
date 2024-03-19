@@ -3187,8 +3187,230 @@ span.label.label-danger {
     align-items: center;
     cursor: pointer;
 }
+.advertisement_townmannerAJ .owl-stage {
+    left: auto;
+}
+.advertisement_townmanner_img img {
+    border-radius: 10px;
+}
 
 
+
+
+
+/*Gagan Css*/
+.HomeInT_Slider_page .bg-slider{
+    min-height: 90vh;
+  	object-fit:cover;
+}
+.HomeInT_Slider_page .carousel-caption{
+    bottom: 70px!important;
+    margin-top: 0px!important;
+    padding-top: 0px!important;
+}
+.HomeInT_Slider_page .carousel-caption h5{
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 46px;
+    font-weight: 400;
+}
+
+.HomeInT_Slider_page .carousel-caption h5 span{
+    font-weight: 700;
+}
+.HomeInT_Slider_page .carousel-caption p {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+}
+.HomeInT_Slider_page .carousel-caption button{
+    text-decoration: none;
+    padding: 4px 40px;
+    line-height: 45px;
+    font-size: 14px;
+    position: relative;
+    z-index: 2;
+    background-image: linear-gradient(to right, #d7d7d7, #fff);
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+  	border: none;
+    margin-top: 10px;
+}
+.HomeInT_Slider_page .carousel-caption button:hover{
+	background: linear-gradient(to right, #ff4447, #8a2e2e);
+  	color:#fff;
+}
+.HomeInT_Slider_page .carousel-indicators{
+    position: absolute!important;
+    display: flex!important;
+    gap: 10px!important;
+    bottom: 29px!important;
+    align-items: center!important;
+    justify-content: center!important;
+    width: 100%!important;
+    margin: 0!important;
+    z-index: 2!important;
+}
+
+.HomeInT_Slider_page .carousel-indicators li{
+  width: 20px!important;
+  height: 20px!important;
+  cursor: pointer;
+  display: inline-flex;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+#interior-tabs-container {
+    padding: 70px 0 80px 0;
+}
+
+.interior-heading-box h5{
+    font-size: 30px;
+    width: 100%;
+    color: #0b1116;
+    font-weight: 300 !important;
+    text-align: center;
+}
+.interior-heading-box p {
+    font-size: 19px;
+    line-height: 30px;
+    color: #0b0b0b;
+    margin-top: 20px;
+    text-align: center;
+}
+#interior-tabs-container ul{
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+ .tab.tab_services {
+    border: 1px solid #e5e5e5;
+    margin: 0;
+    padding:40px;
+    max-width: 100%;
+    border-radius: 10px;
+    width: 18%;
+   	position:relative;
+}
+.tab_services{
+    text-align: center;
+}
+.tab_services img{
+    max-width: 50px;
+}
+.tab_services h3 {
+    color: #323131;
+    font-size: 16px;
+    margin: 25px 0 0px;
+    font-weight: 200;
+}
+
+
+.tab_services{
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+.tab_services:hover {
+  box-shadow: 8px 15px 20px 0px rgb(0 0 0 / 9%);
+  transition: all 0.4s ease-in-out;
+}
+.case_study_box:hover::after{
+  transform: scale(1, 1);
+}
+.tab_services:hover::after, .tab_services:hover::before{
+  transform: scale(1, 1);
+}
+.case_study_box:hover::after{
+  transform: scale(1, 1);
+}
+.tab_services::after, .tab_services::before{
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  transition: all 0.5s;
+  border-radius:10px;
+}
+.tab_services::after{
+  border-right: 1px solid #bf1e2e;
+  border-left: 1px solid #bf1e2e;
+  transform: scale(1, 0);
+}
+.tab_services::before{
+  border-top: 1px solid #bf1e2e;
+  border-bottom: 1px solid #bf1e2e;
+  transform: scale(0, 1);
+}
+.tab_services a{
+  position: relative;
+  z-index: 1;
+}
+
+
+.Advertisment.main-banner-sec{
+ padding:70px 0 0 0; 
+}
+
+.Advertisment .banner-carousel{
+	height:auto;
+}
+.Advertisment .banner-slide > img{
+	border-radius:10px;
+}
+
+
+.banner-slide{
+   padding:0 10px;
+}
+.banner-carousel .slick-prev, .banner-carousel .slick-next {
+    width: 40px;
+    height: 40px;
+    line-height: 53px;
+}
+.seller_location {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80%;
+}
+
+
+@media screen and (max-width: 499px){
+    .bg-slider {
+        min-height: 450px;
+        padding:  0 ;
+        height: auto;
+        object-fit: cover;
+    }
+    .carousel-caption{
+        bottom: 45px!important;
+        width: 100%;
+        left: 0!important;
+        right: 0!important;
+    }
+
+    #interior-tabs-container ul{
+        margin: 0 auto;
+       justify-content: center;
+    }
+    .tab.tab_services{
+        margin: 0;
+        width: 45%;
+        padding: 20px;
+    }
+    .tab_services h3 {
+        margin: 15px 0 0px;
+    }
+
+}
+/*End*/
 
 
 
@@ -3569,10 +3791,3 @@ span.label.label-danger {
         grid-gap: 15px;
     }
 }
-
-
-
-
-
-
-

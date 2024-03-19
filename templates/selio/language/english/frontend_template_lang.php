@@ -853,7 +853,7 @@ $lang['Popular Listing'] = "Newly Launched Properties";
 $lang['Load More'] = "Load More";
 $lang['Real Estate for Rent'] = "Real Estate for Rent";
 $lang['Real Estate for Sale'] = "Real Estate for Buy";
-$lang['Discover best properties in one place'] = "<span>Discover </span> best properties <span>in</span> one place";
+$lang['Discover best properties in one place'] = "<span>Discover</span> best properties <span>in</span> one place";
 $lang['Testimonials'] = "Testimonials";
 $lang['Kritsofer Nolan'] = "Kritsofer Nolan";
 $lang['Property Owner'] = "Property Owner";
@@ -963,5 +963,6 @@ $lang['Company details'] = "Company details";
 $lang['Purchase To Show'] = "Purchase To Show";
 $lang['Our Blog'] = "Our Blog Posts";
 $lang['Agent Login'] = "Agent Login";
+$lang['New Properties'] = "New Properties";
 
 ?>

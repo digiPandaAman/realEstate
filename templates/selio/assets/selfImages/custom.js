@@ -82,7 +82,30 @@ $(".ourBlogSliderAJ").owlCarousel({
     },
   });
   
-  
+  $(".advertisement_townmannerAJ").owlCarousel({
+    loop: true,
+    nav: true,
+    navText: ["<i class='la la-long-arrow-left'></i>", "<i class='la la-long-arrow-right'></i>"],
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 6000,
+    item: 6,
+    margin: 0,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      576: {
+        items: 1,
+      },
+      768: {
+        items: 1,
+      },
+      992: {
+        items: 1,
+      },
+    },
+  });
   
   
   
