@@ -25,6 +25,7 @@ foreach($slideshow_images_obj as $value) {
   
 <div class="<?php echo $class;?>">
     <div class="card">
+        <span class="verifiedBadge">Verified</span>
         <?php if(config_db_item('results_listings_video') == 1 && _ch($item['option_'.config_db_item('multimedia_field_id')], false)):?>
             <div>
         <?php else:?>

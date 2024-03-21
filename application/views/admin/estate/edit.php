@@ -255,7 +255,10 @@
                                                     <?php else:?>
                                               <div class="<?php echo empty($options_lang[$key][$key_option]->prefix)&&empty($options_lang[$key][$key_option]->suffix)?'col-lg-9':'col-lg-6'; ?>">
                                                 <?php echo form_input('option'.$val_option->id.'_'.$key, set_value('option'.$val_option->id.'_'.$key, isset($estate->{'option'.$val_option->id.'_'.$key})?$estate->{'option'.$val_option->id.'_'.$key}:''), 'class="form-control '.$val_option->type.'" id="inputOption_'.$key.'_'.$val_option->id.'" placeholder="'.$val_option->option.'" '.$required_text.' '.$max_length_text)?>
-                                              </div>
+                                                <?php if('option'.$val_option->id.'_'.$key == 'option78_1'): ?>
+                                                <a class="btn btn-sm btn-success" onclick="genratePrompt();">Generate Short Description from AI</a>
+                                                <?php endif; ?>
+                                            </div>
                                               <?php if(!empty($options_lang[$key][$key_option]->prefix) || !empty($options_lang[$key][$key_option]->suffix)): ?>
                                               <div class="col-lg-3">
                                                 <?php echo $options_lang[$key][$key_option]->prefix.$options_lang[$key][$key_option]->suffix?>

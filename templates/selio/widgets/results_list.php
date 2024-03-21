@@ -1,6 +1,7 @@
 <div class="list-products">
     <?php foreach($results as $key=>$item): ?>
     <div class="card">
+        <span class="verifiedBadge">Verified</span>
         <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
             <div class="img-block">
                 <div class="overlay"></div>

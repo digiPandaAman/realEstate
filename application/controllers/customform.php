@@ -2,6 +2,12 @@
 
 class Customform extends CI_Controller
 {
+    public function __construct()
+    {
+		parent::__construct();
+        $this->load->model('commanmodel','comman');
+	}
+
     public function index()
     {
         die('Aman');
@@ -112,6 +118,90 @@ class Customform extends CI_Controller
             $this->load->library('session');
             $this->session->set_flashdata('customFormMsg', '<p class="alert alert-success">Message Sent Successfully</p>');
             return redirect('en/191/insurance');
+        endif;
+    }
+
+    public function checkScore()
+    {
+        $this->load->library('session');
+        $todayDate = date('Y-m-d');
+        $post = $this->input->post();
+        if($post):
+            $userPan = isset($post['PANCard'])?trim(strtoupper($post['PANCard'])):'';
+            $checkPan = $this->comman->get1Data('credit_report',['crPan'=>$userPan]);
+            if($checkPan):
+                if(strtotime($checkPan->crDate) < strtotime('-30 days')):
+                    $workingType = 'updateData';
+                    $apiResponse = $this->getCreditScore($post);
+                else:
+                    $workingType = '';
+                    $apiResponse = json_decode($checkPan->crResponse);
+                endif;
+            else:
+                $workingType = 'addData';
+                $apiResponse = $this->getCreditScore($post);
+            endif;
+            if($apiResponse->status_code == 200 && $apiResponse->success):
+                $scoreAdded = [
+                    'crName' => $apiResponse->data->name?ucwords($apiResponse->data->name):ucwords($post['name']),
+                    'crMobile' => $post['mobile'],
+                    'crPan' => $apiResponse->data->pan?$apiResponse->data->pan:strtoupper($userPan),
+                    'crDate' => $todayDate,
+                    'crScore' => $apiResponse->data->credit_score,
+                    'crPdfLink' => $apiResponse->data->credit_report_link,
+                    'crResponse' => json_encode($apiResponse),
+                ];
+                if($workingType == 'addData'):
+                    $checkQuery = $this->comman->addData('credit_report',$scoreAdded);
+                elseif($workingType == 'updateData'):
+                    $checkQuery = $this->comman->updateData('credit_report',['crId'=>$checkPan->crId,'crPan'=>$userPan],$scoreAdded);
+                else:
+                    $checkQuery = true;
+                endif;
+                if($checkQuery):
+                    $genrateToken = md5($userPan.'townCreditManorScore');
+                    $this->session->set_flashdata('customFormMsg', '<p class="alert alert-success">Your Credit Score</p>');
+                    return redirect('en/192/cibil_score?panNo='.$userPan.'&token='.$genrateToken);
+                else:
+                    $this->session->set_flashdata('customFormMsg', '<p class="alert alert-danger">Something went wrong. please try again!</p>');
+                    return redirect('en/192/cibil_score');
+                endif;
+            else:
+                $this->session->set_flashdata('customFormMsg', '<p class="alert alert-danger">Something went wrong. please try again!</p>');
+                return redirect('en/192/cibil_score');
+            endif;
+        endif;
+    }
+
+    public function getCreditScore($payload)
+    {
+        $userName = isset($payload['name'])?$payload['name']:'';
+        $userMobile = isset($payload['mobile'])?$payload['mobile']:'';
+        $userPan = isset($payload['PANCard'])?$payload['PANCard']:'';
+        if($userName && $userMobile && $userPan):
+
+            $url = "https://kyc-api.surepass.io/api/v1/credit-report-v2/fetch-pdf-report";
+            $serverKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMDE0NjA5NiwianRpIjoiODUxOWRiN2QtODVkMC00MTJlLThkMTktMmE5Nzk2ODI3YjViIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LnVzZXJuYW1lXzJ5MTV1OWk0MW10bjR3eWpsaTh6b2p6eXZiZEBzdXJlcGFzcy5pbyIsIm5iZiI6MTcxMDE0NjA5NiwiZXhwIjoyMDI1NTA2MDk2LCJ1c2VyX2NsYWltcyI6eyJzY29wZXMiOlsidXNlciJdfX0.yl8oGagzT8FRXUBh8sL2JKO0ISqgHh65dwQAd0NTRrE';
+            $arrayToSend = ['name' =>$userName,'pan' =>$userPan,'mobile'=>$userMobile,'consent'=>'Y'];
+            $json = json_encode($arrayToSend);
+            $headers = ['Content-Type: application/json','Authorization: Bearer '.$serverKey];
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+            //Send the request
+            $response = curl_exec($ch);
+            //Close request
+            if ($response === FALSE) {
+                die('Send Error: ' . curl_error($ch));
+            }else {
+                return json_decode($response);
+            }
+            curl_close($ch);
         endif;
     }
 }

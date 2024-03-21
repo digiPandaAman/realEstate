@@ -4180,6 +4180,19 @@ class Frontend extends Frontend_Controller
     
 	public function index ()
 	{
+        $userPanNumber = $this->input->get('panNo');
+        $token = $this->input->get('token');
+        if($userPanNumber && $token):
+            $genrateToken = md5($userPanNumber.'townCreditManorScore');
+            if($token === $genrateToken):
+                $this->load->model('commanmodel','comman');
+                $checkPan = $this->comman->get1Data('credit_report',['crPan'=>$userPanNumber]);
+                if($checkPan):
+                    $this->data['creditScoreData'] = $checkPan;
+                endif;
+            endif;
+        endif;
+
         $lang_id = $this->data['lang_id'];
         
         $this->_page_offline();

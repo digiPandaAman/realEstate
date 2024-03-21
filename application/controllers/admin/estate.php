@@ -40,9 +40,9 @@ class Estate extends Admin_Controller
                     $gen_where[] = 'json_object LIKE \'%'.$row_t->value_path.'%\'';
                 }
                 
-//                $where = 'language_id = '.$this->data['content_language_id'].' AND status != "HOLD_ADMIN" AND ('.
-//                         implode(' OR ', $gen_where).
-//                         ')';
+            //    $where = 'language_id = '.$this->data['content_language_id'].' AND status != "HOLD_ADMIN" AND ('.
+            //             implode(' OR ', $gen_where).
+            //             ')';
                 
                 $where['(status IS NULL OR status != "CONTRACT")'] = NULL;
                 $where['(status IS NULL OR status != "HOLD_ADMIN")'] = NULL;
@@ -228,9 +228,9 @@ class Estate extends Admin_Controller
                     $gen_where[] = 'json_object LIKE \'%'.$row_t->value_path.'%\'';
                 }
                 
-//                $where = 'language_id = '.$this->data['content_language_id'].' AND status != "HOLD_ADMIN" AND ('.
-//                         implode(' OR ', $gen_where).
-//                         ')';
+            //    $where = 'language_id = '.$this->data['content_language_id'].' AND status != "HOLD_ADMIN" AND ('.
+            //             implode(' OR ', $gen_where).
+            //             ')';
                 
                 $where['(status = "CONTRACT")'] = NULL;
                 $where['('.implode(' OR ', $gen_where).')'] = NULL;
@@ -298,9 +298,9 @@ class Estate extends Admin_Controller
                     $gen_where[] = 'json_object LIKE \'%'.$row_t->value_path.'%\'';
                 }
                 
-//                $where = 'language_id = '.$this->data['content_language_id'].' AND status != "HOLD_ADMIN" AND ('.
-//                         implode(' OR ', $gen_where).
-//                         ')';
+            //    $where = 'language_id = '.$this->data['content_language_id'].' AND status != "HOLD_ADMIN" AND ('.
+            //             implode(' OR ', $gen_where).
+            //             ')';
                 
                 $where['('.implode(' OR ', $gen_where).')'] = NULL;
             }
@@ -776,6 +776,70 @@ class Estate extends Admin_Controller
 		$this->data['subview'] = 'admin/estate/edit';
         $this->load->view('admin/_layout_main', $this->data);
 	}
+
+    // AJ Strat
+    public function genrateTextGBT()
+    {
+        $post = $this->input->post();
+        if($post):
+            $finalPrompt = trim($post['prompt']);
+            if($finalPrompt):
+                $chatGBTResponse = $this->callChatGBT($finalPrompt);
+                // print_r($chatGBTResponse);
+                if(isset($chatGBTResponse->choices) && $chatGBTResponse->choices):
+                    $response = current($chatGBTResponse->choices);
+                    print_r($response->message->content);
+                endif;
+            endif;
+        endif;
+    }
+
+    public function callChatGBT($prompt='')
+    {
+        if($prompt):
+            $apiKey = "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";
+            $organizationKey = "org-EZCyF7WtnlWY5ugaz1HTmxUm";
+
+            $url = 'https://api.openai.com/v1/chat/completions';  
+
+            $headers = array(
+                "Authorization: Bearer {$apiKey}",
+                "OpenAI-Organization: {$organizationKey}", 
+                "Content-Type: application/json"
+            );
+            
+            // Define messages
+            $messages = array();
+            $message = array();
+            $message["role"] = "user";
+            $message["content"] = $prompt;
+            $messages[] = $message;
+            
+            // Define data
+            $data = array();
+            $data["model"] = "gpt-3.5-turbo";
+            $data["messages"] = $messages;
+            $data["max_tokens"] = 50;
+
+            // init curl
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_POST, 1);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+            
+            $result = curl_exec($curl);
+            if (curl_errno($curl)) {
+                return 'Error:' . curl_error($curl);
+            } else {
+                return json_decode($result);
+            }
+            curl_close($curl);
+        else:
+            return '';
+        endif;
+    }
+    // AJ End
     
     public function status($id=NULL, $status=NULL, $redirect_uri = '')
     {
@@ -1581,569 +1645,569 @@ class Estate extends Admin_Controller
         return TRUE;
 	}
     
-        public function import_csv() {
-            $this->load->library('Importcsv');
-            /* feature */
-            $xml='file.csv';
-            $config['allowed_types'] = 'csv|xml|txt|text';
-            $config['allowed_types'] = '*'; // test
-            $config['upload_path'] = './files/';
-            $config['overwrite'] = TRUE;
-            $this->data['message'] = '';
-            
-            $this->load->library('upload', $config);
-            $this->data['skipped']=0;
-            
-            $this->form_validation->set_rules('csv_url', "lang: CSV Url",'trim');
-            
-            if($this->form_validation->run()== TRUE) {
-                if($this->config->item('app_type') == 'demo')
-                {
-                    $this->session->set_flashdata('error', 
-                            lang_check('Data editing disabled in demo'));
-                    redirect('admin/estate');
-                    exit();
-                }
-                
-                $google_gps = false;
-                if($this->input->post('google_gps') && $this->input->post('google_gps')==1){
-                   $google_gps = true;
-                } 
-                
-                    if($this->input->post('csv_url')) {
-                        if(preg_match('/\.(csv|xml|txt|text)$/i', $this->input->post('csv_url'))){
-                        // Load csv file for import
-                        $xmlurl = trim($this->input->post('csv_url'));
-                        /*$imports=$this->importcsv->start_import($xmlurl);*/
-                        
-                        if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
-                            $imports=$this->importcsv->start_import($xmlurl, true, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
-                        } else {
-                            $imports=$this->importcsv->start_import($xmlurl, false, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
-                        }
-                        
-                        $this->data['imports']= $imports['info'];
-                        $this->data['skipped']= $imports['count_skip'];
-                        
-                        } else {
-                            $this->data['error'] = 'Set current csv link';
-                        }
-                    } else if($this->upload->do_upload('userfile_csv')){
-                        $this->upload->do_upload('userfile_xml');
-                        $upload_data = $this->upload->data();
-                        $file_path = $upload_data['full_path'];
-
-                        // Load csv file for import
-                        $xmlurl = $file_path;
-                        
-                        if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
-                            $imports=$this->importcsv->start_import($xmlurl, true, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
-                        } else {
-                            $imports=$this->importcsv->start_import($xmlurl,false, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
-                        }
-                        
-                        $this->data['imports']= $imports['info'];
-                        $this->data['skipped']= $imports['count_skip'];
-                        if(isset($imports['message']))
-                            $this->data['message']= $imports['message'];
-                        
-                                
-                    } else {
-                        /* error */
-                        $this->data['error'] = $this->upload->display_errors('', '');
-                    }
+    public function import_csv() {
+        $this->load->library('Importcsv');
+        /* feature */
+        $xml='file.csv';
+        $config['allowed_types'] = 'csv|xml|txt|text';
+        $config['allowed_types'] = '*'; // test
+        $config['upload_path'] = './files/';
+        $config['overwrite'] = TRUE;
+        $this->data['message'] = '';
+        
+        $this->load->library('upload', $config);
+        $this->data['skipped']=0;
+        
+        $this->form_validation->set_rules('csv_url', "lang: CSV Url",'trim');
+        
+        if($this->form_validation->run()== TRUE) {
+            if($this->config->item('app_type') == 'demo')
+            {
+                $this->session->set_flashdata('error', 
+                        lang_check('Data editing disabled in demo'));
+                redirect('admin/estate');
+                exit();
             }
-                
+            
+            $google_gps = false;
+            if($this->input->post('google_gps') && $this->input->post('google_gps')==1){
+                $google_gps = true;
+            } 
+            
+                if($this->input->post('csv_url')) {
+                    if(preg_match('/\.(csv|xml|txt|text)$/i', $this->input->post('csv_url'))){
+                    // Load csv file for import
+                    $xmlurl = trim($this->input->post('csv_url'));
+                    /*$imports=$this->importcsv->start_import($xmlurl);*/
+                    
+                    if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
+                        $imports=$this->importcsv->start_import($xmlurl, true, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
+                    } else {
+                        $imports=$this->importcsv->start_import($xmlurl, false, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
+                    }
+                    
+                    $this->data['imports']= $imports['info'];
+                    $this->data['skipped']= $imports['count_skip'];
+                    
+                    } else {
+                        $this->data['error'] = 'Set current csv link';
+                    }
+                } else if($this->upload->do_upload('userfile_csv')){
+                    $this->upload->do_upload('userfile_xml');
+                    $upload_data = $this->upload->data();
+                    $file_path = $upload_data['full_path'];
+
+                    // Load csv file for import
+                    $xmlurl = $file_path;
+                    
+                    if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
+                        $imports=$this->importcsv->start_import($xmlurl, true, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
+                    } else {
+                        $imports=$this->importcsv->start_import($xmlurl,false, $this->input->post('max_images'), $google_gps, $this->input->post('limit_listings'));
+                    }
+                    
+                    $this->data['imports']= $imports['info'];
+                    $this->data['skipped']= $imports['count_skip'];
+                    if(isset($imports['message']))
+                        $this->data['message']= $imports['message'];
+                    
+                            
+                } else {
+                    /* error */
+                    $this->data['error'] = $this->upload->display_errors('', '');
+                }
+        }
+            
         // Load view
         $this->data['subview'] = 'admin/estate/import_csv';
         $this->load->view('admin/_layout_main', $this->data);
+    }
+    
+    function export_csv ($limit_properties=NULL, $offset_properties=0){
+        $this->load->library('importcsv');
+        $this->load->helper('download');
+        
+        $date = date('Y-m-d H:i:s');
+        force_download('export_'.$date.'.csv', $this->importcsv->get_csv($limit_properties, $offset_properties));
+        
+    }
+        
+    /*
+        * 
+        *  Import places from https://developers.google.com/places/web-service/
+        * 
+        */
+    
+    function import_google_places () {
+        
+        if(config_item('import_google_places')!== TRUE || !file_exists(APPPATH.'libraries/Import_google_places.php')) {
+            redirect('admin/estate');
         }
         
-        function export_csv ($limit_properties=NULL, $offset_properties=0){
-            $this->load->library('importcsv');
-            $this->load->helper('download');
+        $this->load->library('import_google_places');
+        $this->load->model('estate_m');
+        $this->load->model('treefield_m');
+        
+        /* add libraries and model */
+        $this->CI = &get_instance();
+        $this->CI->load->model('estate_m');
+        $this->CI->load->model('file_m');
+        $this->CI->load->model('language_m');
+        $this->CI->load->model('repository_m');
+        $this->CI->load->library('uploadHandler', array('initialize'=>FALSE));
+        $this->CI->load->library('ghelper');
+        $this->CI->load->model('option_m',2);
+        $lang_id =  $this->language_m->get_default_id();
+        
+        $this->data['category_list'] = $this->option_m->get_field_values($lang_id, 2);
+        $this->data['marker_list'] = $this->option_m->get_field_values($lang_id, 6);
+        $this->data['message']='';
+        
+        $this->data['gps'] = '';
+        if(isset($this->data['settings']['gps']) && !empty($this->data['settings']['gps']))
+            $this->data['gps'] = $this->data['settings']['gps'];
+        
+        // from https://developers.google.com/places/supported_types#table1
+        $types = array('accounting','airport','accounting','airport','amusement_park','aquarium','art_gallery','atm','bakery','bank',
+                        'bar','beauty_salon','bicycle_store','book_store','bowling_alley','bus_station','cafe','campground',
+                        'car_dealer','car_rental','car_repair','car_wash','casino','cemetery','church','city_hall','clothing_store','convenience_store',
+                        'courthouse','dentist','department_store','doctor','electrician','electronics_store','embassy','fire_station',
+                        'florist','food','funeral_home','furniture_store','gas_station','gas_station','general_contractor','grocery_or_supermarket',                
+                        'gym','hair_care','hardware_store','health','hindu_temple','home_goods_store','hospital','insurance_agency','jewelry_store',
+                        'laundry','lawyer','library','liquor_store','local_government_office','locksmith','lodging','meal_delivery','meal_takeaway',
+                        'mosque','movie_rental','movie_theater','moving_company','museum','night_club','painter','park','parking',
+                        'pet_store','pharmacy','physiotherapist','place_of_worship','plumber','police','post_office','real_estate_agency',
+                        'restaurant','roofing_contractor','rv_park','school','shoe_store','shopping_mall','spa','stadium','storage','store',
+                        'subway_station','synagogue','taxi_stand','train_station','transit_station','travel_agency','university','veterinary_care',
+                        'zoo'
+                    );
+        
+        $this->data['types_list']=  array_combine($types,$types);
+        
+        $langs_api = array(
+                "ar"=> lang_check("Arabic"),
+                "bg"=> lang_check("Bulgarian"),
+                "bn"=> lang_check("Bengali"),
+                "ca"=> lang_check("Catalan"),
+                "cs"=> lang_check("Czech"),
+                "da"=> lang_check("Danish"),
+                "de"=> lang_check("German"),
+                "el"=> lang_check("Greek"),
+                "en"=> lang_check("English"),
+                "en-AU"=> lang_check("English (Australian)"),
+                "en-GB"=> lang_check("English (Great Britain)"),
+                "es"=> lang_check("Spanish"),
+                "eu"=> lang_check("Basque"),
+                "fa"=> lang_check("Farsi"),
+                "fi"=> lang_check("Finnish"),
+                "fil"=>lang_check("Filipino"),
+                "fr"=> lang_check("French"),
+                "gl"=> lang_check("Galician"),
+                "gu"=> lang_check("Gujarati"),
+                "hi"=> lang_check("Hindi"),
+                "hr"=> lang_check("Croatian"),
+                "hu"=> lang_check("Hungarian"),
+                "id"=> lang_check("Indonesian"),
+                "it"=> lang_check("Italian"),
+                "iw"=> lang_check("Hebrew"),
+                "ja"=> lang_check("Japanese"),
+                "kn"=> lang_check("Kannada"),
+                "ko"=> lang_check("Korean"),
+                "lt"=> lang_check("Lithuanian"),
+                "lv"=> lang_check("Latvian"),
+                "ml"=> lang_check("Malayalam"),
+                "mr"=> lang_check("Marathi"),
+                "nl"=> lang_check("Dutch"),
+                "no"=> lang_check("Norwegian"),
+                "pl"=> lang_check("Polish"),
+                "pt"=> lang_check("Portuguese"),
+                "pt-BR"=> lang_check("Portuguese (Brazil)"),
+                "pt-PT"=> lang_check("Portuguese (Portugal)"),
+                "ro"=> lang_check("Romanian"),
+                "ru"=> lang_check("Russian"),
+                "sk"=> lang_check("Slovak"),
+                "sl"=> lang_check("Slovenian"),
+                "sr"=> lang_check("Serbian"),
+                "sv"=> lang_check("Swedish"),
+                "ta"=> lang_check("Tamil"),
+                "te"=> lang_check("Telugu"),
+                "th"=> lang_check("Thai"),
+                "tl"=> lang_check("Tagalog"),
+                "tr"=> lang_check("Turkish"),
+                "uk"=> lang_check("Ukrainian"),
+                "vi"=> lang_check("Vietnamese"),
+                "zh-CN"=> lang_check("Chinese (Simplified)"),
+                "zh-TW"=> lang_check("Chinese (Traditional)"),
+        );
+        $this->data['langs_api']=  $langs_api;
+        $this->data['lang_code'] = $this->language_m->get_default();
+        
+        $form_import = $this->input->post('form_import');
+        
+        $this->data['gps_google']='';
+        $this->data['preview_data']=array();
+        $this->data['imported']='';
+        $this->data['marker_category']='';
+        $this->data['marker_category_string']='';
+        
+        // $form_import==1 - import form, else preview
+        if($form_import==1) {
+            $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
+            $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
+            $this->form_validation->set_rules('type', "lang: Type",'trim|required');
+            $this->form_validation->set_rules('name', "lang: Name",'trim');
             
-            $date = date('Y-m-d H:i:s');
-            force_download('export_'.$date.'.csv', $this->importcsv->get_csv($limit_properties, $offset_properties));
-            
+        } else {
+            $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
+            $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
+            $this->form_validation->set_rules('type', "lang: Type",'trim|required');
+            $this->form_validation->set_rules('name', "lang: Name",'trim');
         }
         
-        /*
-         * 
-         *  Import places from https://developers.google.com/places/web-service/
-         * 
-         */
         
-        function import_google_places () {
-            
-            if(config_item('import_google_places')!== TRUE || !file_exists(APPPATH.'libraries/Import_google_places.php')) {
+        
+        if($this->form_validation->run()== TRUE) {
+            if($this->config->item('app_type') == 'demo')
+            {
+                $this->session->set_flashdata('error', 
+                        lang_check('Data editing disabled in demo'));
                 redirect('admin/estate');
+                exit();
             }
+            // time limit increase
+            set_time_limit(9999999);
             
-            $this->load->library('import_google_places');
-            $this->load->model('estate_m');
-            $this->load->model('treefield_m');
+            $gps_google= $this->input->post('gps_google');
+            $gps_google= str_replace(' ', '', $gps_google);
+
+            $this->data['gps_google'] = $this->input->post('gps_google');
+            $this->data['radius'] = $this->input->post('radius');
+            $this->data['type'] = $this->input->post('type');
+            $this->data['name'] = $this->input->post('name');
+            $this->data['lang_api'] = $this->input->post('lang_api');
+            $this->data['geocode_api'] = $this->input->post('geocode_api');
+            $this->data['place_in_detail'] = $this->input->post('place_in_detail');
             
-            /* add libraries and model */
-            $this->CI = &get_instance();
-            $this->CI->load->model('estate_m');
-            $this->CI->load->model('file_m');
-            $this->CI->load->model('language_m');
-            $this->CI->load->model('repository_m');
-            $this->CI->load->library('uploadHandler', array('initialize'=>FALSE));
-            $this->CI->load->library('ghelper');
-            $this->CI->load->model('option_m',2);
-            $lang_id =  $this->language_m->get_default_id();
+            $category_tree = $this->input->post('option79_1'); 
+            $cache_results = $this->input->post('cache_results');
+            if($cache_results)
+                $this->import_google_places->caching_results = unserialize(base64_decode($cache_results));
             
-            $this->data['category_list'] = $this->option_m->get_field_values($lang_id, 2);
-            $this->data['marker_list'] = $this->option_m->get_field_values($lang_id, 6);
-            $this->data['message']='';
-            
-            $this->data['gps'] = '';
-            if(isset($this->data['settings']['gps']) && !empty($this->data['settings']['gps']))
-                $this->data['gps'] = $this->data['settings']['gps'];
-            
-            // from https://developers.google.com/places/supported_types#table1
-            $types = array('accounting','airport','accounting','airport','amusement_park','aquarium','art_gallery','atm','bakery','bank',
-                            'bar','beauty_salon','bicycle_store','book_store','bowling_alley','bus_station','cafe','campground',
-                            'car_dealer','car_rental','car_repair','car_wash','casino','cemetery','church','city_hall','clothing_store','convenience_store',
-                            'courthouse','dentist','department_store','doctor','electrician','electronics_store','embassy','fire_station',
-                            'florist','food','funeral_home','furniture_store','gas_station','gas_station','general_contractor','grocery_or_supermarket',                
-                            'gym','hair_care','hardware_store','health','hindu_temple','home_goods_store','hospital','insurance_agency','jewelry_store',
-                            'laundry','lawyer','library','liquor_store','local_government_office','locksmith','lodging','meal_delivery','meal_takeaway',
-                            'mosque','movie_rental','movie_theater','moving_company','museum','night_club','painter','park','parking',
-                            'pet_store','pharmacy','physiotherapist','place_of_worship','plumber','police','post_office','real_estate_agency',
-                            'restaurant','roofing_contractor','rv_park','school','shoe_store','shopping_mall','spa','stadium','storage','store',
-                            'subway_station','synagogue','taxi_stand','train_station','transit_station','travel_agency','university','veterinary_care',
-                            'zoo'
-                        );
-            
-            $this->data['types_list']=  array_combine($types,$types);
-            
-            $langs_api = array(
-                    "ar"=> lang_check("Arabic"),
-                    "bg"=> lang_check("Bulgarian"),
-                    "bn"=> lang_check("Bengali"),
-                    "ca"=> lang_check("Catalan"),
-                    "cs"=> lang_check("Czech"),
-                    "da"=> lang_check("Danish"),
-                    "de"=> lang_check("German"),
-                    "el"=> lang_check("Greek"),
-                    "en"=> lang_check("English"),
-                    "en-AU"=> lang_check("English (Australian)"),
-                    "en-GB"=> lang_check("English (Great Britain)"),
-                    "es"=> lang_check("Spanish"),
-                    "eu"=> lang_check("Basque"),
-                    "fa"=> lang_check("Farsi"),
-                    "fi"=> lang_check("Finnish"),
-                    "fil"=>lang_check("Filipino"),
-                    "fr"=> lang_check("French"),
-                    "gl"=> lang_check("Galician"),
-                    "gu"=> lang_check("Gujarati"),
-                    "hi"=> lang_check("Hindi"),
-                    "hr"=> lang_check("Croatian"),
-                    "hu"=> lang_check("Hungarian"),
-                    "id"=> lang_check("Indonesian"),
-                    "it"=> lang_check("Italian"),
-                    "iw"=> lang_check("Hebrew"),
-                    "ja"=> lang_check("Japanese"),
-                    "kn"=> lang_check("Kannada"),
-                    "ko"=> lang_check("Korean"),
-                    "lt"=> lang_check("Lithuanian"),
-                    "lv"=> lang_check("Latvian"),
-                    "ml"=> lang_check("Malayalam"),
-                    "mr"=> lang_check("Marathi"),
-                    "nl"=> lang_check("Dutch"),
-                    "no"=> lang_check("Norwegian"),
-                    "pl"=> lang_check("Polish"),
-                    "pt"=> lang_check("Portuguese"),
-                    "pt-BR"=> lang_check("Portuguese (Brazil)"),
-                    "pt-PT"=> lang_check("Portuguese (Portugal)"),
-                    "ro"=> lang_check("Romanian"),
-                    "ru"=> lang_check("Russian"),
-                    "sk"=> lang_check("Slovak"),
-                    "sl"=> lang_check("Slovenian"),
-                    "sr"=> lang_check("Serbian"),
-                    "sv"=> lang_check("Swedish"),
-                    "ta"=> lang_check("Tamil"),
-                    "te"=> lang_check("Telugu"),
-                    "th"=> lang_check("Thai"),
-                    "tl"=> lang_check("Tagalog"),
-                    "tr"=> lang_check("Turkish"),
-                    "uk"=> lang_check("Ukrainian"),
-                    "vi"=> lang_check("Vietnamese"),
-                    "zh-CN"=> lang_check("Chinese (Simplified)"),
-                    "zh-TW"=> lang_check("Chinese (Traditional)"),
-            );
-            $this->data['langs_api']=  $langs_api;
-            $this->data['lang_code'] = $this->language_m->get_default();
-            
-            $form_import = $this->input->post('form_import');
-            
-            $this->data['gps_google']='';
-            $this->data['preview_data']=array();
-            $this->data['imported']='';
-            $this->data['marker_category']='';
-            $this->data['marker_category_string']='';
-            
-            // $form_import==1 - import form, else preview
+            $geocode = false;
             if($form_import==1) {
-                $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
-                $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
-                $this->form_validation->set_rules('type', "lang: Type",'trim|required');
-                $this->form_validation->set_rules('name', "lang: Name",'trim');
+                // import start
+                $add_multiple = $this->input->post('add_multiple');
+                $category = $this->input->post('type_db');
+                $marker_category = $this->input->post('marker_category');
+                if($this->data['geocode_api'] == 1)
+                    $geocode = true;
                 
+                $preview_data=$this->import_google_places->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], false, $this->input->post('lang_api'), $add_multiple, $category, $marker_category, $this->input->post('max_images'),$geocode, $this->data['place_in_detail'], $category_tree);
+                $this->data['imported']=true;
+                $this->data['preview_data']=$preview_data['preview_data'];
+                if(isset($preview_data['message']))
+                    $this->data['message']=$preview_data['message'];
+
             } else {
-                $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
-                $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
-                $this->form_validation->set_rules('type', "lang: Type",'trim|required');
-                $this->form_validation->set_rules('name', "lang: Name",'trim');
-            }
-            
-            
-            
-            if($this->form_validation->run()== TRUE) {
-                if($this->config->item('app_type') == 'demo')
-                {
-                    $this->session->set_flashdata('error', 
-                            lang_check('Data editing disabled in demo'));
-                    redirect('admin/estate');
-                    exit();
-                }
-                // time limit increase
-                set_time_limit(9999999);
+                // preview import start
+                $preview_data=$this->import_google_places->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], true, $this->input->post('lang_api'));
+                $this->data['preview_data']=$preview_data['preview_data'];
                 
-                $gps_google= $this->input->post('gps_google');
-                $gps_google= str_replace(' ', '', $gps_google);
-
-                $this->data['gps_google'] = $this->input->post('gps_google');
-                $this->data['radius'] = $this->input->post('radius');
-                $this->data['type'] = $this->input->post('type');
-                $this->data['name'] = $this->input->post('name');
-                $this->data['lang_api'] = $this->input->post('lang_api');
-                $this->data['geocode_api'] = $this->input->post('geocode_api');
-                $this->data['place_in_detail'] = $this->input->post('place_in_detail');
+                $this->data['output_log']=$this->import_google_places->google_output;
+                $this->data['cache_results'] = base64_encode(serialize($this->import_google_places->caching_results));
                 
-                $category_tree = $this->input->post('option79_1'); 
-                $cache_results = $this->input->post('cache_results');
-                if($cache_results)
-                    $this->import_google_places->caching_results = unserialize(base64_decode($cache_results));
+                if(isset($preview_data['message']))
+                    $this->data['message']=$preview_data['message'];
                 
-                $geocode = false;
-                if($form_import==1) {
-                   // import start
-                   $add_multiple = $this->input->post('add_multiple');
-                   $category = $this->input->post('type_db');
-                   $marker_category = $this->input->post('marker_category');
-                   if($this->data['geocode_api'] == 1)
-                       $geocode = true;
-                   
-                    $preview_data=$this->import_google_places->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], false, $this->input->post('lang_api'), $add_multiple, $category, $marker_category, $this->input->post('max_images'),$geocode, $this->data['place_in_detail'], $category_tree);
-                    $this->data['imported']=true;
-                    $this->data['preview_data']=$preview_data['preview_data'];
-                    if(isset($preview_data['message']))
-                        $this->data['message']=$preview_data['message'];
-
-                } else {
-                    // preview import start
-                    $preview_data=$this->import_google_places->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], true, $this->input->post('lang_api'));
-                    $this->data['preview_data']=$preview_data['preview_data'];
-                    
-                    $this->data['output_log']=$this->import_google_places->google_output;
-                    $this->data['cache_results'] = base64_encode(serialize($this->import_google_places->caching_results));
-                    
-                    if(isset($preview_data['message']))
-                        $this->data['message']=$preview_data['message'];
-                    
-                    // if 0 results
-                    if(empty($preview_data)) {
-                        $this->data['error']=lang_check('0 results for import, please check more info in Developer log (at bottom of page)');
-                    }
+                // if 0 results
+                if(empty($preview_data)) {
+                    $this->data['error']=lang_check('0 results for import, please check more info in Developer log (at bottom of page)');
                 }
             }
-            
-            // Load view
-            $this->data['subview'] = 'admin/estate/import_google_places';
-            $this->load->view('admin/_layout_main', $this->data);
         }
         
-        function import_xml2u() {
-            if(!file_exists(APPPATH.'libraries/Xml2u.php') || $this->session->userdata('type')!='ADMIN') {
-                exit('XML2U modul is not installed');
-            }
-            
-            $this->data['message']='';
-            $this->load->library('xml2u');
-            
-            $lang_id =  $this->language_m->get_default_id();
-            $this->form_validation->set_rules('xml_url', "lang: XML Url", 'trim|required');
-            $this->form_validation->set_rules('xml_offset', "lang: Offset", 'trim|numeric');
-            $this->form_validation->set_rules('xml_limit', "lang: Limit", 'trim|numeric');
-            
-            
-            if($this->form_validation->run() == TRUE) {
-                
-                if($this->config->item('app_type') == 'demo')
-                {
-                    $this->session->set_flashdata('error', 
-                            lang_check('Data editing disabled in demo'));
-                    redirect('admin/estate');
-                    exit();
-                }
-                
-                $url = $this->input->post('xml_url'); 
-                
-                $overwrite_existing = false;
-                if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
-                   $overwrite_existing = true;
-                } 
-                
-                $activated = false;
-                if($this->input->post('activated') && $this->input->post('activated')==1){
-                   $activated = true;
-                } 
-                
-                $google_gps = false;
-                if($this->input->post('google_gps') && $this->input->post('google_gps')==1){
-                   $google_gps = true;
-                } 
-                
-                $offset= false;
-                if($this->input->post('xml_offset') && !empty($this->input->post('xml_offset'))){
-                   $offset = $this->input->post('xml_offset');
-                } 
-                
-                $limit = false;
-                if($this->input->post('xml_limit') && !empty($this->input->post('xml_limit'))){
-                   $limit = $this->input->post('xml_limit');
-                } 
-                
-                $result_import = $this->xml2u->import($url, $overwrite_existing, $activated, $google_gps, $this->input->post('max_images'), $this->input->post('user_id'), $offset, $limit);
-                $this->data['imports']= $result_import['info'];
-                $this->data['skipped']= $result_import['count_skip'];
-                $this->data['count_exists_overwrite']= $result_import['count_exists_overwrite'];
-                $this->data['count_exists']= $result_import['count_exists'];
-                
-                if(isset($result_import['message']))
-                    $this->data['message']= $result_import['message'];
-                
-            }
-            
-            // Load view
-            $this->data['subview'] = 'admin/estate/import_xml2u';
-            $this->load->view('admin/_layout_main', $this->data);
-            
+        // Load view
+        $this->data['subview'] = 'admin/estate/import_google_places';
+        $this->load->view('admin/_layout_main', $this->data);
+    }
+    
+    function import_xml2u() {
+        if(!file_exists(APPPATH.'libraries/Xml2u.php') || $this->session->userdata('type')!='ADMIN') {
+            exit('XML2U modul is not installed');
         }
         
+        $this->data['message']='';
+        $this->load->library('xml2u');
         
-          /*
-         * 
-         *  Import places from https://developers.google.com/places/web-service/
-         * 
-         */
+        $lang_id =  $this->language_m->get_default_id();
+        $this->form_validation->set_rules('xml_url', "lang: XML Url", 'trim|required');
+        $this->form_validation->set_rules('xml_offset', "lang: Offset", 'trim|numeric');
+        $this->form_validation->set_rules('xml_limit', "lang: Limit", 'trim|numeric');
         
-        function import_foursquare () {
+        
+        if($this->form_validation->run() == TRUE) {
             
-            if(config_item('import_foursquare')!== TRUE || !file_exists(APPPATH.'libraries/Import_foursquare.php')) {
+            if($this->config->item('app_type') == 'demo')
+            {
+                $this->session->set_flashdata('error', 
+                        lang_check('Data editing disabled in demo'));
                 redirect('admin/estate');
+                exit();
             }
             
-            $this->load->library('import_foursquare');
-            $this->load->model('estate_m');
-            /* add libraries and model */
+            $url = $this->input->post('xml_url'); 
             
-            $lang_id =  $this->language_m->get_default_id();
+            $overwrite_existing = false;
+            if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
+                $overwrite_existing = true;
+            } 
             
-            $this->data['category_list'] = $this->option_m->get_field_values($lang_id, 2);
-            $this->data['marker_list'] = $this->option_m->get_field_values($lang_id, 6);
+            $activated = false;
+            if($this->input->post('activated') && $this->input->post('activated')==1){
+                $activated = true;
+            } 
             
-            $this->data['gps'] = '';
-            if(isset($this->data['settings']['gps']) && !empty($this->data['settings']['gps']))
-                $this->data['gps'] = $this->data['settings']['gps'];
+            $google_gps = false;
+            if($this->input->post('google_gps') && $this->input->post('google_gps')==1){
+                $google_gps = true;
+            } 
             
-            // from https://developer.foursquare.com/docs/venues/explore
-            $types = array('food','drinks','coffee','arts','outdoors','sights','trending','specials','nextVenues','topPicks'
-                        );
+            $offset= false;
+            if($this->input->post('xml_offset') && !empty($this->input->post('xml_offset'))){
+                $offset = $this->input->post('xml_offset');
+            } 
             
+            $limit = false;
+            if($this->input->post('xml_limit') && !empty($this->input->post('xml_limit'))){
+                $limit = $this->input->post('xml_limit');
+            } 
             
-            /* GENERATE ARRAY WITH CATEGORY 
-             *  output example:
-             *   array (
-             *     'Arts & Entertainment' => '4d4b7104d754a06370d81259',
-             *     '-Amphitheater' => '56aa371be4b08b9a8d5734db',
-             *     '-Aquarium' => '4fceea171983d5d06c3e9823',
-             *     '-Arcade' => '4bf58dd8d48988d1e1931735',
-             *    ...
-             *  );
-             *              
-             */
-            $generate_categories_list = function(&$results=NULL, $categories=NULL, $level=1) use (&$generate_categories_list) {
-                $level_gen = str_pad('', $level*3, ' - ');
-                foreach ($categories as $key => $value) {
-                    $results[$level_gen.$value->name] = $value->id;
-                    if(isset($value->categories) && !empty($value->categories)) {
-                        $generate_categories_list($results, $value->categories, $level+1);
-                    }
-                }
-            };
-            $url = 'https://api.foursquare.com/v2/venues/categories?oauth_token=G0EZ51NXVYDAXGHHYVKLCKJX5ZF4LPA4TIKLPQ3U1MSFXT33&v=20170627';
-            $categories_list = array();
-            @$json = file_get_contents($url);
-            $json= json_decode($json);
-            $response = $json->response;
-            $categories = $response->categories;
-            $generate_categories_list($categories_list,$categories);
-            /*
-            dump($categories_list);
-            exit();
+            $result_import = $this->xml2u->import($url, $overwrite_existing, $activated, $google_gps, $this->input->post('max_images'), $this->input->post('user_id'), $offset, $limit);
+            $this->data['imports']= $result_import['info'];
+            $this->data['skipped']= $result_import['count_skip'];
+            $this->data['count_exists_overwrite']= $result_import['count_exists_overwrite'];
+            $this->data['count_exists']= $result_import['count_exists'];
+            
+            if(isset($result_import['message']))
+                $this->data['message']= $result_import['message'];
+            
+        }
+        
+        // Load view
+        $this->data['subview'] = 'admin/estate/import_xml2u';
+        $this->load->view('admin/_layout_main', $this->data);
+        
+    }
+        
+        
+    /*
+    * 
+    *  Import places from https://developers.google.com/places/web-service/
+    * 
+    */
+
+    function import_foursquare () {
+        
+        if(config_item('import_foursquare')!== TRUE || !file_exists(APPPATH.'libraries/Import_foursquare.php')) {
+            redirect('admin/estate');
+        }
+        
+        $this->load->library('import_foursquare');
+        $this->load->model('estate_m');
+        /* add libraries and model */
+        
+        $lang_id =  $this->language_m->get_default_id();
+        
+        $this->data['category_list'] = $this->option_m->get_field_values($lang_id, 2);
+        $this->data['marker_list'] = $this->option_m->get_field_values($lang_id, 6);
+        
+        $this->data['gps'] = '';
+        if(isset($this->data['settings']['gps']) && !empty($this->data['settings']['gps']))
+            $this->data['gps'] = $this->data['settings']['gps'];
+        
+        // from https://developer.foursquare.com/docs/venues/explore
+        $types = array('food','drinks','coffee','arts','outdoors','sights','trending','specials','nextVenues','topPicks'
+                    );
+        
+        
+        /* GENERATE ARRAY WITH CATEGORY 
+            *  output example:
+            *   array (
+            *     'Arts & Entertainment' => '4d4b7104d754a06370d81259',
+            *     '-Amphitheater' => '56aa371be4b08b9a8d5734db',
+            *     '-Aquarium' => '4fceea171983d5d06c3e9823',
+            *     '-Arcade' => '4bf58dd8d48988d1e1931735',
+            *    ...
+            *  );
+            *              
             */
-            
-            $this->data['types_list']=  array_flip($categories_list);
-            //$this->data['types_list']=  array_combine($types,$types);
-            
-            $form_import = $this->input->post('form_import');
-            
-            $this->data['gps_google']='';
-            $this->data['preview_data']=array();
-            $this->data['imported']='';
-            $this->data['marker_category']='';
-            $this->data['marker_category_string']='';
-            $this->data['message']='';
-            $this->data['message_successful']='';
-            $this->data['type'] ='';
-            
-            // $form_import==1 - import form, else preview
-            if($form_import==1) {
-                $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
-                $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
-                //$this->form_validation->set_rules('type', "lang: Type",'trim|required');
-                //$this->form_validation->set_rules('name', "lang: Name",'trim');
-                
-            } else {
-                $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
-                $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
-                //$this->form_validation->set_rules('type', "lang: Type",'trim|required');
-               // $this->form_validation->set_rules('name', "lang: Name",'trim');
-            
-            }
-            
-            if($this->form_validation->run()== TRUE) {
-                
-                if($this->config->item('app_type') == 'demo')
-                {
-                    $this->session->set_flashdata('error', 
-                            lang_check('Data editing disabled in demo'));
-                    redirect('admin/estate');
-                    exit();
-                }
-                
-                $gps_google= $this->input->post('gps_google');
-                $gps_google= str_replace(' ', '', $gps_google);
-
-                $this->data['gps_google'] = $this->input->post('gps_google');
-                $this->data['radius'] = $this->input->post('radius');
-                $this->data['type'] = $this->input->post('type');
-                if(is_array($this->data['type']))
-                    $this->data['type'] = implode(',', $this->data['type']);
-                
-                $this->data['name'] = $this->input->post('name');
-
-                if($form_import==1) {
-                   // import start
-                   $add_multiple = $this->input->post('add_multiple');
-                   $category = $this->input->post('type_db');
-                   $marker_category = $this->input->post('marker_category');
-
-                    $preview_data=$this->import_foursquare->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], false, $add_multiple, $category, $marker_category, $this->input->post('max_images'));
-                    $this->data['imported']=true;
-                    $this->data['preview_data']=$preview_data['data'];
-                    
-                    if(isset($preview_data['message']))
-                        $this->data['message']=$preview_data['message'];
-                    else
-                        $this->data['message_successful'] = lang_check ('Import is successful');
-                    
-                } else {
-                    // preview import start
-                    $preview_data=$this->import_foursquare->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], true);
-                    $this->data['preview_data']=$preview_data['data'];
-                    
-                    if(isset($preview_data['message']))
-                        $this->data['message']=$preview_data['message'];
-
-                    // if 0 results
-                    if(empty($preview_data['data'])) {
-                        $this->data['error']=lang_check('0 results for import');
-                    }
-                    
+        $generate_categories_list = function(&$results=NULL, $categories=NULL, $level=1) use (&$generate_categories_list) {
+            $level_gen = str_pad('', $level*3, ' - ');
+            foreach ($categories as $key => $value) {
+                $results[$level_gen.$value->name] = $value->id;
+                if(isset($value->categories) && !empty($value->categories)) {
+                    $generate_categories_list($results, $value->categories, $level+1);
                 }
             }
+        };
+        $url = 'https://api.foursquare.com/v2/venues/categories?oauth_token=G0EZ51NXVYDAXGHHYVKLCKJX5ZF4LPA4TIKLPQ3U1MSFXT33&v=20170627';
+        $categories_list = array();
+        @$json = file_get_contents($url);
+        $json= json_decode($json);
+        $response = $json->response;
+        $categories = $response->categories;
+        $generate_categories_list($categories_list,$categories);
+        /*
+        dump($categories_list);
+        exit();
+        */
+        
+        $this->data['types_list']=  array_flip($categories_list);
+        //$this->data['types_list']=  array_combine($types,$types);
+        
+        $form_import = $this->input->post('form_import');
+        
+        $this->data['gps_google']='';
+        $this->data['preview_data']=array();
+        $this->data['imported']='';
+        $this->data['marker_category']='';
+        $this->data['marker_category_string']='';
+        $this->data['message']='';
+        $this->data['message_successful']='';
+        $this->data['type'] ='';
+        
+        // $form_import==1 - import form, else preview
+        if($form_import==1) {
+            $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
+            $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
+            //$this->form_validation->set_rules('type', "lang: Type",'trim|required');
+            //$this->form_validation->set_rules('name', "lang: Name",'trim');
             
-            // Load view
-            $this->data['subview'] = 'admin/estate/import_foursquare';
-            $this->load->view('admin/_layout_main', $this->data);
+        } else {
+            $this->form_validation->set_rules('gps_google', "lang: Gps google",'trim|required');
+            $this->form_validation->set_rules('radius', "lang: Radius",'trim|required');
+            //$this->form_validation->set_rules('type', "lang: Type",'trim|required');
+            // $this->form_validation->set_rules('name', "lang: Name",'trim');
+        
         }
         
-        function import_eventful(){
+        if($this->form_validation->run()== TRUE) {
             
-            if(!file_exists(APPPATH.'libraries/Eventful.php') || $this->session->userdata('type')!='ADMIN') {
-                exit('Eventful modul is not installed');
+            if($this->config->item('app_type') == 'demo')
+            {
+                $this->session->set_flashdata('error', 
+                        lang_check('Data editing disabled in demo'));
+                redirect('admin/estate');
+                exit();
             }
             
-            $allowed_execution_time  = ini_get('max_execution_time')-180;
-            $this->load->library('eventful', array('allowed_execution_time'=>$allowed_execution_time));
+            $gps_google= $this->input->post('gps_google');
+            $gps_google= str_replace(' ', '', $gps_google);
+
+            $this->data['gps_google'] = $this->input->post('gps_google');
+            $this->data['radius'] = $this->input->post('radius');
+            $this->data['type'] = $this->input->post('type');
+            if(is_array($this->data['type']))
+                $this->data['type'] = implode(',', $this->data['type']);
             
-            $this->load->model('treefield_m');
-            
-            $this->data['event_categories']=$this->eventful->get_categories();
-             
-            $this->data['message']='';
-            
-            $lang_id =  $this->language_m->get_default_id();
-            $this->form_validation->set_rules('option79_1', "lang: Category into import", 'trim|required');
-            $this->form_validation->set_rules('event_category', "lang: Eventful categories", 'trim|required');
-            $this->form_validation->set_rules('eventful_limit_page', "lang: Eventful limit page", 'trim|required');
-            $this->form_validation->set_rules('eventful_offset_page', "lang: Eventful offset page", 'trim|required');
-            
-            
-            if($this->form_validation->run()) {
+            $this->data['name'] = $this->input->post('name');
+
+            if($form_import==1) {
+                // import start
+                $add_multiple = $this->input->post('add_multiple');
+                $category = $this->input->post('type_db');
+                $marker_category = $this->input->post('marker_category');
+
+                $preview_data=$this->import_foursquare->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], false, $add_multiple, $category, $marker_category, $this->input->post('max_images'));
+                $this->data['imported']=true;
+                $this->data['preview_data']=$preview_data['data'];
                 
-                if($this->config->item('app_type') == 'demo')
-                {
-                    $this->session->set_flashdata('error', 
-                            lang_check('Data editing disabled in demo'));
-                    redirect('admin/estate');
-                    exit();
+                if(isset($preview_data['message']))
+                    $this->data['message']=$preview_data['message'];
+                else
+                    $this->data['message_successful'] = lang_check ('Import is successful');
+                
+            } else {
+                // preview import start
+                $preview_data=$this->import_foursquare->import($this->data['gps_google'],$this->data['radius'],$this->data['type'], $this->data['name'], true);
+                $this->data['preview_data']=$preview_data['data'];
+                
+                if(isset($preview_data['message']))
+                    $this->data['message']=$preview_data['message'];
+
+                // if 0 results
+                if(empty($preview_data['data'])) {
+                    $this->data['error']=lang_check('0 results for import');
                 }
                 
-                $category = $this->input->post('option79_1'); 
-                $event_category = $this->input->post('event_category'); 
-                
-                $overwrite_existing = false;
-                if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
-                   $overwrite_existing = true;
-                } 
-                
-                /*
-                $activated = false;
-                if($this->input->post('activated') && $this->input->post('activated')==1){
-                   $activated = true;
-                } */
-                $result_import = $this->eventful->start_import($overwrite_existing, $event_category, $category, TRUE, $this->input->post('eventful_limit_page'), $this->input->post('eventful_offset_page'), $this->input->post('max_images'));
-                $this->data['imports']= $result_import['info'];
-                $this->data['skipped']= $result_import['count_skip'];
-                $this->data['count_exists_overwrite']= $result_import['count_exists_overwrite'];
-                $this->data['count_exists']= $result_import['count_exists'];
-                
-                if(isset($result_import['message']))
-                    $this->data['message']= $result_import['message'];
-                
+            }
+        }
+        
+        // Load view
+        $this->data['subview'] = 'admin/estate/import_foursquare';
+        $this->load->view('admin/_layout_main', $this->data);
+    }
+
+    function import_eventful(){
+        
+        if(!file_exists(APPPATH.'libraries/Eventful.php') || $this->session->userdata('type')!='ADMIN') {
+            exit('Eventful modul is not installed');
+        }
+        
+        $allowed_execution_time  = ini_get('max_execution_time')-180;
+        $this->load->library('eventful', array('allowed_execution_time'=>$allowed_execution_time));
+        
+        $this->load->model('treefield_m');
+        
+        $this->data['event_categories']=$this->eventful->get_categories();
+            
+        $this->data['message']='';
+        
+        $lang_id =  $this->language_m->get_default_id();
+        $this->form_validation->set_rules('option79_1', "lang: Category into import", 'trim|required');
+        $this->form_validation->set_rules('event_category', "lang: Eventful categories", 'trim|required');
+        $this->form_validation->set_rules('eventful_limit_page', "lang: Eventful limit page", 'trim|required');
+        $this->form_validation->set_rules('eventful_offset_page', "lang: Eventful offset page", 'trim|required');
+        
+        
+        if($this->form_validation->run()) {
+            
+            if($this->config->item('app_type') == 'demo')
+            {
+                $this->session->set_flashdata('error', 
+                        lang_check('Data editing disabled in demo'));
+                redirect('admin/estate');
+                exit();
             }
             
-            // Load view
-            $this->data['subview'] = 'admin/estate/import_eventful';
-            $this->load->view('admin/_layout_main', $this->data);
+            $category = $this->input->post('option79_1'); 
+            $event_category = $this->input->post('event_category'); 
+            
+            $overwrite_existing = false;
+            if($this->input->post('overwrite_existing') && $this->input->post('overwrite_existing')==1){
+                $overwrite_existing = true;
+            } 
+            
+            /*
+            $activated = false;
+            if($this->input->post('activated') && $this->input->post('activated')==1){
+                $activated = true;
+            } */
+            $result_import = $this->eventful->start_import($overwrite_existing, $event_category, $category, TRUE, $this->input->post('eventful_limit_page'), $this->input->post('eventful_offset_page'), $this->input->post('max_images'));
+            $this->data['imports']= $result_import['info'];
+            $this->data['skipped']= $result_import['count_skip'];
+            $this->data['count_exists_overwrite']= $result_import['count_exists_overwrite'];
+            $this->data['count_exists']= $result_import['count_exists'];
+            
+            if(isset($result_import['message']))
+                $this->data['message']= $result_import['message'];
+            
         }
+        
+        // Load view
+        $this->data['subview'] = 'admin/estate/import_eventful';
+        $this->load->view('admin/_layout_main', $this->data);
+    }
         
     public function clone_listing($listing_id = NULL) 
 	{
@@ -2432,7 +2496,7 @@ class Estate extends Admin_Controller
     
             $this->form_validation->set_message('_checkavailable', lang_check('Dependent field support only one field, please use same field or remove old dependents field then create new'));
             return FALSE;
-        }
+    }
 
         
     function _validation_required ($str) {

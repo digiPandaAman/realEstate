@@ -812,3 +812,21 @@ $(document).ready(function(){
 })
 
 /* end hint */
+
+function genratePrompt()
+{
+    var promptData = $('#inputOption_1_78').val();
+    if(promptData){
+        $.ajax({
+          type: "POST",
+          data: {
+              prompt: promptData,
+          },
+          url: 'genrateTextGBT',
+          success: function (response) {
+            // console.log(response,'Aman');
+            CKEDITOR.instances['inputOption_1_8'].setData(response);
+          }
+      });
+    }
+}

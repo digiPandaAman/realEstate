@@ -35,7 +35,7 @@
         <div class="homeLoanForm">
             <div class="container">
                 <p class="home-loan-heading text-left">Get Instant Detailed <b>CIBIL Score</b> Report for <b>Free</b></p>
-                <?=form_open('customform/homeLoan',['class'=>'null','autocomplete'=>'off']);?>
+                <?=form_open('customform/checkScore',['class'=>'null','autocomplete'=>'off']);?>
                 <?=$this->session->flashdata('customFormMsg');?>
                 <div class="LeadForm_Calculate">
                     <div class="form_item rupeeBox">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form_item contBox rupeeBox">
                         <span class="contCode">+91</span>
-                        <input type="text" name="mobile" class="formInput" autocomplete="off" pattern="[0-9]+{10,15}"
+                        <input type="text" name="mobile" class="formInput" autocomplete="off" pattern="[0-9]{10,15}"
                             minlength="10" maxlength="15" required="">
                         <label for="mobileNo" class=" formLabel">Mobile No.</label>
                     </div>
@@ -84,6 +84,33 @@
 
     </div>
 </section>
+
+<?php if(isset($creditScoreData) && $creditScoreData): ?>
+<section>
+    <div>
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Pan</th>
+                <th>Credit Score</th>
+                <th>Updated on</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <td><?=$creditScoreData->crName;?></td>
+                <td><?=$creditScoreData->crMobile;?></td>
+                <td><?=$creditScoreData->crPan;?></td>
+                <td><?=$creditScoreData->crScore;?></td>
+                <td><?=$creditScoreData->crDate;?></td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="<?=$creditScoreData->crPdfLink;?>" target="_blank">Downlaod PDF</a>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</section>
+<?php endif; ?>
 
 <section class="faq-section paddinngTB" id="faqs1">
 <div class="container">
