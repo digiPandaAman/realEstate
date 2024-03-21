@@ -1043,7 +1043,38 @@ body .files-list {
     -webkit-align-items: center;
     align-items: center;
 }
-    
+
+.genratePromptButton {
+    text-transform: capitalize;
+    font-size: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px 0 rgba(152, 160, 180, 10);
+    background-image: linear-gradient(to right, #E040FB, #00BCD4);
+    border-radius: 5px;
+    margin: 0;
+    transition: all 0.4s ease;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px !important;
+    display: inline-block;
+    margin-top: 10px;
+    letter-spacing: 0.6px;
+    transition: all 0.4s ease-in-out;
+}
+
+.genratePromptButton img{
+    filter: invert();
+    margin-right: 5px;
+}
+
+.genratePromptButton:hover {
+	color: #fff;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #00BCD4, #E040FB);
+    transition: all 0.4s ease-in-out;
+}
+
+
 @media (min-width: 768px){
 
     .col-sm-4.multi_columns {
