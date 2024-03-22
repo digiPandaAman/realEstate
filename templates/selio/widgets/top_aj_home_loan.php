@@ -24,7 +24,7 @@
                         <img width="100" src="<?=('assets/selfImages/axis-bank.webp');?>" />
                     </div>
 					<div class="CIBIL_score">
-						<a href="<?=base_url('en/192/cibil_score');?>" class="check_CIBIL_score_btn">Get Your CIBIL Score</a>
+						<a href="<?=base_url('en/192/cibil_score');?>" class="check_CIBIL_score_btn">Get Your Credit Score</a>
 					</div>
                 </div>
                 <div class="ProductBanner_Img">
@@ -37,7 +37,7 @@
     <div id="Description_loandetails">
         <div class="container">
             <h1 class="InnerLoanheading">Home Loan</h1>
-            <p class="short_description">Make your dream home a reality with our leading home loan services. TownManor
+            <p class="short_description">Make your dream home a reality with our leading home loan services. Townmanor
                 Money
                 has tied knots with an array of banks providing nimble and hassle-free mortgage loans. Unlock home
                 credit loans with a host of benefits, like low housing loan interest rates and smaller EMIs to space out

@@ -37,7 +37,23 @@ $href_btn = site_url($lang_code . '/' . get_results_page_id() . '/?search={"v_se
             </div>
             <div class="col-xl-6 col-lg-6 p-0">
                 <div class="intro-img">
-                    <img src="assets/images/intro/<?php echo (sw_is_safari()) ? '1.jpg' : '1.webp';?>" alt="<?php echo lang_check('View for rent');?>" class="img-fluid">
+                    <!-- slider -->
+					 <div id="carouselExampleIndicators" class="carousel slide HomeInT_Slider_page" data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+							</ol>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img  src="assets/images/intro/<?php echo (sw_is_safari()) ? '1.jpg' : '1.webp';?>" alt="<?php echo lang_check('View for rent');?>" class="img-fluid d-block w-100">
+								</div>
+								<div class="carousel-item">
+									<img  src="assets/images/intro/<?php echo (sw_is_safari()) ? '2.jpg' : '2.webp';?>" alt="<?php echo lang_check('View for rent');?>" class="img-fluid d-block w-100">
+								</div>
+							</div>
+						</div>
+						<!-- end -->
+					
                 </div>
             </div>
         </div>

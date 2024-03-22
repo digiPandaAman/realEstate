@@ -14,7 +14,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_news.webp
                     <span><?php echo lang_check('Our Blog');?></span>
                     <h3><?php echo lang_check('Recent Posts');?></h3>
 					<p>&nbsp;</p>
-					<p class="blog_news_peh">Lorem ipsum onts persp unde omnis iste natus errluptatem acc usantium demque laudantium totam.</p>
+					<p class="blog_news_peh">Your Real Estate Resource Center: Explore market trends, insightful guides, and more-  all in one place.</p>
                 </div>
             </div>
 			<div class="col-lg-8">
@@ -26,7 +26,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_news.webp
 							<div class="blog-single-post">
 								<div class="blog-img">
 									<a href="<?php echo site_url($lang_code.'/'.$row->id.'/'.url_title_cro($row->title)); ?>" title="<?php echo $row->title; ?>">
-										<img src="<?php echo _simg('files/'.$row->image_filename, '800x540'); ?>" alt="">
+										<img src="<?php echo _simg('files/'.$row->image_filename, '800x500'); ?>" alt="">
 									</a>
 									<div class="view-post">
 										<a href="<?php echo site_url($lang_code.'/'.$row->id.'/'.url_title_cro($row->title)); ?>" title="<?php echo $row->title; ?>" class="view-posts"><?php echo lang_check('View Post');?></a>

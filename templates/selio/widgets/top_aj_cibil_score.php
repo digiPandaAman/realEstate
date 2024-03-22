@@ -26,7 +26,7 @@
                     </ul>
                 </div>
                 <div class="ProductBanner_Img text-center">
-                    <img width="400" src="<?=('assets/selfImages/2895505.jpg');?>" />
+                    <img width="500" src="<?=('assets/selfImages/2895505.jpg');?>" />
                 </div>
             </div>
 

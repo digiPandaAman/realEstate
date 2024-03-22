@@ -25,13 +25,13 @@ Widget-preview-image: /assets/img/widgets_preview/top_testimonials.webp
                 <div class="comment-carousel">
                     <div class="comment-info">
                          <div class="cm-img">
-                            <img src="assets/images/resources/<?php echo (sw_is_safari()) ? 'cm-img3.jpg' : 'cm-img3.webp';?>" alt="<?php echo lang_check('testimonials1');?>">
+                            <img src="assets/images/resources/<?php echo (sw_is_safari()) ? 'cm-img1.jpg' : 'cm-img1.webp';?>" alt="<?php echo lang_check('testimonials1');?>">
                         </div><!--author-img end-->
                         <p><?php echo lang_check('testimonials1');?></p>
                         <div class="cm-info-sec">
                            
                             <div class="cm-info">
-                                <h3><?php echo lang_check('Kritsofer Nolan');?> /</h3>
+                                <h3><?php echo lang_check('Sarah  Kapoor');?> /</h3>
                                 <h4><?php echo lang_check('Property Owner');?></h4>
                             </div>
                         </div><!--cm-info-sec end-->
@@ -44,7 +44,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_testimonials.webp
                         <div class="cm-info-sec">
                             
                             <div class="cm-info">
-                                <h3><?php echo lang_check('Kritsofer Nolan');?> /</h3>
+                                <h3><?php echo lang_check('Arjun Mehra');?> /</h3>
                                 <h4><?php echo lang_check('Property Owner');?></h4>
                             </div>
                         </div><!--cm-info-sec end-->
@@ -57,20 +57,20 @@ Widget-preview-image: /assets/img/widgets_preview/top_testimonials.webp
                         <div class="cm-info-sec">
                             
                             <div class="cm-info">
-                                <h3><?php echo lang_check('Kritsofer Nolan');?> /</h3>
+                                <h3><?php echo lang_check('Priya Dasn');?> /</h3>
                                 <h4><?php echo lang_check('Property Owner');?></h4>
                             </div>
                         </div><!--cm-info-sec end-->
                     </div><!--comment-info end-->
                     <div class="comment-info">
                         <div class="cm-img">
-                            <img src="assets/images/resources/<?php echo (sw_is_safari()) ? 'cm-img2.jpg' : 'cm-img2.webp';?>" alt="<?php echo lang_check('testimonials4');?>">
+                            <img src="assets/images/resources/<?php echo (sw_is_safari()) ? 'cm-img4.jpg' : 'cm-img4.webp';?>" alt="<?php echo lang_check('testimonials4');?>">
                         </div><!--author-img end-->
                         <p><?php echo lang_check('testimonials4');?></p>
                         <div class="cm-info-sec">
                             
                             <div class="cm-info">
-                                <h3><?php echo lang_check('Kritsofer Nolan');?> /</h3>
+                                <h3><?php echo lang_check('Vikram  Singh');?> /</h3>
                                 <h4><?php echo lang_check('Property Owner');?></h4>
                             </div>
                         </div><!--cm-info-sec end-->

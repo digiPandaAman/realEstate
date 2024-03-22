@@ -24,7 +24,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_news.webp
                     <div class="blog-single-post">
                         <div class="blog-img">
                             <a href="<?php echo site_url($lang_code.'/'.$row->id.'/'.url_title_cro($row->title)); ?>" title="<?php echo $row->title; ?>">
-                                <img src="<?php echo _simg('files/'.$row->image_filename, '810x465'); ?>" alt="">
+                                <img src="<?php echo _simg('files/'.$row->image_filename, '800x500'); ?>" alt="">
                             </a>
                             <div class="view-post">
                                 <a href="<?php echo site_url($lang_code.'/'.$row->id.'/'.url_title_cro($row->title)); ?>" title="<?php echo $row->title; ?>" class="view-posts"><?php echo lang_check('View Post');?></a>

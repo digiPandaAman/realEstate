@@ -6,7 +6,7 @@ Widget-preview-image: /assets/img/widgets_preview/right_agents.webp
 ?>
 
 
-<section class="explore-feature hp7 section-padding widget_edit_enabled pb-0 seller-bg">
+<section class="explore-feature hp7 section-padding widget_edit_enabled pb-0 seller-bg AJ_aGentS_Home">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8">

@@ -7,7 +7,7 @@ $(".recommendedSellerSliderAJ").owlCarousel({
     autoplay: true,
     autoplayTimeout: 6000,
     item: 6,
-    margin: 25,
+    margin: 15,
     responsive: {
       0: {
         items: 1,
@@ -24,10 +24,10 @@ $(".recommendedSellerSliderAJ").owlCarousel({
         items: 2,
       },
       1280: {
-        items: 3,
+        items: 4,
       },
       1540: {
-        items: 3,
+        items: 4,
       },
     },
   });

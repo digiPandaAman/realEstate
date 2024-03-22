@@ -1,9 +1,10 @@
 <div class="list-products">
     <?php foreach($results as $key=>$item): ?>
     <div class="card">
-        <span class="verifiedBadge">Verified</span>
+        
         <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
             <div class="img-block">
+              <span class="verifiedBadge">Verified</span>
                 <div class="overlay"></div>
                 <?php if(_ch($item['option_38'], false) && _ch($item['option_38'], false) !='empty'):?>
                 <?php

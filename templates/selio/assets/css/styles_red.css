@@ -495,6 +495,10 @@ section.footer_area p.description {
 .explore-feature .card {
     border-radius: 10px;
 }
+.explore-feature .card .card-body {
+    padding: 37px 11px 32px 15px;
+    border: 0;
+}
 .explore-feature .card .card-body h3 {
     font-size: 18px;
     margin: 25px auto 10px auto;
@@ -505,6 +509,8 @@ section.footer_area p.description {
 }
 .explore-feature .card .card-body p {
     font-size: 14px;
+  	padding:0;
+  	min-height: 120px;
 }
 section.popular-cities.hp_s1.section-padding.widget_edit_enabled {
     padding: 70px 0 60px;
@@ -527,17 +533,20 @@ body .testimonial-sec.section-padding {
 }
 .testimonail-sect .comment-info > p {
     border: none;
-    font-size: 24px;
+    font-size: 15px;
     color: #fff;
     font-family: 'Gilroy';
-    font-weight: 200;
-    line-height: 42px;
+    font-weight: 300;
+    line-height: 26px;
     text-align: center;
     max-width: 750px;
     margin: auto !important;
     width: auto;
     float: none;
     padding: 140px 0px 30px 0;
+}
+.comment-info .cm-info-sec{
+	padding-left:0;
 }
 .cm-info-sec .cm-info h3 {
     font-weight: 100;
@@ -563,12 +572,12 @@ body .testimonial-sec.section-padding {
 }
 .testi_title {
     width: 100%;
-    color: #909090;
+    font-size: 32px;
+    color: #0b1116;
     text-transform: uppercase;
     font-family: 'Gilroy' !important;
-    font-weight: 400 !important;
-    font-size: 18px;
-    margin-bottom: 60px;
+    font-weight: 300 !important;
+    margin-bottom: 90px;
 }
 .comment-info:before{
     display:none;
@@ -605,8 +614,8 @@ body .testimonial-sec.section-padding {
     line-height: 40px;
     font-weight: 100;
 }
-.intro-thumb-row{
-    display:none;
+.intro-thumb-row {
+    border-radius: 0 20px 0 0;
 }
 .intro .intro-img {
     padding-left: 0px;
@@ -926,7 +935,7 @@ section.explore-feature.seller-bg {
     color:#fff;
 }
 .blog_news_peh {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 26px;
     color: #67686c;
     font-family: raleway,sans-serif;
@@ -1012,11 +1021,11 @@ section.explore-feature.seller-bg {
     left: auto;
 }
 .popularCitiesSliderAJ.owl-carousel .owl-nav .owl-prev {
-    left: -60px;
+    left: -40px;
     top: 25%;
 }
 .popularCitiesSliderAJ.owl-carousel .owl-nav .owl-next {
-    right: -60px;
+    right: -40px;
     top: 25%;
 }
 .sellers_card {
@@ -2472,6 +2481,9 @@ header .top-header{
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 22px 22px 20px 20px !important;
 }
+.card_bod_full{
+  padding-top:15px;
+}
 .card_bod_full .favorites-actions {
     z-index: 5;
     position: absolute;
@@ -3199,10 +3211,6 @@ span.label.label-danger {
 
 
 /*Gagan Css*/
-.HomeInT_Slider_page .bg-slider{
-    min-height: 90vh;
-  	object-fit:cover;
-}
 .HomeInT_Slider_page .carousel-caption{
     bottom: 70px!important;
     margin-top: 0px!important;
@@ -3254,8 +3262,8 @@ span.label.label-danger {
 }
 
 .HomeInT_Slider_page .carousel-indicators li{
-  width: 20px!important;
-  height: 20px!important;
+  width: 15px!important;
+  height: 15px!important;
   cursor: pointer;
   display: inline-flex;
   border-radius: 50px;
@@ -3411,6 +3419,191 @@ span.label.label-danger {
 
 }
 /*End*/
+
+
+.AJ_aGentS_Home .sellers_card .card-body{
+	display:block;
+  	text-align: center;
+}
+.AJ_aGentS_Home .sellers_img {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.AJ_aGentS_Home .sellers_detail {
+    width: 100%;
+    text-align: center;
+}
+.AJ_aGentS_Home .seller_location{
+	margin:auto;
+}
+.AJ_aGentS_Home .seller_expert{
+	display:none;
+}
+.AJ_aGentS_Home .sellers_card .card-body{
+	padding:15px;
+}
+.AJ_aGentS_Home .seller_location span {
+    padding: 2px 0;
+    margin: 2px 0 8px;
+}
+.AJ_aGentS_Home .seller_name_title a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    letter-spacing: 0;
+    text-transform: capitalize;
+}
+.AJ_aGentS_Home .sellers_name_row{
+	justify-content: center;
+    margin-top: 10px;
+}
+.AJ_aGentS_Home .seller_exp, .AJ_aGentS_Home .seller_property {
+    font-size: 12px;
+    color: #666;
+}
+.AJ_aGentS_Home .sellers_card {
+    margin: 15px 0px;
+}
+#carouselExampleIndicators .carousel-inner .carousel-item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff444700 30%, #00000085);
+}
+.interior-CallTo {
+    background: #f9eded;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.interior-CallTo .icon {
+    background: #f29999;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.interior-CallTo .icon img{
+	max-width:55px;
+}
+.CallTo_title h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.RegiSterCallToacTion {
+    margin-bottom: -30px;
+    position: relative;
+    z-index: 1;
+}
+.card .img-block span.verifiedBadge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    padding: 2px 10px;
+    color: #333;
+    text-transform: capitalize;
+    z-index: 3;
+    border-radius: 20px;
+    font-size: 13px;
+}
+.AJ_aGentS_Home .sellers_img img {
+    border-radius: 50px;
+}
+.comment-carousel .slick-slide:after {
+    border-right: 1px solid #cacaca1f;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 40px;
+    bottom: 0;
+    left: auto;
+    margin: auto;
+}
+.list-products .card .img-block span.verifiedBadge {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: #fff;
+    padding: 2px 10px;
+    font-size: 13px;
+}
+.purpose-buy_properties {
+    margin-top: 10px !important;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 15px;
+}
+.agent-profile .agent-info {
+    border-radius: 0 20px 20px 0;
+}
+.agent-profile {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.agent-profile .agent-info li span, .agent-profile .agent-info li a {
+    color: #333;
+    font-size: 16px;
+      font-weight: 200;
+}
+.list-products .card .img-block {
+    border-radius: 20px 0 0 20px !important;
+    overflow: hidden;
+}
+.pager-sec-details > ul{
+	float:left;
+}
+
+.blog-single-post p {
+    float: left;
+    width: 100%;
+    margin-bottom: 24px;
+    color: #404040;
+    font-size: 15px;
+    line-height: 28px;
+    font-family: 'Raleway';
+}
+.blog-single-post p strong {
+    font-size: 18px;
+    font-weight: 600;
+}
+.post_info h3 a{
+	font-size:18px;
+}
+.intro-img #carouselExampleIndicators {
+    border-radius: 0 0 30px 0;
+    overflow: hidden;
+}
+.intro-img #carouselExampleIndicators .carousel-indicators{
+	gap:0 !important;
+}
+.footer-list li {
+    padding-left: 20px;
+  	position:relative;
+}
+.footer-list i {
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
 
 
 

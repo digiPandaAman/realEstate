@@ -10,7 +10,7 @@ Widget-preview-image: /assets/img/widgets_preview/footer_contact.webp
         <h3><?php echo lang_check('Contact Us');?></h3>
         <ul class="footer-list">                
             <li><i class="la la-map-marker"></i> 
-            <span class="value"><?php echo lang_check('432 Park Ave, New York, NY 10022');?></span></li>
+            <span class="value"><?php echo lang_check('ST-304, Eldeco Studio, Sector 93A, Noida India, PIN-201301');?></span></li>
             <?php if(_ch($settings_phone, false)):?>
                 <?php 
                     $justNums = preg_replace("/[^0-9]/", '',  _ch($settings_phone,'#'));
@@ -18,6 +18,6 @@ Widget-preview-image: /assets/img/widgets_preview/footer_contact.webp
                 <li><i class="la la-phone"></i> <span class="value"><a href="tel://<?php echo $justNums;?>"><?php _che($settings_phone);?></a></span></li>
             <?php endif;?>
             <li><i class="la la-envelope"></i> <span class="value"><a href="mailto:<?php _che($settings_email);?>"><?php _che($settings_email);?></a></span></li>
-            <li><i class="la la-chevron-circle-right"></i><span class="value"><a href="#"><?php echo lang_check('Contact Us');?></a></span></li></ul>
+            <li><i class="la la-chevron-circle-right"></i><span class="value"><a href="<?=base_url('en/180/contact_us');?>"><?php echo lang_check('Contact Us');?></a></span></li></ul>
     </div>
 </div>

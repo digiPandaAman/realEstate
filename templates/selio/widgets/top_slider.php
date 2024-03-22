@@ -16,7 +16,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_slider.webp
 		<div class="banner-carousel">
 			<?php foreach($slideshow_images as $key=>$file): ?>
 			<div class="banner-slide">
-				<img src="<?php echo _simg($file['url'], '1800x600', true); ?>" alt="<?php echo basename($file['url']);?>">
+				<img src="<?php echo _simg($file['url'], '600x400', true); ?>" alt="<?php echo basename($file['url']);?>">
 				<?php if(config_item('property_slider_enabled')===TRUE&&!empty($file['property_details'])):?>
 				<?php
 				$listing_id = $file['property_details']['property_id'];

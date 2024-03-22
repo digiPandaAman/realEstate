@@ -13,10 +13,10 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 bg-slider" src="<?=('assets/selfImages/Interior_back.jpg');?>" alt="Second slide">
+                <img class="d-block w-100 bg-slider" src="<?=('assets/selfImages/Interior_back2.jpg');?>" alt="Second slide">
 				
                 <div class="carousel-caption  d-md-block">
-                    <h5>Bring home beautiful interiors</h5>
+					<h5>Bring home <span>beautiful interiors</span></h5>
                     <p>Experience unmatched quality & timely delivery with Livspace</p>
                     <button>Book a free Consultation</button>
                 </div>
@@ -102,3 +102,32 @@
             </div>
         </div>
     </div>
+
+<div class="RegiSterCallToacTion">
+	<div class="container">
+          <div class="row">
+               <div class="col-md-6">
+				    <div class="interior-CallTo">
+						<div class="icon">
+							<img src="<?=('assets/selfImages/interior_DC.png');?>">
+						</div>
+						<div class="CallTo_title">
+							<h4>Are you a interior designer?</h4>
+							<a href="{front_login_url}#sw_register" class="RegisTer_NoW_BTN">Register Now <i class="la la-sign-in"></i></a>
+						</div>
+					</div>
+			   </div>
+			  <div class="col-md-6">
+				    <div class="interior-CallTo">
+						<div class="icon">
+							<img src="<?=('assets/selfImages/interior_DC.png');?>">
+						</div>
+						<div class="CallTo_title">
+							<h4>Are you a interior Contractor?</h4>
+							<a href="{front_login_url}#sw_register" class="RegisTer_NoW_BTN">Register Now <i class="la la-sign-in"></i></a>
+						</div>
+					</div>
+			   </div>
+         </div>
+    </div>
+</div>

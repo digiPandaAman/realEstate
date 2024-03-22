@@ -25,14 +25,15 @@ foreach($slideshow_images_obj as $value) {
   
 <div class="<?php echo $class;?>">
     <div class="card">
-        <span class="verifiedBadge">Verified</span>
+        
         <?php if(config_db_item('results_listings_video') == 1 && _ch($item['option_'.config_db_item('multimedia_field_id')], false)):?>
             <div>
         <?php else:?>
             <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
         <?php endif;?>
             <div class="img-block <?php if(config_db_item('results_listings_video') == 1 && _ch($item['option_'.config_db_item('multimedia_field_id')], false)):?> video-block <?php endif;?>">
-                <div class="overlay"></div>
+              <span class="verifiedBadge">Verified</span>  
+              <div class="overlay"></div>
                 <?php if(($item['is_featured'])):?>
                     <div class="budget"><i class="fa fa-star"></i></div>
                 <?php endif;?>
