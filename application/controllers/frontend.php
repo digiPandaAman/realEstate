@@ -4182,7 +4182,15 @@ class Frontend extends Frontend_Controller
 	{
         $userPanNumber = $this->input->get('panNo');
         $token = $this->input->get('token');
-        if($userPanNumber && $token):
+        $otpToken = $this->input->get('otpToken');
+        if($otpToken):
+            $otpToken = str_replace(' ','+',$otpToken);
+            $decode = $this->encrypt->decode($otpToken);
+            $decodeFinal = json_decode($decode);
+            $decodeFinal->otpVerify = true;
+            $decodeFinal->otpToken = $otpToken;
+            $this->data['otpVerifyData'] = $decodeFinal;
+        elseif($userPanNumber && $token):
             $genrateToken = md5($userPanNumber.'townCreditManorScore');
             if($token === $genrateToken):
                 $this->load->model('commanmodel','comman');
