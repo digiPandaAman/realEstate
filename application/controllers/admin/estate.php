@@ -797,7 +797,8 @@ class Estate extends Admin_Controller
     public function callChatGBT($prompt='')
     {
         if($prompt):
-            $apiKey = "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";
+            // $apiKey = "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";
+            $apiKey = "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";
             $organizationKey = "org-EZCyF7WtnlWY5ugaz1HTmxUm";
 
             $url = 'https://api.openai.com/v1/chat/completions';  

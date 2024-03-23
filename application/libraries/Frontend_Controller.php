@@ -2,7 +2,8 @@
 
 class Frontend_Controller extends MY_Controller 
 {
-	public function __construct(){
+	public function __construct()
+    {
 		parent::__construct();
         
         if(config_item('installed') == false)
@@ -61,15 +62,15 @@ class Frontend_Controller extends MY_Controller
         /* [Load config and settings] */
         $this->load->model('language_m');
 
-//        Force no-cache
-//     
-//        header('P3P: CP="CAO PSA OUR"');
-//        header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
-//        header("Last-Modified: " . date("D, d M Y H:i:s") . " GMT");
-//        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-//        header("Cache-Control: post-check=0, pre-check=0", false);
-//        header("Pragma: no-cache");
-//        header("Connection: close");
+        // Force no-cache
+        
+        // header('P3P: CP="CAO PSA OUR"');
+        // header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
+        // header("Last-Modified: " . date("D, d M Y H:i:s") . " GMT");
+        // header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+        // header("Cache-Control: post-check=0, pre-check=0", false);
+        // header("Pragma: no-cache");
+        // header("Connection: close");
         
         $this->form_validation->set_error_delimiters('<p class="alert alert-error">', '</p>');
         
@@ -377,10 +378,10 @@ class Frontend_Controller extends MY_Controller
 
         // Fetch current page
         $this->temp_data['page'] = $this->page_m->get_lang($this->data['page_id']);
-//            echo '<pre>';
-//            var_dump($this->data['page_id'], $this->temp_data['page']);
-//            echo '</pre>';
-//            exit();
+        //    echo '<pre>';
+        //    var_dump($this->data['page_id'], $this->temp_data['page']);
+        //    echo '</pre>';
+        //    exit();
         if(!empty($this->temp_data['page']) && !empty($this->data['page_id'])){
             $this->data['page_navigation_title'] = $this->temp_data['page']->{'navigation_title_'.$this->data['lang_id']};
             $this->data['page_title'] = $this->temp_data['page']->{'title_'.$this->data['lang_id']};

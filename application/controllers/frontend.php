@@ -1656,6 +1656,20 @@ class Frontend extends Frontend_Controller
         $this->check_login();
         $this->load_head_data();
 
+        $post = $this->input->post();
+        if($post && isset($post['formType']) && ($post['formType'] == 'genrateTextGBT')):
+            $finalPrompt = trim($post['prompt']);
+            if($finalPrompt):
+                $chatGBTResponse = $this->callChatGBT($finalPrompt);
+                // echo "<pre>";print_r($chatGBTResponse);die();
+                if(isset($chatGBTResponse->choices) && $chatGBTResponse->choices):
+                    $response = current($chatGBTResponse->choices);
+                    print_r($response->message->content);
+                    die();
+                endif;
+            endif;
+        endif;
+
         $this->data['content_language_id'] = $this->data['lang_id'];
         $id = NULL;
         if($this->uri->segment(4) != '')
@@ -2293,6 +2307,55 @@ class Frontend extends Frontend_Controller
         $output = $this->parser->parse($this->data['settings_template'].'/editproperty.php', $this->data, TRUE);
         echo str_replace('assets/', base_url('templates/'.$this->data['settings_template']).'/assets/', $output);
     }
+
+    // AJ Strat
+    public function callChatGBT($prompt='')
+    {
+        if($prompt):
+            // $apiKey = "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";
+            $apiKey = "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";
+            $organizationKey = "org-EZCyF7WtnlWY5ugaz1HTmxUm";
+
+            $url = 'https://api.openai.com/v1/chat/completions';  
+
+            $headers = array(
+                "Authorization: Bearer {$apiKey}",
+                "OpenAI-Organization: {$organizationKey}", 
+                "Content-Type: application/json"
+            );
+            
+            // Define messages
+            $messages = array();
+            $message = array();
+            $message["role"] = "user";
+            $message["content"] = $prompt;
+            $messages[] = $message;
+            
+            // Define data
+            $data = array();
+            $data["model"] = "gpt-3.5-turbo";
+            $data["messages"] = $messages;
+            $data["max_tokens"] = 50;
+
+            // init curl
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_POST, 1);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+            
+            $result = curl_exec($curl);
+            if (curl_errno($curl)) {
+                return 'Error:' . curl_error($curl);
+            } else {
+                return json_decode($result);
+            }
+            curl_close($curl);
+        else:
+            return '';
+        endif;
+    }
+    // AJ End
     
     public function logout()
     {

@@ -401,3 +401,22 @@ function selio_number_format(number, format) {
         return number.toFixed();
         
 }
+
+function genratePrompt()
+{
+    var promptData = $('#inputOption_1_78').val();
+    if(promptData){
+        $.ajax({
+          type: "POST",
+          data: {
+              prompt: promptData,
+              formType: 'genrateTextGBT',
+          },
+          url: '',
+          success: function (response) {
+            // console.log(response,'Aman');
+            CKEDITOR.instances['inputOption_1_8'].setData(response);
+          }
+      });
+    }
+}

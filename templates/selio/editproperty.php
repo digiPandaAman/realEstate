@@ -129,6 +129,9 @@
                                             <?php else:?>
                                             <div class="controls">
                                                 <?php echo form_input('option'.$val_option['id'].'_'.$key, set_value('option'.$val_option['id'].'_'.$key, isset($estate['option'.$val_option['id'].'_'.$key])?$estate['option'.$val_option['id'].'_'.$key]:''), 'class="form-control '.$val_option['type'].'" id="inputOption_'.$key.'_'.$val_option['id'].'" placeholder="'.$val_option['option'].'" '.$required_text.' '.$max_length_text)?>
+                                                <?php if('option'.$val_option['id'].'_'.$key == 'option78_1'): ?>
+                                                <a class="genratePromptButton" onclick="genratePrompt();"><img width="25" src="assets/selfImages/ai.png" alt=""> Generate Short Description with AI</a>
+                                                <?php endif; ?>
                                                 <?php if(!empty($options_lang[$key][$key_option]->prefix) || !empty($options_lang[$key][$key_option]->suffix)): ?>
                                                      <span class="prefix">
                                                   <?php echo $options_lang[$key][$key_option]->prefix.$options_lang[$key][$key_option]->suffix?>
