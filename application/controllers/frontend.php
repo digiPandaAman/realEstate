@@ -6,7 +6,7 @@ class Frontend extends Frontend_Controller
 	public function __construct ()
 	{
 		parent::__construct();
-                
+        $this->load->model('commanmodel','comman');
 	}
     
     private function _get_purpose()
@@ -4262,6 +4262,21 @@ class Frontend extends Frontend_Controller
                     $this->data['creditScoreData'] = $checkPan;
                 endif;
             endif;
+        endif;
+
+        $checkSegment = $this->uri->segment(2);
+        if($checkSegment == 193 || $checkSegment == 194):
+            $this->data['homeInterior'] = $this->comman->getData('aj_categorie',['status'=>1]);
+            $serviceCheckSegment = $this->uri->segment(4);
+            if($serviceCheckSegment):
+                foreach($this->data['homeInterior'] as $hiData):
+                    $seoName = str_replace(' ','-',strtolower($hiData->name));
+                    if($seoName == $serviceCheckSegment):
+                        $this->data['homeInteriorData'] = $this->comman->getData('aj_categorie_data',['categorieId'=>$hiData->id,'cdStatus'=>1]);
+                    endif;
+                endforeach;
+            endif;
+            // echo "<pre>";print_r($this->data['homeInterior']);die();
         endif;
 
         $lang_id = $this->data['lang_id'];

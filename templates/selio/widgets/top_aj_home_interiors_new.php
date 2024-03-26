@@ -36,70 +36,20 @@
                     </div>
                 </div>
             </div>
+            <?php if(isset($homeInterior) && $homeInterior): ?>
             <div class="row justify-content-center">
                 <ul>
+                    <?php foreach($homeInterior as $hiData): $seoName = str_replace(' ','-',strtolower($hiData->name)); ?>
                     <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/modular-Kitchen.png');?>">
-                        <h3>Modular Kitchen</h3>
+						<a href="<?=base_url('en/194/services/'.$seoName);?>">
+                        <img src="<?=('assets/selfImages/homeInteriorCategory/'.$seoName.'.png');?>">
+                        <h3><?=ucwords($hiData->name);?></h3>
 						</a>
                     </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/Wardrobes.png');?>">
-                        <h3>Wardrobes</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/bedroom.png');?>">
-                        <h3>Master Bedroom</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/tv-unit.png');?>">
-                        <h3>TV Unit</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/living.png');?>">
-                        <h3>Living Room</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/false-selling.png');?>">
-                        <h3>Kitchen False Ceiling</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/bathroom.png');?>">
-                        <h3>Bathroom</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/kid-room.png');?>">
-                        <h3>Kids Room</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/wall-tiles.png');?>">
-                        <h3>Kitchen Walls Tiles</h3>
-						</a>
-                    </li>
-                    <li class="tab tab_services">
-						<a href="">
-                        <img src="<?=('assets/selfImages/balcony.png');?>">
-                        <h3>Balcony</h3>
-						</a>
-                    </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 
