@@ -126,6 +126,8 @@ $similar_estates = $CI->estate_m->get_by($where, FALSE, 4, 'RAND()', 0, array(),
 $similar_estates_array = array();
 $CI->generate_results_array($similar_estates, $similar_estates_array, $options_name);
 
+echo "<pre>";print_r($similar_estates_array);
+
 if(sw_count($similar_estates_array) > 0): ?>
 
 <div class="similar-listings-posts">

@@ -68,7 +68,7 @@
                                     }</label>
                                 <div class="col-lg-9">
                                     <input type="file" name="c_image[]" class="form-control"
-                                        accept="image/png, image/jpg, image/jpeg" multiple>
+                                        accept="image/png, image/jpg, image/jpeg" multiple required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -110,15 +110,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php if (sw_count($tree_listings)): foreach ($tree_listings as $listing_item): ?>
+                                <?php if (sw_count($tree_listings)): foreach ($tree_listings as $listing_item): $images = json_decode($listing_item->cdImages); ?>
                                 <tr>
                                     <td><?=$listing_item->cdId;?></td>
-                                    <td></td>
+                                    <td>
+                                        <?php foreach($images as $img): ?>
+                                        <img src="<?=base_url($img);?>" width="60" alt="">
+                                        <?php endforeach; ?>
+                                    </td>
                                     <td><?=$listing_item->cdTitle;?></td>
                                     <!-- <td><?php echo btn_edit('admin/treefield/edit/' . $option->id . '/' . $listing_item->cdId) ?>
                                     </td> -->
                                     <td>
-                                        <?=btn_delete('admin/customaj/deleteCategories/'.$listing_item->cdId);?>
+                                        <?=btn_delete('admin/customaj/deleteCategoriesData/'.$listing_item->cdId);?>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>

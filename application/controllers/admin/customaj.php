@@ -5,9 +5,6 @@ class Customaj extends Admin_Controller
 	public function __construct()
     {
 		parent::__construct();
-        // $this->load->model('slideshow_m');
-        // $this->load->model('file_m');
-        // $this->load->model('repository_m');
         $this->load->model('commanmodel','comman');
 	}
 
@@ -133,6 +130,22 @@ class Customaj extends Admin_Controller
             $this->data['treefield_no_parents'] = $finalCategorie;
             $this->data['subview'] = 'admin/customeaj/categoriesDataAdd';
             $this->load->view('admin/_layout_main', $this->data);
+        endif;
+    }
+
+    public function deleteCategoriesData($categoriesId=0)
+    {
+        $getCategorie = $this->comman->get1Data('aj_categorie_data',['cdId'=>$categoriesId]);
+        if($getCategorie):
+            $success = $this->comman->updateData('aj_categorie_data',['cdId'=>$getCategorie->cdId],['cdStatus'=>2]);
+            if($success):
+                $this->session->set_flashdata('message','Categorie Data Deleted.');
+            else:
+                $this->session->set_flashdata('error','Something went wrong. please try again.');
+            endif;
+            redirect('admin/customaj/categoriesData');
+        else:
+            redirect('admin/customaj/categoriesData');
         endif;
     }
 }

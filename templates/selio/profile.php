@@ -127,30 +127,6 @@ if ( ! function_exists('anti_spam_field'))
                                                     <div class="img-block">
                                                         <div class="overlay"></div>
                                                         <img src="<?php echo _simg($item['thumbnail_url'], '851x678', true); ?>" alt="<?php echo _ch($item['option_10']); ?>" class="img-fluid">
-                                                        <div class="rate-info">
-                                                                <?php if (!empty($item['option_36']) || !empty($item['option_37'])): ?>
-                                                                <h5>
-                                                                    <?php if (!empty($item['option_36']) || !empty($item['option_37'])): ?>
-                                                                        <?php if (_ch($item['option_4'], false) && stripos($item['option_4'], lang_check('Rent')) !== FAlSE): ?>
-                                                                            <?php 
-                                                                                if(!empty($item['option_37']))echo ' '.show_price($item['option_37'], $options_prefix_37, $options_suffix_37, $lang_id);
-                                                                                if(!empty($item['option_37']) && !empty($item['option_36'])) echo ' / ';
-                                                                                if(!empty($item['option_36']))echo show_price($item['option_36'], $options_prefix_36, $options_suffix_36, $lang_id);
-                                                                            ?>
-                                                                        <?php else: ?>
-                                                                           <?php 
-                                                                                if(!empty($item['option_36']))echo show_price($item['option_36'], $options_prefix_36, $options_suffix_36, $lang_id);
-                                                                                if(!empty($item['option_37']) && !empty($item['option_36'])) echo ' / ';
-                                                                                if(!empty($item['option_37']))echo ' '.show_price($item['option_37'], $options_prefix_37, $options_suffix_37, $lang_id);
-                                                                            ?>
-                                                                        <?php endif; ?>
-                                                                <?php endif; ?>
-                                                                </h5>
-                                                                <?php endif; ?>
-                                                                <?php if (_ch($item['option_4'], false)): ?>
-                                                                <span><?php echo _ch($item['option_4'], ''); ?></span>
-                                                            <?php endif; ?>
-                                                        </div>
                                                     </div>
                                                 </a>
                                                 <div class="card_bod_full">
@@ -159,6 +135,35 @@ if ( ! function_exists('anti_spam_field'))
                                                             <h3><?php echo _ch($item['option_10']); ?></h3>
                                                             <p><i class="la la-map-marker"></i><?php _che($item['address']); ?></p>
                                                         </a>
+                                                        <div class="rate-info">
+                                                                <?php if (!empty($item['option_36']) || !empty($item['option_37'])): ?>
+                                                                <h5>
+                                                                    <?php if(strtolower($item['option_36']) == 'price on request'): echo ucwords($item['option_36']); ?>
+                                                                    <?php elseif(strtolower($item['option_37']) == 'price on request'): echo ucwords($item['option_37']); ?>
+                                                                        
+                                                                    <?php else: ?>
+                                                                        <?php if (!empty($item['option_36']) || !empty($item['option_37'])): ?>
+                                                                            <?php if (_ch($item['option_4'], false) && stripos($item['option_4'], lang_check('Rent')) !== FAlSE): ?>
+                                                                                <?php 
+                                                                                    if(!empty($item['option_37']))echo ' '.show_price($item['option_37'], $options_prefix_37, $options_suffix_37, $lang_id);
+                                                                                    if(!empty($item['option_37']) && !empty($item['option_36'])) echo ' / ';
+                                                                                    if(!empty($item['option_36']))echo show_price($item['option_36'], $options_prefix_36, $options_suffix_36, $lang_id);
+                                                                                ?>
+                                                                            <?php else: ?>
+                                                                            <?php 
+                                                                                    if(!empty($item['option_36']))echo show_price($item['option_36'], $options_prefix_36, $options_suffix_36, $lang_id);
+                                                                                    if(!empty($item['option_37']) && !empty($item['option_36'])) echo ' / ';
+                                                                                    if(!empty($item['option_37']))echo ' '.show_price($item['option_37'], $options_prefix_37, $options_suffix_37, $lang_id);
+                                                                                ?>
+                                                                            <?php endif; ?>
+                                                                        <?php endif; ?>
+                                                                    <?php endif; ?>
+                                                                </h5>
+                                                                <?php endif; ?>
+                                                                <?php if (_ch($item['option_4'], false)): ?>
+                                                                <span><?php echo _ch($item['option_4'], ''); ?></span>
+                                                            <?php endif; ?>
+                                                        </div>
                                                         <ul>
                                                             <?php
                                                             $custom_elements = _get_custom_items();
